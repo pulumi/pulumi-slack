@@ -1,12 +1,12 @@
 import * as pulumi from "@pulumi/pulumi";
-import { SlackConversation } from "@pulumi/slack"
+import { Conversation } from "@pulumi/slack";
 
 // Create a new Slack channel
-const channel = new SlackConversation("platychat", {
-    name: "platychat",
-    topic: "my topic",
-    isPrivate: false,
-})
+const channel = new Conversation("platychat", {
+  name: "platychat",
+  topic: "my topic",
+  isPrivate: false,
+});
 
 // Get the id of the new channel as an output
-export const channelId = channel.id
+export const channelId = channel.id;
