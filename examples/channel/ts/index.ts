@@ -2,7 +2,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as slack from "@pulumi/slack";
 
 // Create a new Slack channel
-const channel = new Conversation("test", {
+const channel = new slack.Conversation("test", {
   name: "test-chat",
   topic: "my topic",
   isPrivate: false,
