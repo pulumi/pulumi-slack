@@ -14,9 +14,17 @@ func getJSBaseOptions(t *testing.T) integration.ProgramTestOptions {
 	base := getBaseOptions()
 	baseJS := base.With(integration.ProgramTestOptions{
 		Dependencies: []string{
-			"@pulumi/foo",
+			"@pulumi/slack",
 		},
 	})
 
 	return baseJS
+}
+
+func TestAccChannelTs(t *testing.T) {
+	test := getJSBaseOptions(t).
+		With(integration.ProgramTestOptions{
+			Dir: filepath.Join(getCwd(t), "channel", "ts"),
+		})
+	integration.ProgramTest(t, &test)
 }
