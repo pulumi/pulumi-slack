@@ -44,6 +44,7 @@ func Provider() tfbridge.ProviderInfo {
 		Description: "A Pulumi package for managing Slack workspaces.",
 		Keywords:    []string{"pulumi", "slack", "category/utility"},
 		License:     "Apache-2.0",
+		LogoURL:     "https://cdn.bfldr.com/5H442O3W/at/pl546j-7le8zk-6gwiyo/Slack_Mark.svg", //nolint:golint,lll
 		Homepage:    "https://www.pulumi.com",
 		Repository:  "https://github.com/pulumi/pulumi-slack",
 		GitHubOrg:   "pablovarela",
