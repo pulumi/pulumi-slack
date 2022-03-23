@@ -43,7 +43,6 @@ channel = slack.Conversation("test",
 
 ```go
 import (
-	"fmt"
 	slack "github.com/pulumi/pulumi-slack/sdk/go/slack"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -56,7 +55,7 @@ func main() {
             IsPrivate: pulumi.Bool(false),
         })
 		if err != nil {
-			return fmt.Errorf("error creating new channel: %v", err)
+			return err
 		}
 
 		ctx.Export("channel", channel.Name)
@@ -78,8 +77,8 @@ class SlackChannel : Channel
     public SlackChannel()
     {
         var channel = new Conversation("test", new ConversationArgs{
-            topic: "my topic",
-            isPrivate: false,
+            topic = "my topic",
+            isPrivate = false,
         });
     }
 }
