@@ -77,7 +77,7 @@ class SlackChannel : Channel
 {
     public SlackChannel()
     {
-        var channel = new Conversation("test", new InstanceServerArgs{
+        var channel = new Conversation("test", new ConversationArgs{
             topic: "my topic",
             isPrivate: false,
         });
