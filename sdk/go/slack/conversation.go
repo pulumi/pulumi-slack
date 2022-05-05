@@ -349,6 +349,74 @@ func (o ConversationOutput) ToConversationOutputWithContext(ctx context.Context)
 	return o
 }
 
+// Either of none or archive
+func (o ConversationOutput) ActionOnDestroy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.StringPtrOutput { return v.ActionOnDestroy }).(pulumi.StringPtrOutput)
+}
+
+// is a unix timestamp.
+func (o ConversationOutput) Created() pulumi.IntOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.IntOutput { return v.Created }).(pulumi.IntOutput)
+}
+
+// is the user ID of the member that created this channel.
+func (o ConversationOutput) Creator() pulumi.StringOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.StringOutput { return v.Creator }).(pulumi.StringOutput)
+}
+
+// indicates a conversation is archived. Frozen in time.
+func (o ConversationOutput) IsArchived() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.BoolPtrOutput { return v.IsArchived }).(pulumi.BoolPtrOutput)
+}
+
+// represents this conversation as being part of a Shared Channel
+// with a remote organization.
+func (o ConversationOutput) IsExtShared() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.BoolOutput { return v.IsExtShared }).(pulumi.BoolOutput)
+}
+
+// will be true if this channel is the "general" channel that includes
+// all regular team members.
+func (o ConversationOutput) IsGeneral() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.BoolOutput { return v.IsGeneral }).(pulumi.BoolOutput)
+}
+
+// explains whether this shared channel is shared between Enterprise
+// Grid workspaces within the same organization.
+func (o ConversationOutput) IsOrgShared() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.BoolOutput { return v.IsOrgShared }).(pulumi.BoolOutput)
+}
+
+// create a private channel instead of a public one.
+func (o ConversationOutput) IsPrivate() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.BoolOutput { return v.IsPrivate }).(pulumi.BoolOutput)
+}
+
+// means the conversation is in some way shared between multiple workspaces.
+func (o ConversationOutput) IsShared() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.BoolOutput { return v.IsShared }).(pulumi.BoolOutput)
+}
+
+// name of the public or private channel.
+func (o ConversationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// user IDs to add to the channel.
+func (o ConversationOutput) PermanentMembers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.StringArrayOutput { return v.PermanentMembers }).(pulumi.StringArrayOutput)
+}
+
+// purpose of the channel.
+func (o ConversationOutput) Purpose() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.StringPtrOutput { return v.Purpose }).(pulumi.StringPtrOutput)
+}
+
+// topic for the channel.
+func (o ConversationOutput) Topic() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.StringPtrOutput { return v.Topic }).(pulumi.StringPtrOutput)
+}
+
 type ConversationArrayOutput struct{ *pulumi.OutputState }
 
 func (ConversationArrayOutput) ElementType() reflect.Type {
