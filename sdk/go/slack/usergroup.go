@@ -302,6 +302,33 @@ func (o UsergroupOutput) ToUsergroupOutputWithContext(ctx context.Context) Userg
 	return o
 }
 
+// channel IDs for which the User Group uses as a default.
+func (o UsergroupOutput) Channels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Usergroup) pulumi.StringArrayOutput { return v.Channels }).(pulumi.StringArrayOutput)
+}
+
+// a short description of the User Group.
+func (o UsergroupOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Usergroup) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// a mention handle. Must be unique among channels, users
+// and User Groups.
+func (o UsergroupOutput) Handle() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Usergroup) pulumi.StringPtrOutput { return v.Handle }).(pulumi.StringPtrOutput)
+}
+
+// a name for the User Group. Must be unique among User Groups.
+func (o UsergroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v *Usergroup) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
+}
+
+// user IDs that represent the entire list of users for the
+// User Group.
+func (o UsergroupOutput) Users() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Usergroup) pulumi.StringArrayOutput { return v.Users }).(pulumi.StringArrayOutput)
+}
+
 type UsergroupArrayOutput struct{ *pulumi.OutputState }
 
 func (UsergroupArrayOutput) ElementType() reflect.Type {
