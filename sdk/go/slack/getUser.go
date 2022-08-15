@@ -34,27 +34,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-slack/sdk/go/slack"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := slack.GetUser(ctx, &GetUserArgs{
-// 			Name: pulumi.StringRef("my-user"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = slack.GetUser(ctx, &GetUserArgs{
-// 			Email: pulumi.StringRef("my-user@example.com"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := slack.GetUser(ctx, &GetUserArgs{
+//				Name: pulumi.StringRef("my-user"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = slack.GetUser(ctx, &GetUserArgs{
+//				Email: pulumi.StringRef("my-user@example.com"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func GetUser(ctx *pulumi.Context, args *GetUserArgs, opts ...pulumi.InvokeOption) (*GetUserResult, error) {
 	var rv GetUserResult

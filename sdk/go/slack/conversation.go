@@ -44,47 +44,53 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-slack/sdk/go/slack"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := slack.NewConversation(ctx, "test", &slack.ConversationArgs{
-// 			IsPrivate:        pulumi.Bool(true),
-// 			PermanentMembers: pulumi.StringArray{},
-// 			Topic:            pulumi.String("The topic for my channel"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := slack.NewConversation(ctx, "test", &slack.ConversationArgs{
+//				IsPrivate:        pulumi.Bool(true),
+//				PermanentMembers: pulumi.StringArray{},
+//				Topic:            pulumi.String("The topic for my channel"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ```go
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-slack/sdk/go/slack"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := slack.NewConversation(ctx, "nonadmin", &slack.ConversationArgs{
-// 			ActionOnDestroy:  pulumi.String("none"),
-// 			IsPrivate:        pulumi.Bool(true),
-// 			PermanentMembers: pulumi.StringArray{},
-// 			Topic:            pulumi.String("The channel won't be archived on destroy"),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := slack.NewConversation(ctx, "nonadmin", &slack.ConversationArgs{
+//				ActionOnDestroy:  pulumi.String("none"),
+//				IsPrivate:        pulumi.Bool(true),
+//				PermanentMembers: pulumi.StringArray{},
+//				Topic:            pulumi.String("The channel won't be archived on destroy"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -92,13 +98,20 @@ import (
 // `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
 //
 // ```sh
-//  $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
+//
+//	$ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
+//
 // ```
 type Conversation struct {
 	pulumi.CustomResourceState
 
 	// Either of none or archive
 	ActionOnDestroy pulumi.StringPtrOutput `pulumi:"actionOnDestroy"`
+	// indicate
+	// whether the members should be kick of the channel when removed from
+	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
+	// a side effect on public channels where user that joined the channel are kicked.
+	ActionOnUpdatePermanentMembers pulumi.StringPtrOutput `pulumi:"actionOnUpdatePermanentMembers"`
 	// is a unix timestamp.
 	Created pulumi.IntOutput `pulumi:"created"`
 	// is the user ID of the member that created this channel.
@@ -162,6 +175,11 @@ func GetConversation(ctx *pulumi.Context,
 type conversationState struct {
 	// Either of none or archive
 	ActionOnDestroy *string `pulumi:"actionOnDestroy"`
+	// indicate
+	// whether the members should be kick of the channel when removed from
+	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
+	// a side effect on public channels where user that joined the channel are kicked.
+	ActionOnUpdatePermanentMembers *string `pulumi:"actionOnUpdatePermanentMembers"`
 	// is a unix timestamp.
 	Created *int `pulumi:"created"`
 	// is the user ID of the member that created this channel.
@@ -194,6 +212,11 @@ type conversationState struct {
 type ConversationState struct {
 	// Either of none or archive
 	ActionOnDestroy pulumi.StringPtrInput
+	// indicate
+	// whether the members should be kick of the channel when removed from
+	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
+	// a side effect on public channels where user that joined the channel are kicked.
+	ActionOnUpdatePermanentMembers pulumi.StringPtrInput
 	// is a unix timestamp.
 	Created pulumi.IntPtrInput
 	// is the user ID of the member that created this channel.
@@ -230,6 +253,11 @@ func (ConversationState) ElementType() reflect.Type {
 type conversationArgs struct {
 	// Either of none or archive
 	ActionOnDestroy *string `pulumi:"actionOnDestroy"`
+	// indicate
+	// whether the members should be kick of the channel when removed from
+	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
+	// a side effect on public channels where user that joined the channel are kicked.
+	ActionOnUpdatePermanentMembers *string `pulumi:"actionOnUpdatePermanentMembers"`
 	// indicates a conversation is archived. Frozen in time.
 	IsArchived *bool `pulumi:"isArchived"`
 	// create a private channel instead of a public one.
@@ -248,6 +276,11 @@ type conversationArgs struct {
 type ConversationArgs struct {
 	// Either of none or archive
 	ActionOnDestroy pulumi.StringPtrInput
+	// indicate
+	// whether the members should be kick of the channel when removed from
+	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
+	// a side effect on public channels where user that joined the channel are kicked.
+	ActionOnUpdatePermanentMembers pulumi.StringPtrInput
 	// indicates a conversation is archived. Frozen in time.
 	IsArchived pulumi.BoolPtrInput
 	// create a private channel instead of a public one.
@@ -288,7 +321,7 @@ func (i *Conversation) ToConversationOutputWithContext(ctx context.Context) Conv
 // ConversationArrayInput is an input type that accepts ConversationArray and ConversationArrayOutput values.
 // You can construct a concrete instance of `ConversationArrayInput` via:
 //
-//          ConversationArray{ ConversationArgs{...} }
+//	ConversationArray{ ConversationArgs{...} }
 type ConversationArrayInput interface {
 	pulumi.Input
 
@@ -313,7 +346,7 @@ func (i ConversationArray) ToConversationArrayOutputWithContext(ctx context.Cont
 // ConversationMapInput is an input type that accepts ConversationMap and ConversationMapOutput values.
 // You can construct a concrete instance of `ConversationMapInput` via:
 //
-//          ConversationMap{ "key": ConversationArgs{...} }
+//	ConversationMap{ "key": ConversationArgs{...} }
 type ConversationMapInput interface {
 	pulumi.Input
 
@@ -352,6 +385,14 @@ func (o ConversationOutput) ToConversationOutputWithContext(ctx context.Context)
 // Either of none or archive
 func (o ConversationOutput) ActionOnDestroy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Conversation) pulumi.StringPtrOutput { return v.ActionOnDestroy }).(pulumi.StringPtrOutput)
+}
+
+// indicate
+// whether the members should be kick of the channel when removed from
+// `permanentMembers`. When set to `none` the user are never kicked, this prevent
+// a side effect on public channels where user that joined the channel are kicked.
+func (o ConversationOutput) ActionOnUpdatePermanentMembers() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.StringPtrOutput { return v.ActionOnUpdatePermanentMembers }).(pulumi.StringPtrOutput)
 }
 
 // is a unix timestamp.

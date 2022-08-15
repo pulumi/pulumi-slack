@@ -16,6 +16,7 @@ class ConversationArgs:
     def __init__(__self__, *,
                  is_private: pulumi.Input[bool],
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
+                 action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -25,6 +26,10 @@ class ConversationArgs:
         The set of arguments for constructing a Conversation resource.
         :param pulumi.Input[bool] is_private: create a private channel instead of a public one.
         :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_update_permanent_members: indicate
+               whether the members should be kick of the channel when removed from
+               `permanent_members`. When set to `none` the user are never kicked, this prevent
+               a side effect on public channels where user that joined the channel are kicked.
         :param pulumi.Input[bool] is_archived: indicates a conversation is archived. Frozen in time.
         :param pulumi.Input[str] name: name of the public or private channel.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] permanent_members: user IDs to add to the channel.
@@ -34,6 +39,8 @@ class ConversationArgs:
         pulumi.set(__self__, "is_private", is_private)
         if action_on_destroy is not None:
             pulumi.set(__self__, "action_on_destroy", action_on_destroy)
+        if action_on_update_permanent_members is not None:
+            pulumi.set(__self__, "action_on_update_permanent_members", action_on_update_permanent_members)
         if is_archived is not None:
             pulumi.set(__self__, "is_archived", is_archived)
         if name is not None:
@@ -68,6 +75,21 @@ class ConversationArgs:
     @action_on_destroy.setter
     def action_on_destroy(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_on_destroy", value)
+
+    @property
+    @pulumi.getter(name="actionOnUpdatePermanentMembers")
+    def action_on_update_permanent_members(self) -> Optional[pulumi.Input[str]]:
+        """
+        indicate
+        whether the members should be kick of the channel when removed from
+        `permanent_members`. When set to `none` the user are never kicked, this prevent
+        a side effect on public channels where user that joined the channel are kicked.
+        """
+        return pulumi.get(self, "action_on_update_permanent_members")
+
+    @action_on_update_permanent_members.setter
+    def action_on_update_permanent_members(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_on_update_permanent_members", value)
 
     @property
     @pulumi.getter(name="isArchived")
@@ -134,6 +156,7 @@ class ConversationArgs:
 class _ConversationState:
     def __init__(__self__, *,
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
+                 action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
                  created: Optional[pulumi.Input[int]] = None,
                  creator: Optional[pulumi.Input[str]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
@@ -149,6 +172,10 @@ class _ConversationState:
         """
         Input properties used for looking up and filtering Conversation resources.
         :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_update_permanent_members: indicate
+               whether the members should be kick of the channel when removed from
+               `permanent_members`. When set to `none` the user are never kicked, this prevent
+               a side effect on public channels where user that joined the channel are kicked.
         :param pulumi.Input[int] created: is a unix timestamp.
         :param pulumi.Input[str] creator: is the user ID of the member that created this channel.
         :param pulumi.Input[bool] is_archived: indicates a conversation is archived. Frozen in time.
@@ -167,6 +194,8 @@ class _ConversationState:
         """
         if action_on_destroy is not None:
             pulumi.set(__self__, "action_on_destroy", action_on_destroy)
+        if action_on_update_permanent_members is not None:
+            pulumi.set(__self__, "action_on_update_permanent_members", action_on_update_permanent_members)
         if created is not None:
             pulumi.set(__self__, "created", created)
         if creator is not None:
@@ -203,6 +232,21 @@ class _ConversationState:
     @action_on_destroy.setter
     def action_on_destroy(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_on_destroy", value)
+
+    @property
+    @pulumi.getter(name="actionOnUpdatePermanentMembers")
+    def action_on_update_permanent_members(self) -> Optional[pulumi.Input[str]]:
+        """
+        indicate
+        whether the members should be kick of the channel when removed from
+        `permanent_members`. When set to `none` the user are never kicked, this prevent
+        a side effect on public channels where user that joined the channel are kicked.
+        """
+        return pulumi.get(self, "action_on_update_permanent_members")
+
+    @action_on_update_permanent_members.setter
+    def action_on_update_permanent_members(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action_on_update_permanent_members", value)
 
     @property
     @pulumi.getter
@@ -358,6 +402,7 @@ class Conversation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
+                 action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -427,6 +472,10 @@ class Conversation(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_update_permanent_members: indicate
+               whether the members should be kick of the channel when removed from
+               `permanent_members`. When set to `none` the user are never kicked, this prevent
+               a side effect on public channels where user that joined the channel are kicked.
         :param pulumi.Input[bool] is_archived: indicates a conversation is archived. Frozen in time.
         :param pulumi.Input[bool] is_private: create a private channel instead of a public one.
         :param pulumi.Input[str] name: name of the public or private channel.
@@ -515,6 +564,7 @@ class Conversation(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
+                 action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -531,6 +581,7 @@ class Conversation(pulumi.CustomResource):
             __props__ = ConversationArgs.__new__(ConversationArgs)
 
             __props__.__dict__["action_on_destroy"] = action_on_destroy
+            __props__.__dict__["action_on_update_permanent_members"] = action_on_update_permanent_members
             __props__.__dict__["is_archived"] = is_archived
             if is_private is None and not opts.urn:
                 raise TypeError("Missing required property 'is_private'")
@@ -556,6 +607,7 @@ class Conversation(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             action_on_destroy: Optional[pulumi.Input[str]] = None,
+            action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
             created: Optional[pulumi.Input[int]] = None,
             creator: Optional[pulumi.Input[str]] = None,
             is_archived: Optional[pulumi.Input[bool]] = None,
@@ -576,6 +628,10 @@ class Conversation(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_update_permanent_members: indicate
+               whether the members should be kick of the channel when removed from
+               `permanent_members`. When set to `none` the user are never kicked, this prevent
+               a side effect on public channels where user that joined the channel are kicked.
         :param pulumi.Input[int] created: is a unix timestamp.
         :param pulumi.Input[str] creator: is the user ID of the member that created this channel.
         :param pulumi.Input[bool] is_archived: indicates a conversation is archived. Frozen in time.
@@ -597,6 +653,7 @@ class Conversation(pulumi.CustomResource):
         __props__ = _ConversationState.__new__(_ConversationState)
 
         __props__.__dict__["action_on_destroy"] = action_on_destroy
+        __props__.__dict__["action_on_update_permanent_members"] = action_on_update_permanent_members
         __props__.__dict__["created"] = created
         __props__.__dict__["creator"] = creator
         __props__.__dict__["is_archived"] = is_archived
@@ -618,6 +675,17 @@ class Conversation(pulumi.CustomResource):
         Either of none or archive
         """
         return pulumi.get(self, "action_on_destroy")
+
+    @property
+    @pulumi.getter(name="actionOnUpdatePermanentMembers")
+    def action_on_update_permanent_members(self) -> pulumi.Output[Optional[str]]:
+        """
+        indicate
+        whether the members should be kick of the channel when removed from
+        `permanent_members`. When set to `none` the user are never kicked, this prevent
+        a side effect on public channels where user that joined the channel are kicked.
+        """
+        return pulumi.get(self, "action_on_update_permanent_members")
 
     @property
     @pulumi.getter

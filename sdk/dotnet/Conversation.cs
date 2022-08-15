@@ -40,42 +40,38 @@ namespace Pulumi.Slack
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Slack = Pulumi.Slack;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var test = new Slack.Conversation("test", new()
     ///     {
-    ///         var test = new Slack.Conversation("test", new Slack.ConversationArgs
-    ///         {
-    ///             IsPrivate = true,
-    ///             PermanentMembers = {},
-    ///             Topic = "The topic for my channel",
-    ///         });
-    ///     }
+    ///         IsPrivate = true,
+    ///         PermanentMembers = new[] {},
+    ///         Topic = "The topic for my channel",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Slack = Pulumi.Slack;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var nonadmin = new Slack.Conversation("nonadmin", new()
     ///     {
-    ///         var nonadmin = new Slack.Conversation("nonadmin", new Slack.ConversationArgs
-    ///         {
-    ///             ActionOnDestroy = "none",
-    ///             IsPrivate = true,
-    ///             PermanentMembers = {},
-    ///             Topic = "The channel won't be archived on destroy",
-    ///         });
-    ///     }
+    ///         ActionOnDestroy = "none",
+    ///         IsPrivate = true,
+    ///         PermanentMembers = new[] {},
+    ///         Topic = "The channel won't be archived on destroy",
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -87,13 +83,22 @@ namespace Pulumi.Slack
     /// ```
     /// </summary>
     [SlackResourceType("slack:index/conversation:Conversation")]
-    public partial class Conversation : Pulumi.CustomResource
+    public partial class Conversation : global::Pulumi.CustomResource
     {
         /// <summary>
         /// Either of none or archive
         /// </summary>
         [Output("actionOnDestroy")]
         public Output<string?> ActionOnDestroy { get; private set; } = null!;
+
+        /// <summary>
+        /// indicate
+        /// whether the members should be kick of the channel when removed from
+        /// `permanent_members`. When set to `none` the user are never kicked, this prevent
+        /// a side effect on public channels where user that joined the channel are kicked.
+        /// </summary>
+        [Output("actionOnUpdatePermanentMembers")]
+        public Output<string?> ActionOnUpdatePermanentMembers { get; private set; } = null!;
 
         /// <summary>
         /// is a unix timestamp.
@@ -214,13 +219,22 @@ namespace Pulumi.Slack
         }
     }
 
-    public sealed class ConversationArgs : Pulumi.ResourceArgs
+    public sealed class ConversationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Either of none or archive
         /// </summary>
         [Input("actionOnDestroy")]
         public Input<string>? ActionOnDestroy { get; set; }
+
+        /// <summary>
+        /// indicate
+        /// whether the members should be kick of the channel when removed from
+        /// `permanent_members`. When set to `none` the user are never kicked, this prevent
+        /// a side effect on public channels where user that joined the channel are kicked.
+        /// </summary>
+        [Input("actionOnUpdatePermanentMembers")]
+        public Input<string>? ActionOnUpdatePermanentMembers { get; set; }
 
         /// <summary>
         /// indicates a conversation is archived. Frozen in time.
@@ -267,15 +281,25 @@ namespace Pulumi.Slack
         public ConversationArgs()
         {
         }
+        public static new ConversationArgs Empty => new ConversationArgs();
     }
 
-    public sealed class ConversationState : Pulumi.ResourceArgs
+    public sealed class ConversationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// Either of none or archive
         /// </summary>
         [Input("actionOnDestroy")]
         public Input<string>? ActionOnDestroy { get; set; }
+
+        /// <summary>
+        /// indicate
+        /// whether the members should be kick of the channel when removed from
+        /// `permanent_members`. When set to `none` the user are never kicked, this prevent
+        /// a side effect on public channels where user that joined the channel are kicked.
+        /// </summary>
+        [Input("actionOnUpdatePermanentMembers")]
+        public Input<string>? ActionOnUpdatePermanentMembers { get; set; }
 
         /// <summary>
         /// is a unix timestamp.
@@ -361,5 +385,6 @@ namespace Pulumi.Slack
         public ConversationState()
         {
         }
+        public static new ConversationState Empty => new ConversationState();
     }
 }

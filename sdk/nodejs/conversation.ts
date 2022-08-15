@@ -98,6 +98,13 @@ export class Conversation extends pulumi.CustomResource {
      */
     public readonly actionOnDestroy!: pulumi.Output<string | undefined>;
     /**
+     * indicate
+     * whether the members should be kick of the channel when removed from
+     * `permanentMembers`. When set to `none` the user are never kicked, this prevent
+     * a side effect on public channels where user that joined the channel are kicked.
+     */
+    public readonly actionOnUpdatePermanentMembers!: pulumi.Output<string | undefined>;
+    /**
      * is a unix timestamp.
      */
     public /*out*/ readonly created!: pulumi.Output<number>;
@@ -163,6 +170,7 @@ export class Conversation extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ConversationState | undefined;
             resourceInputs["actionOnDestroy"] = state ? state.actionOnDestroy : undefined;
+            resourceInputs["actionOnUpdatePermanentMembers"] = state ? state.actionOnUpdatePermanentMembers : undefined;
             resourceInputs["created"] = state ? state.created : undefined;
             resourceInputs["creator"] = state ? state.creator : undefined;
             resourceInputs["isArchived"] = state ? state.isArchived : undefined;
@@ -181,6 +189,7 @@ export class Conversation extends pulumi.CustomResource {
                 throw new Error("Missing required property 'isPrivate'");
             }
             resourceInputs["actionOnDestroy"] = args ? args.actionOnDestroy : undefined;
+            resourceInputs["actionOnUpdatePermanentMembers"] = args ? args.actionOnUpdatePermanentMembers : undefined;
             resourceInputs["isArchived"] = args ? args.isArchived : undefined;
             resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -207,6 +216,13 @@ export interface ConversationState {
      * Either of none or archive
      */
     actionOnDestroy?: pulumi.Input<string>;
+    /**
+     * indicate
+     * whether the members should be kick of the channel when removed from
+     * `permanentMembers`. When set to `none` the user are never kicked, this prevent
+     * a side effect on public channels where user that joined the channel are kicked.
+     */
+    actionOnUpdatePermanentMembers?: pulumi.Input<string>;
     /**
      * is a unix timestamp.
      */
@@ -268,6 +284,13 @@ export interface ConversationArgs {
      * Either of none or archive
      */
     actionOnDestroy?: pulumi.Input<string>;
+    /**
+     * indicate
+     * whether the members should be kick of the channel when removed from
+     * `permanentMembers`. When set to `none` the user are never kicked, this prevent
+     * a side effect on public channels where user that joined the channel are kicked.
+     */
+    actionOnUpdatePermanentMembers?: pulumi.Input<string>;
     /**
      * indicates a conversation is archived. Frozen in time.
      */

@@ -37,28 +37,31 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-slack/sdk/go/slack"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := slack.NewUsergroup(ctx, "myGroup", &slack.UsergroupArgs{
-// 			Channels: pulumi.StringArray{
-// 				pulumi.String("CHANNEL00"),
-// 			},
-// 			Description: pulumi.String("Test user group"),
-// 			Handle:      pulumi.String("test"),
-// 			Users: pulumi.StringArray{
-// 				pulumi.String("USER00"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := slack.NewUsergroup(ctx, "myGroup", &slack.UsergroupArgs{
+//				Channels: pulumi.StringArray{
+//					pulumi.String("CHANNEL00"),
+//				},
+//				Description: pulumi.String("Test user group"),
+//				Handle:      pulumi.String("test"),
+//				Users: pulumi.StringArray{
+//					pulumi.String("USER00"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // Note that if a channel is removed from the `channels` list users are
@@ -69,33 +72,36 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-slack/sdk/go/slack"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		myGroup, err := slack.NewUsergroup(ctx, "myGroup", &slack.UsergroupArgs{
-// 			Handle:      pulumi.String("test"),
-// 			Description: pulumi.String("Test user group"),
-// 			Users: pulumi.StringArray{
-// 				pulumi.String("USER00"),
-// 			},
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = slack.NewConversation(ctx, "test", &slack.ConversationArgs{
-// 			Topic:            pulumi.String("The topic for my channel"),
-// 			PermanentMembers: myGroup.Users,
-// 			IsPrivate:        pulumi.Bool(true),
-// 		})
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			myGroup, err := slack.NewUsergroup(ctx, "myGroup", &slack.UsergroupArgs{
+//				Handle:      pulumi.String("test"),
+//				Description: pulumi.String("Test user group"),
+//				Users: pulumi.StringArray{
+//					pulumi.String("USER00"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			_, err = slack.NewConversation(ctx, "test", &slack.ConversationArgs{
+//				Topic:            pulumi.String("The topic for my channel"),
+//				PermanentMembers: myGroup.Users,
+//				IsPrivate:        pulumi.Bool(true),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 //
 // ## Import
@@ -103,7 +109,9 @@ import (
 // `slack_usergroup` can be imported using the ID of the group, e.g.
 //
 // ```sh
-//  $ pulumi import slack:index/usergroup:Usergroup my_group S022GE79E9G
+//
+//	$ pulumi import slack:index/usergroup:Usergroup my_group S022GE79E9G
+//
 // ```
 type Usergroup struct {
 	pulumi.CustomResourceState
@@ -241,7 +249,7 @@ func (i *Usergroup) ToUsergroupOutputWithContext(ctx context.Context) UsergroupO
 // UsergroupArrayInput is an input type that accepts UsergroupArray and UsergroupArrayOutput values.
 // You can construct a concrete instance of `UsergroupArrayInput` via:
 //
-//          UsergroupArray{ UsergroupArgs{...} }
+//	UsergroupArray{ UsergroupArgs{...} }
 type UsergroupArrayInput interface {
 	pulumi.Input
 
@@ -266,7 +274,7 @@ func (i UsergroupArray) ToUsergroupArrayOutputWithContext(ctx context.Context) U
 // UsergroupMapInput is an input type that accepts UsergroupMap and UsergroupMapOutput values.
 // You can construct a concrete instance of `UsergroupMapInput` via:
 //
-//          UsergroupMap{ "key": UsergroupArgs{...} }
+//	UsergroupMap{ "key": UsergroupArgs{...} }
 type UsergroupMapInput interface {
 	pulumi.Input
 

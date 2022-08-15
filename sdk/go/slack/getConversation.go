@@ -34,21 +34,24 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-slack/sdk/go/slack"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := slack.LookupConversation(ctx, &GetConversationArgs{
-// 			ChannelId: "my-channel",
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := slack.LookupConversation(ctx, &GetConversationArgs{
+//				ChannelId: "my-channel",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupConversation(ctx *pulumi.Context, args *LookupConversationArgs, opts ...pulumi.InvokeOption) (*LookupConversationResult, error) {
 	var rv LookupConversationResult

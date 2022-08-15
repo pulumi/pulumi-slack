@@ -34,29 +34,27 @@ namespace Pulumi.Slack
     /// ## Example Usage
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Slack = Pulumi.Slack;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var myGroup = new Slack.Usergroup("myGroup", new()
     ///     {
-    ///         var myGroup = new Slack.Usergroup("myGroup", new Slack.UsergroupArgs
+    ///         Channels = new[]
     ///         {
-    ///             Channels = 
-    ///             {
-    ///                 "CHANNEL00",
-    ///             },
-    ///             Description = "Test user group",
-    ///             Handle = "test",
-    ///             Users = 
-    ///             {
-    ///                 "USER00",
-    ///             },
-    ///         });
-    ///     }
+    ///             "CHANNEL00",
+    ///         },
+    ///         Description = "Test user group",
+    ///         Handle = "test",
+    ///         Users = new[]
+    ///         {
+    ///             "USER00",
+    ///         },
+    ///     });
     /// 
-    /// }
+    /// });
     /// ```
     /// 
     /// Note that if a channel is removed from the `channels` list users are
@@ -64,31 +62,30 @@ namespace Pulumi.Slack
     /// groups and in the channel in sync set `permanent_users` in the channel:
     /// 
     /// ```csharp
+    /// using System.Collections.Generic;
     /// using Pulumi;
     /// using Slack = Pulumi.Slack;
     /// 
-    /// class MyStack : Stack
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     public MyStack()
+    ///     var myGroup = new Slack.Usergroup("myGroup", new()
     ///     {
-    ///         var myGroup = new Slack.Usergroup("myGroup", new Slack.UsergroupArgs
+    ///         Handle = "test",
+    ///         Description = "Test user group",
+    ///         Users = new[]
     ///         {
-    ///             Handle = "test",
-    ///             Description = "Test user group",
-    ///             Users = 
-    ///             {
-    ///                 "USER00",
-    ///             },
-    ///         });
-    ///         var test = new Slack.Conversation("test", new Slack.ConversationArgs
-    ///         {
-    ///             Topic = "The topic for my channel",
-    ///             PermanentMembers = myGroup.Users,
-    ///             IsPrivate = true,
-    ///         });
-    ///     }
+    ///             "USER00",
+    ///         },
+    ///     });
     /// 
-    /// }
+    ///     var test = new Slack.Conversation("test", new()
+    ///     {
+    ///         Topic = "The topic for my channel",
+    ///         PermanentMembers = myGroup.Users,
+    ///         IsPrivate = true,
+    ///     });
+    /// 
+    /// });
     /// ```
     /// 
     /// ## Import
@@ -100,7 +97,7 @@ namespace Pulumi.Slack
     /// ```
     /// </summary>
     [SlackResourceType("slack:index/usergroup:Usergroup")]
-    public partial class Usergroup : Pulumi.CustomResource
+    public partial class Usergroup : global::Pulumi.CustomResource
     {
         /// <summary>
         /// channel IDs for which the User Group uses as a default.
@@ -178,7 +175,7 @@ namespace Pulumi.Slack
         }
     }
 
-    public sealed class UsergroupArgs : Pulumi.ResourceArgs
+    public sealed class UsergroupArgs : global::Pulumi.ResourceArgs
     {
         [Input("channels")]
         private InputList<string>? _channels;
@@ -227,9 +224,10 @@ namespace Pulumi.Slack
         public UsergroupArgs()
         {
         }
+        public static new UsergroupArgs Empty => new UsergroupArgs();
     }
 
-    public sealed class UsergroupState : Pulumi.ResourceArgs
+    public sealed class UsergroupState : global::Pulumi.ResourceArgs
     {
         [Input("channels")]
         private InputList<string>? _channels;
@@ -278,5 +276,6 @@ namespace Pulumi.Slack
         public UsergroupState()
         {
         }
+        public static new UsergroupState Empty => new UsergroupState();
     }
 }

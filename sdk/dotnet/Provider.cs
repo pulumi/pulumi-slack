@@ -16,7 +16,7 @@ namespace Pulumi.Slack
     /// [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
     /// </summary>
     [SlackResourceType("pulumi:providers:slack")]
-    public partial class Provider : Pulumi.ProviderResource
+    public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
         /// The Slack token
@@ -50,7 +50,7 @@ namespace Pulumi.Slack
         }
     }
 
-    public sealed class ProviderArgs : Pulumi.ResourceArgs
+    public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
         /// The Slack token
@@ -61,5 +61,6 @@ namespace Pulumi.Slack
         public ProviderArgs()
         {
         }
+        public static new ProviderArgs Empty => new ProviderArgs();
     }
 }
