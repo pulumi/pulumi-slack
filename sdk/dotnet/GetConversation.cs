@@ -35,20 +35,18 @@ namespace Pulumi.Slack
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Slack = Pulumi.Slack;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var test = Slack.GetConversation.Invoke(new()
         ///     {
-        ///         var test = Output.Create(Slack.GetConversation.InvokeAsync(new Slack.GetConversationArgs
-        ///         {
-        ///             ChannelId = "my-channel",
-        ///         }));
-        ///     }
+        ///         ChannelId = "my-channel",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -80,20 +78,18 @@ namespace Pulumi.Slack
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Slack = Pulumi.Slack;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var test = Slack.GetConversation.Invoke(new()
         ///     {
-        ///         var test = Output.Create(Slack.GetConversation.InvokeAsync(new Slack.GetConversationArgs
-        ///         {
-        ///             ChannelId = "my-channel",
-        ///         }));
-        ///     }
+        ///         ChannelId = "my-channel",
+        ///     });
         /// 
-        /// }
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -103,7 +99,7 @@ namespace Pulumi.Slack
     }
 
 
-    public sealed class GetConversationArgs : Pulumi.InvokeArgs
+    public sealed class GetConversationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the channel
@@ -114,9 +110,10 @@ namespace Pulumi.Slack
         public GetConversationArgs()
         {
         }
+        public static new GetConversationArgs Empty => new GetConversationArgs();
     }
 
-    public sealed class GetConversationInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetConversationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The ID of the channel
@@ -127,6 +124,7 @@ namespace Pulumi.Slack
         public GetConversationInvokeArgs()
         {
         }
+        public static new GetConversationInvokeArgs Empty => new GetConversationInvokeArgs();
     }
 
 

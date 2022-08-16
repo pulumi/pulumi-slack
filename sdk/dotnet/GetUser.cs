@@ -35,24 +35,23 @@ namespace Pulumi.Slack
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Slack = Pulumi.Slack;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var byName = Slack.GetUser.Invoke(new()
         ///     {
-        ///         var byName = Output.Create(Slack.GetUser.InvokeAsync(new Slack.GetUserArgs
-        ///         {
-        ///             Name = "my-user",
-        ///         }));
-        ///         var byEmail = Output.Create(Slack.GetUser.InvokeAsync(new Slack.GetUserArgs
-        ///         {
-        ///             Email = "my-user@example.com",
-        ///         }));
-        ///     }
+        ///         Name = "my-user",
+        ///     });
         /// 
-        /// }
+        ///     var byEmail = Slack.GetUser.Invoke(new()
+        ///     {
+        ///         Email = "my-user@example.com",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -84,24 +83,23 @@ namespace Pulumi.Slack
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Slack = Pulumi.Slack;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var byName = Slack.GetUser.Invoke(new()
         ///     {
-        ///         var byName = Output.Create(Slack.GetUser.InvokeAsync(new Slack.GetUserArgs
-        ///         {
-        ///             Name = "my-user",
-        ///         }));
-        ///         var byEmail = Output.Create(Slack.GetUser.InvokeAsync(new Slack.GetUserArgs
-        ///         {
-        ///             Email = "my-user@example.com",
-        ///         }));
-        ///     }
+        ///         Name = "my-user",
+        ///     });
         /// 
-        /// }
+        ///     var byEmail = Slack.GetUser.Invoke(new()
+        ///     {
+        ///         Email = "my-user@example.com",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -111,7 +109,7 @@ namespace Pulumi.Slack
     }
 
 
-    public sealed class GetUserArgs : Pulumi.InvokeArgs
+    public sealed class GetUserArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The email of the user
@@ -128,9 +126,10 @@ namespace Pulumi.Slack
         public GetUserArgs()
         {
         }
+        public static new GetUserArgs Empty => new GetUserArgs();
     }
 
-    public sealed class GetUserInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUserInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The email of the user
@@ -147,6 +146,7 @@ namespace Pulumi.Slack
         public GetUserInvokeArgs()
         {
         }
+        public static new GetUserInvokeArgs Empty => new GetUserInvokeArgs();
     }
 
 

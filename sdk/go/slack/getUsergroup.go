@@ -32,27 +32,30 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-slack/sdk/go/slack"
-// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
 // )
 //
-// func main() {
-// 	pulumi.Run(func(ctx *pulumi.Context) error {
-// 		_, err := slack.LookupUsergroup(ctx, &GetUsergroupArgs{
-// 			Name: pulumi.StringRef("my-usergroup"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		_, err = slack.LookupUsergroup(ctx, &GetUsergroupArgs{
-// 			UsergroupId: pulumi.StringRef("USERGROUP00"),
-// 		}, nil)
-// 		if err != nil {
-// 			return err
-// 		}
-// 		return nil
-// 	})
-// }
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := slack.LookupUsergroup(ctx, &GetUsergroupArgs{
+//				Name: pulumi.StringRef("my-usergroup"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = slack.LookupUsergroup(ctx, &GetUsergroupArgs{
+//				UsergroupId: pulumi.StringRef("USERGROUP00"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
 // ```
 func LookupUsergroup(ctx *pulumi.Context, args *LookupUsergroupArgs, opts ...pulumi.InvokeOption) (*LookupUsergroupResult, error) {
 	var rv LookupUsergroupResult

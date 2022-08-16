@@ -74,7 +74,7 @@ namespace Pulumi.Slack
         }
     }
 
-    internal sealed class SlackResourceTypeAttribute : Pulumi.ResourceTypeAttribute
+    internal sealed class SlackResourceTypeAttribute : global::Pulumi.ResourceTypeAttribute
     {
         public SlackResourceTypeAttribute(string type) : base(type, Utilities.Version)
         {

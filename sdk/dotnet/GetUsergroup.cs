@@ -33,24 +33,23 @@ namespace Pulumi.Slack
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Slack = Pulumi.Slack;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var byName = Slack.GetUsergroup.Invoke(new()
         ///     {
-        ///         var byName = Output.Create(Slack.GetUsergroup.InvokeAsync(new Slack.GetUsergroupArgs
-        ///         {
-        ///             Name = "my-usergroup",
-        ///         }));
-        ///         var byId = Output.Create(Slack.GetUsergroup.InvokeAsync(new Slack.GetUsergroupArgs
-        ///         {
-        ///             UsergroupId = "USERGROUP00",
-        ///         }));
-        ///     }
+        ///         Name = "my-usergroup",
+        ///     });
         /// 
-        /// }
+        ///     var byId = Slack.GetUsergroup.Invoke(new()
+        ///     {
+        ///         UsergroupId = "USERGROUP00",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -80,24 +79,23 @@ namespace Pulumi.Slack
         /// {{% example %}}
         /// 
         /// ```csharp
+        /// using System.Collections.Generic;
         /// using Pulumi;
         /// using Slack = Pulumi.Slack;
         /// 
-        /// class MyStack : Stack
+        /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     public MyStack()
+        ///     var byName = Slack.GetUsergroup.Invoke(new()
         ///     {
-        ///         var byName = Output.Create(Slack.GetUsergroup.InvokeAsync(new Slack.GetUsergroupArgs
-        ///         {
-        ///             Name = "my-usergroup",
-        ///         }));
-        ///         var byId = Output.Create(Slack.GetUsergroup.InvokeAsync(new Slack.GetUsergroupArgs
-        ///         {
-        ///             UsergroupId = "USERGROUP00",
-        ///         }));
-        ///     }
+        ///         Name = "my-usergroup",
+        ///     });
         /// 
-        /// }
+        ///     var byId = Slack.GetUsergroup.Invoke(new()
+        ///     {
+        ///         UsergroupId = "USERGROUP00",
+        ///     });
+        /// 
+        /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
@@ -107,7 +105,7 @@ namespace Pulumi.Slack
     }
 
 
-    public sealed class GetUsergroupArgs : Pulumi.InvokeArgs
+    public sealed class GetUsergroupArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the usergroup
@@ -124,9 +122,10 @@ namespace Pulumi.Slack
         public GetUsergroupArgs()
         {
         }
+        public static new GetUsergroupArgs Empty => new GetUsergroupArgs();
     }
 
-    public sealed class GetUsergroupInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetUsergroupInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
         /// The name of the usergroup
@@ -143,6 +142,7 @@ namespace Pulumi.Slack
         public GetUsergroupInvokeArgs()
         {
         }
+        public static new GetUsergroupInvokeArgs Empty => new GetUsergroupInvokeArgs();
     }
 
 
