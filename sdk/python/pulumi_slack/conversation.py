@@ -17,6 +17,7 @@ class ConversationArgs:
                  is_private: pulumi.Input[bool],
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
                  action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
+                 adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -41,6 +42,8 @@ class ConversationArgs:
             pulumi.set(__self__, "action_on_destroy", action_on_destroy)
         if action_on_update_permanent_members is not None:
             pulumi.set(__self__, "action_on_update_permanent_members", action_on_update_permanent_members)
+        if adopt_existing_channel is not None:
+            pulumi.set(__self__, "adopt_existing_channel", adopt_existing_channel)
         if is_archived is not None:
             pulumi.set(__self__, "is_archived", is_archived)
         if name is not None:
@@ -90,6 +93,15 @@ class ConversationArgs:
     @action_on_update_permanent_members.setter
     def action_on_update_permanent_members(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_on_update_permanent_members", value)
+
+    @property
+    @pulumi.getter(name="adoptExistingChannel")
+    def adopt_existing_channel(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "adopt_existing_channel")
+
+    @adopt_existing_channel.setter
+    def adopt_existing_channel(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "adopt_existing_channel", value)
 
     @property
     @pulumi.getter(name="isArchived")
@@ -157,6 +169,7 @@ class _ConversationState:
     def __init__(__self__, *,
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
                  action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
+                 adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
                  created: Optional[pulumi.Input[int]] = None,
                  creator: Optional[pulumi.Input[str]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
@@ -196,6 +209,8 @@ class _ConversationState:
             pulumi.set(__self__, "action_on_destroy", action_on_destroy)
         if action_on_update_permanent_members is not None:
             pulumi.set(__self__, "action_on_update_permanent_members", action_on_update_permanent_members)
+        if adopt_existing_channel is not None:
+            pulumi.set(__self__, "adopt_existing_channel", adopt_existing_channel)
         if created is not None:
             pulumi.set(__self__, "created", created)
         if creator is not None:
@@ -247,6 +262,15 @@ class _ConversationState:
     @action_on_update_permanent_members.setter
     def action_on_update_permanent_members(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "action_on_update_permanent_members", value)
+
+    @property
+    @pulumi.getter(name="adoptExistingChannel")
+    def adopt_existing_channel(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "adopt_existing_channel")
+
+    @adopt_existing_channel.setter
+    def adopt_existing_channel(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "adopt_existing_channel", value)
 
     @property
     @pulumi.getter
@@ -403,6 +427,7 @@ class Conversation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
                  action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
+                 adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -417,14 +442,30 @@ class Conversation(pulumi.CustomResource):
 
         This resource requires the following scopes:
 
+        If using `bot` tokens:
+
+        - [channels:read](https://api.slack.com/scopes/channels:read)
+          (public channels)
+        - [channels:manage](https://api.slack.com/scopes/channels:manage)
+          (public channels)
+        - [channels:join](https://api.slack.com/scopes/channels:join)
+          (adopting existing public channels)
+        - [groups:read](https://api.slack.com/scopes/groups:read)
+          (private channels)
+        - [groups:write](https://api.slack.com/scopes/groups:write)
+          (private channels)
+
+        If using `user` tokens:
+
         - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
-        - [channels:manage](https://api.slack.com/scopes/channels:manage) (public channels)
+        - [channels:write](https://api.slack.com/scopes/channels:manage) (public channels)
         - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
         - [groups:write](https://api.slack.com/scopes/groups:write) (private channels)
 
         The Slack API methods used by the resource are:
 
         - [conversations.create](https://api.slack.com/methods/conversations.create)
+        - [conversations.join](https://api.slack.com/methods/conversations.join)
         - [conversations.setTopic](https://api.slack.com/methods/conversations.setTopic)
         - [conversations.setPurpose](https://api.slack.com/methods/conversations.setPurpose)
         - [conversations.info](https://api.slack.com/methods/conversations.info)
@@ -459,6 +500,17 @@ class Conversation(pulumi.CustomResource):
             is_private=True,
             permanent_members=[],
             topic="The channel won't be archived on destroy")
+        ```
+
+        ```python
+        import pulumi
+        import pulumi_slack as slack
+
+        adopted = slack.Conversation("adopted",
+            action_on_update_permanent_members="none",
+            adopt_existing_channel=True,
+            permanent_members=[],
+            topic="Adopt existing, don't kick members")
         ```
 
         ## Import
@@ -496,14 +548,30 @@ class Conversation(pulumi.CustomResource):
 
         This resource requires the following scopes:
 
+        If using `bot` tokens:
+
+        - [channels:read](https://api.slack.com/scopes/channels:read)
+          (public channels)
+        - [channels:manage](https://api.slack.com/scopes/channels:manage)
+          (public channels)
+        - [channels:join](https://api.slack.com/scopes/channels:join)
+          (adopting existing public channels)
+        - [groups:read](https://api.slack.com/scopes/groups:read)
+          (private channels)
+        - [groups:write](https://api.slack.com/scopes/groups:write)
+          (private channels)
+
+        If using `user` tokens:
+
         - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
-        - [channels:manage](https://api.slack.com/scopes/channels:manage) (public channels)
+        - [channels:write](https://api.slack.com/scopes/channels:manage) (public channels)
         - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
         - [groups:write](https://api.slack.com/scopes/groups:write) (private channels)
 
         The Slack API methods used by the resource are:
 
         - [conversations.create](https://api.slack.com/methods/conversations.create)
+        - [conversations.join](https://api.slack.com/methods/conversations.join)
         - [conversations.setTopic](https://api.slack.com/methods/conversations.setTopic)
         - [conversations.setPurpose](https://api.slack.com/methods/conversations.setPurpose)
         - [conversations.info](https://api.slack.com/methods/conversations.info)
@@ -540,6 +608,17 @@ class Conversation(pulumi.CustomResource):
             topic="The channel won't be archived on destroy")
         ```
 
+        ```python
+        import pulumi
+        import pulumi_slack as slack
+
+        adopted = slack.Conversation("adopted",
+            action_on_update_permanent_members="none",
+            adopt_existing_channel=True,
+            permanent_members=[],
+            topic="Adopt existing, don't kick members")
+        ```
+
         ## Import
 
         `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
@@ -565,6 +644,7 @@ class Conversation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  action_on_destroy: Optional[pulumi.Input[str]] = None,
                  action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
+                 adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
                  is_archived: Optional[pulumi.Input[bool]] = None,
                  is_private: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -582,6 +662,7 @@ class Conversation(pulumi.CustomResource):
 
             __props__.__dict__["action_on_destroy"] = action_on_destroy
             __props__.__dict__["action_on_update_permanent_members"] = action_on_update_permanent_members
+            __props__.__dict__["adopt_existing_channel"] = adopt_existing_channel
             __props__.__dict__["is_archived"] = is_archived
             if is_private is None and not opts.urn:
                 raise TypeError("Missing required property 'is_private'")
@@ -608,6 +689,7 @@ class Conversation(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             action_on_destroy: Optional[pulumi.Input[str]] = None,
             action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
+            adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
             created: Optional[pulumi.Input[int]] = None,
             creator: Optional[pulumi.Input[str]] = None,
             is_archived: Optional[pulumi.Input[bool]] = None,
@@ -654,6 +736,7 @@ class Conversation(pulumi.CustomResource):
 
         __props__.__dict__["action_on_destroy"] = action_on_destroy
         __props__.__dict__["action_on_update_permanent_members"] = action_on_update_permanent_members
+        __props__.__dict__["adopt_existing_channel"] = adopt_existing_channel
         __props__.__dict__["created"] = created
         __props__.__dict__["creator"] = creator
         __props__.__dict__["is_archived"] = is_archived
@@ -686,6 +769,11 @@ class Conversation(pulumi.CustomResource):
         a side effect on public channels where user that joined the channel are kicked.
         """
         return pulumi.get(self, "action_on_update_permanent_members")
+
+    @property
+    @pulumi.getter(name="adoptExistingChannel")
+    def adopt_existing_channel(self) -> pulumi.Output[Optional[bool]]:
+        return pulumi.get(self, "adopt_existing_channel")
 
     @property
     @pulumi.getter

@@ -11,14 +11,30 @@ import * as utilities from "./utilities";
  *
  * This resource requires the following scopes:
  *
+ * If using `bot` tokens:
+ *
+ * - [channels:read](https://api.slack.com/scopes/channels:read)
+ *   (public channels)
+ * - [channels:manage](https://api.slack.com/scopes/channels:manage)
+ *   (public channels)
+ * - [channels:join](https://api.slack.com/scopes/channels:join)
+ *   (adopting existing public channels)
+ * - [groups:read](https://api.slack.com/scopes/groups:read)
+ *   (private channels)
+ * - [groups:write](https://api.slack.com/scopes/groups:write)
+ *   (private channels)
+ *
+ * If using `user` tokens:
+ *
  * - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
- * - [channels:manage](https://api.slack.com/scopes/channels:manage) (public channels)
+ * - [channels:write](https://api.slack.com/scopes/channels:manage) (public channels)
  * - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
  * - [groups:write](https://api.slack.com/scopes/groups:write) (private channels)
  *
  * The Slack API methods used by the resource are:
  *
  * - [conversations.create](https://api.slack.com/methods/conversations.create)
+ * - [conversations.join](https://api.slack.com/methods/conversations.join)
  * - [conversations.setTopic](https://api.slack.com/methods/conversations.setTopic)
  * - [conversations.setPurpose](https://api.slack.com/methods/conversations.setPurpose)
  * - [conversations.info](https://api.slack.com/methods/conversations.info)
@@ -54,6 +70,18 @@ import * as utilities from "./utilities";
  *     isPrivate: true,
  *     permanentMembers: [],
  *     topic: "The channel won't be archived on destroy",
+ * });
+ * ```
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as slack from "@pulumi/slack";
+ *
+ * const adopted = new slack.Conversation("adopted", {
+ *     actionOnUpdatePermanentMembers: "none",
+ *     adoptExistingChannel: true,
+ *     permanentMembers: [],
+ *     topic: "Adopt existing, don't kick members",
  * });
  * ```
  *
@@ -104,6 +132,7 @@ export class Conversation extends pulumi.CustomResource {
      * a side effect on public channels where user that joined the channel are kicked.
      */
     public readonly actionOnUpdatePermanentMembers!: pulumi.Output<string | undefined>;
+    public readonly adoptExistingChannel!: pulumi.Output<boolean | undefined>;
     /**
      * is a unix timestamp.
      */
@@ -171,6 +200,7 @@ export class Conversation extends pulumi.CustomResource {
             const state = argsOrState as ConversationState | undefined;
             resourceInputs["actionOnDestroy"] = state ? state.actionOnDestroy : undefined;
             resourceInputs["actionOnUpdatePermanentMembers"] = state ? state.actionOnUpdatePermanentMembers : undefined;
+            resourceInputs["adoptExistingChannel"] = state ? state.adoptExistingChannel : undefined;
             resourceInputs["created"] = state ? state.created : undefined;
             resourceInputs["creator"] = state ? state.creator : undefined;
             resourceInputs["isArchived"] = state ? state.isArchived : undefined;
@@ -190,6 +220,7 @@ export class Conversation extends pulumi.CustomResource {
             }
             resourceInputs["actionOnDestroy"] = args ? args.actionOnDestroy : undefined;
             resourceInputs["actionOnUpdatePermanentMembers"] = args ? args.actionOnUpdatePermanentMembers : undefined;
+            resourceInputs["adoptExistingChannel"] = args ? args.adoptExistingChannel : undefined;
             resourceInputs["isArchived"] = args ? args.isArchived : undefined;
             resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
             resourceInputs["name"] = args ? args.name : undefined;
@@ -223,6 +254,7 @@ export interface ConversationState {
      * a side effect on public channels where user that joined the channel are kicked.
      */
     actionOnUpdatePermanentMembers?: pulumi.Input<string>;
+    adoptExistingChannel?: pulumi.Input<boolean>;
     /**
      * is a unix timestamp.
      */
@@ -291,6 +323,7 @@ export interface ConversationArgs {
      * a side effect on public channels where user that joined the channel are kicked.
      */
     actionOnUpdatePermanentMembers?: pulumi.Input<string>;
+    adoptExistingChannel?: pulumi.Input<boolean>;
     /**
      * indicates a conversation is archived. Frozen in time.
      */

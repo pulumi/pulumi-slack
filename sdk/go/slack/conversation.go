@@ -17,14 +17,30 @@ import (
 //
 // This resource requires the following scopes:
 //
+// If using `bot` tokens:
+//
+//   - [channels:read](https://api.slack.com/scopes/channels:read)
+//     (public channels)
+//   - [channels:manage](https://api.slack.com/scopes/channels:manage)
+//     (public channels)
+//   - [channels:join](https://api.slack.com/scopes/channels:join)
+//     (adopting existing public channels)
+//   - [groups:read](https://api.slack.com/scopes/groups:read)
+//     (private channels)
+//   - [groups:write](https://api.slack.com/scopes/groups:write)
+//     (private channels)
+//
+// If using `user` tokens:
+//
 // - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
-// - [channels:manage](https://api.slack.com/scopes/channels:manage) (public channels)
+// - [channels:write](https://api.slack.com/scopes/channels:manage) (public channels)
 // - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
 // - [groups:write](https://api.slack.com/scopes/groups:write) (private channels)
 //
 // The Slack API methods used by the resource are:
 //
 // - [conversations.create](https://api.slack.com/methods/conversations.create)
+// - [conversations.join](https://api.slack.com/methods/conversations.join)
 // - [conversations.setTopic](https://api.slack.com/methods/conversations.setTopic)
 // - [conversations.setPurpose](https://api.slack.com/methods/conversations.setPurpose)
 // - [conversations.info](https://api.slack.com/methods/conversations.info)
@@ -93,6 +109,33 @@ import (
 //
 // ```
 //
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-slack/sdk/go/slack"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := slack.NewConversation(ctx, "adopted", &slack.ConversationArgs{
+//				ActionOnUpdatePermanentMembers: pulumi.String("none"),
+//				AdoptExistingChannel:           pulumi.Bool(true),
+//				PermanentMembers:               pulumi.StringArray{},
+//				Topic:                          pulumi.String("Adopt existing, don't kick members"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
@@ -112,6 +155,7 @@ type Conversation struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers pulumi.StringPtrOutput `pulumi:"actionOnUpdatePermanentMembers"`
+	AdoptExistingChannel           pulumi.BoolPtrOutput   `pulumi:"adoptExistingChannel"`
 	// is a unix timestamp.
 	Created pulumi.IntOutput `pulumi:"created"`
 	// is the user ID of the member that created this channel.
@@ -180,6 +224,7 @@ type conversationState struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers *string `pulumi:"actionOnUpdatePermanentMembers"`
+	AdoptExistingChannel           *bool   `pulumi:"adoptExistingChannel"`
 	// is a unix timestamp.
 	Created *int `pulumi:"created"`
 	// is the user ID of the member that created this channel.
@@ -217,6 +262,7 @@ type ConversationState struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers pulumi.StringPtrInput
+	AdoptExistingChannel           pulumi.BoolPtrInput
 	// is a unix timestamp.
 	Created pulumi.IntPtrInput
 	// is the user ID of the member that created this channel.
@@ -258,6 +304,7 @@ type conversationArgs struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers *string `pulumi:"actionOnUpdatePermanentMembers"`
+	AdoptExistingChannel           *bool   `pulumi:"adoptExistingChannel"`
 	// indicates a conversation is archived. Frozen in time.
 	IsArchived *bool `pulumi:"isArchived"`
 	// create a private channel instead of a public one.
@@ -281,6 +328,7 @@ type ConversationArgs struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers pulumi.StringPtrInput
+	AdoptExistingChannel           pulumi.BoolPtrInput
 	// indicates a conversation is archived. Frozen in time.
 	IsArchived pulumi.BoolPtrInput
 	// create a private channel instead of a public one.
@@ -393,6 +441,10 @@ func (o ConversationOutput) ActionOnDestroy() pulumi.StringPtrOutput {
 // a side effect on public channels where user that joined the channel are kicked.
 func (o ConversationOutput) ActionOnUpdatePermanentMembers() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Conversation) pulumi.StringPtrOutput { return v.ActionOnUpdatePermanentMembers }).(pulumi.StringPtrOutput)
+}
+
+func (o ConversationOutput) AdoptExistingChannel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Conversation) pulumi.BoolPtrOutput { return v.AdoptExistingChannel }).(pulumi.BoolPtrOutput)
 }
 
 // is a unix timestamp.

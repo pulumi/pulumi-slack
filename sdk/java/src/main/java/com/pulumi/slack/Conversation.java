@@ -24,14 +24,30 @@ import javax.annotation.Nullable;
  * 
  * This resource requires the following scopes:
  * 
+ * If using `bot` tokens:
+ * 
+ * - [channels:read](https://api.slack.com/scopes/channels:read)
+ *   (public channels)
+ * - [channels:manage](https://api.slack.com/scopes/channels:manage)
+ *   (public channels)
+ * - [channels:join](https://api.slack.com/scopes/channels:join)
+ *   (adopting existing public channels)
+ * - [groups:read](https://api.slack.com/scopes/groups:read)
+ *   (private channels)
+ * - [groups:write](https://api.slack.com/scopes/groups:write)
+ *   (private channels)
+ * 
+ * If using `user` tokens:
+ * 
  * - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
- * - [channels:manage](https://api.slack.com/scopes/channels:manage) (public channels)
+ * - [channels:write](https://api.slack.com/scopes/channels:manage) (public channels)
  * - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
  * - [groups:write](https://api.slack.com/scopes/groups:write) (private channels)
  * 
  * The Slack API methods used by the resource are:
  * 
  * - [conversations.create](https://api.slack.com/methods/conversations.create)
+ * - [conversations.join](https://api.slack.com/methods/conversations.join)
  * - [conversations.setTopic](https://api.slack.com/methods/conversations.setTopic)
  * - [conversations.setPurpose](https://api.slack.com/methods/conversations.setPurpose)
  * - [conversations.info](https://api.slack.com/methods/conversations.info)
@@ -107,6 +123,37 @@ import javax.annotation.Nullable;
  *     }
  * }
  * ```
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.slack.Conversation;
+ * import com.pulumi.slack.ConversationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var adopted = new Conversation(&#34;adopted&#34;, ConversationArgs.builder()        
+ *             .actionOnUpdatePermanentMembers(&#34;none&#34;)
+ *             .adoptExistingChannel(true)
+ *             .permanentMembers()
+ *             .topic(&#34;Adopt existing, don&#39;t kick members&#34;)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -152,6 +199,12 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> actionOnUpdatePermanentMembers() {
         return Codegen.optional(this.actionOnUpdatePermanentMembers);
+    }
+    @Export(name="adoptExistingChannel", type=Boolean.class, parameters={})
+    private Output</* @Nullable */ Boolean> adoptExistingChannel;
+
+    public Output<Optional<Boolean>> adoptExistingChannel() {
+        return Codegen.optional(this.adoptExistingChannel);
     }
     /**
      * is a unix timestamp.
