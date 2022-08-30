@@ -54,6 +54,13 @@ public final class ConversationState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.actionOnUpdatePermanentMembers);
     }
 
+    @Import(name="adoptExistingChannel")
+    private @Nullable Output<Boolean> adoptExistingChannel;
+
+    public Optional<Output<Boolean>> adoptExistingChannel() {
+        return Optional.ofNullable(this.adoptExistingChannel);
+    }
+
     /**
      * is a unix timestamp.
      * 
@@ -245,6 +252,7 @@ public final class ConversationState extends com.pulumi.resources.ResourceArgs {
     private ConversationState(ConversationState $) {
         this.actionOnDestroy = $.actionOnDestroy;
         this.actionOnUpdatePermanentMembers = $.actionOnUpdatePermanentMembers;
+        this.adoptExistingChannel = $.adoptExistingChannel;
         this.created = $.created;
         this.creator = $.creator;
         this.isArchived = $.isArchived;
@@ -323,6 +331,15 @@ public final class ConversationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionOnUpdatePermanentMembers(String actionOnUpdatePermanentMembers) {
             return actionOnUpdatePermanentMembers(Output.of(actionOnUpdatePermanentMembers));
+        }
+
+        public Builder adoptExistingChannel(@Nullable Output<Boolean> adoptExistingChannel) {
+            $.adoptExistingChannel = adoptExistingChannel;
+            return this;
+        }
+
+        public Builder adoptExistingChannel(Boolean adoptExistingChannel) {
+            return adoptExistingChannel(Output.of(adoptExistingChannel));
         }
 
         /**

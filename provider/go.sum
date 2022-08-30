@@ -572,8 +572,9 @@ github.com/hashicorp/terraform-json v0.14.0 h1:sh9iZ1Y8IFJLx+xQiKHGud6/TSUCM0N8e
 github.com/hashicorp/terraform-json v0.14.0/go.mod h1:5A9HIWPkk4e5aeeXIBbkcOvaZbIYnAIkEyqP2pNSckM=
 github.com/hashicorp/terraform-plugin-go v0.12.0 h1:6wW9mT1dSs0Xq4LR6HXj1heQ5ovr5GxXNJwkErZzpJw=
 github.com/hashicorp/terraform-plugin-go v0.12.0/go.mod h1:kwhmaWHNDvT1B3QiSJdAtrB/D4RaKSY/v3r2BuoWK4M=
-github.com/hashicorp/terraform-plugin-log v0.6.0 h1:/Vq78uSIdUSZ3iqDc9PESKtwt8YqNKN6u+khD+lLjuw=
 github.com/hashicorp/terraform-plugin-log v0.6.0/go.mod h1:p4R1jWBXRTvL4odmEkFfDdhUjHf9zcs/BCoNHAc7IK4=
+github.com/hashicorp/terraform-plugin-log v0.7.0 h1:SDxJUyT8TwN4l5b5/VkiTIaQgY6R+Y2BQ0sRZftGKQs=
+github.com/hashicorp/terraform-plugin-log v0.7.0/go.mod h1:p4R1jWBXRTvL4odmEkFfDdhUjHf9zcs/BCoNHAc7IK4=
 github.com/hashicorp/terraform-plugin-sdk v1.0.0/go.mod h1:NuwtLpEpPsFaKJPJNGtMcn9vlhe6Ofe+Y6NqXhJgV2M=
 github.com/hashicorp/terraform-plugin-sdk v1.7.0/go.mod h1:OjgQmey5VxnPej/buEhe+YqKm0KNvV3QqU4hkqHqPCY=
 github.com/hashicorp/terraform-plugin-sdk v1.9.1 h1:AgHnd6yPCg7o57XWrv4L7tIMdF0KQpcZro1pDHF1Xbw=
@@ -778,8 +779,8 @@ github.com/opentracing/basictracer-go v1.1.0/go.mod h1:V2HZueSJEp879yv285Aap1BS6
 github.com/opentracing/opentracing-go v1.1.0/go.mod h1:UkNAQd3GIcIGf0SeVgPpRdFStlNbqXla1AfSYxPUl2o=
 github.com/opentracing/opentracing-go v1.2.0 h1:uEJPy/1a5RIPAJ0Ov+OIO8OxWu77jEv+1B0VhjKrZUs=
 github.com/opentracing/opentracing-go v1.2.0/go.mod h1:GxEUsuufX4nBwe+T+Wl9TAgYrxe9dPLANfrWvHYVTgc=
-github.com/pablovarela/terraform-provider-slack v1.1.23 h1:a7AUdhXWXJIIT5qRX4LjTy9+tdObpPN9HUodA98u+V8=
-github.com/pablovarela/terraform-provider-slack v1.1.23/go.mod h1:GRWvjY7E5myHcmOqXN0DYAHM1wDQry5QafqQz8k6bE0=
+github.com/pablovarela/terraform-provider-slack v1.1.24 h1:bCHHIIij6rEjkzBVvjuktmdh3CG959QymGDTuqkCi78=
+github.com/pablovarela/terraform-provider-slack v1.1.24/go.mod h1:Xyftu/ESILNDqyFvEQ1SMwgtkZlWe4EdRc6Y+Z0JJaY=
 github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pascaldekloe/goe v0.1.0/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
 github.com/pelletier/go-toml v1.9.5/go.mod h1:u1nR/EPcESfeI/szUZKdtJ0xRNbUoANCkoOuaOx1Y+c=

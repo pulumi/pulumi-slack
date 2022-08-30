@@ -9,7 +9,7 @@ replace (
 )
 
 require (
-	github.com/pablovarela/terraform-provider-slack v1.1.23
+	github.com/pablovarela/terraform-provider-slack v1.1.24
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.28.0
 )
 
@@ -106,7 +106,7 @@ require (
 	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
 	github.com/hashicorp/logutils v1.0.0 // indirect
 	github.com/hashicorp/terraform-plugin-go v0.12.0 // indirect
-	github.com/hashicorp/terraform-plugin-log v0.6.0 // indirect
+	github.com/hashicorp/terraform-plugin-log v0.7.0 // indirect
 	github.com/hashicorp/terraform-plugin-sdk v1.9.1 // indirect
 	github.com/hashicorp/terraform-plugin-sdk/v2 v2.20.0 // indirect
 	github.com/hashicorp/terraform-svchost v0.0.0-20200729002733-f050f53b9734 // indirect

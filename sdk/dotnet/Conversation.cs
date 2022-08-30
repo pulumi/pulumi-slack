@@ -16,14 +16,30 @@ namespace Pulumi.Slack
     /// 
     /// This resource requires the following scopes:
     /// 
+    /// If using `bot` tokens:
+    /// 
+    /// - [channels:read](https://api.slack.com/scopes/channels:read)
+    ///   (public channels)
+    /// - [channels:manage](https://api.slack.com/scopes/channels:manage)
+    ///   (public channels)
+    /// - [channels:join](https://api.slack.com/scopes/channels:join)
+    ///   (adopting existing public channels)
+    /// - [groups:read](https://api.slack.com/scopes/groups:read)
+    ///   (private channels)
+    /// - [groups:write](https://api.slack.com/scopes/groups:write)
+    ///   (private channels)
+    /// 
+    /// If using `user` tokens:
+    /// 
     /// - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
-    /// - [channels:manage](https://api.slack.com/scopes/channels:manage) (public channels)
+    /// - [channels:write](https://api.slack.com/scopes/channels:manage) (public channels)
     /// - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
     /// - [groups:write](https://api.slack.com/scopes/groups:write) (private channels)
     /// 
     /// The Slack API methods used by the resource are:
     /// 
     /// - [conversations.create](https://api.slack.com/methods/conversations.create)
+    /// - [conversations.join](https://api.slack.com/methods/conversations.join)
     /// - [conversations.setTopic](https://api.slack.com/methods/conversations.setTopic)
     /// - [conversations.setPurpose](https://api.slack.com/methods/conversations.setPurpose)
     /// - [conversations.info](https://api.slack.com/methods/conversations.info)
@@ -74,6 +90,24 @@ namespace Pulumi.Slack
     /// });
     /// ```
     /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using Pulumi;
+    /// using Slack = Pulumi.Slack;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var adopted = new Slack.Conversation("adopted", new()
+    ///     {
+    ///         ActionOnUpdatePermanentMembers = "none",
+    ///         AdoptExistingChannel = true,
+    ///         PermanentMembers = new[] {},
+    ///         Topic = "Adopt existing, don't kick members",
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
@@ -99,6 +133,9 @@ namespace Pulumi.Slack
         /// </summary>
         [Output("actionOnUpdatePermanentMembers")]
         public Output<string?> ActionOnUpdatePermanentMembers { get; private set; } = null!;
+
+        [Output("adoptExistingChannel")]
+        public Output<bool?> AdoptExistingChannel { get; private set; } = null!;
 
         /// <summary>
         /// is a unix timestamp.
@@ -236,6 +273,9 @@ namespace Pulumi.Slack
         [Input("actionOnUpdatePermanentMembers")]
         public Input<string>? ActionOnUpdatePermanentMembers { get; set; }
 
+        [Input("adoptExistingChannel")]
+        public Input<bool>? AdoptExistingChannel { get; set; }
+
         /// <summary>
         /// indicates a conversation is archived. Frozen in time.
         /// </summary>
@@ -300,6 +340,9 @@ namespace Pulumi.Slack
         /// </summary>
         [Input("actionOnUpdatePermanentMembers")]
         public Input<string>? ActionOnUpdatePermanentMembers { get; set; }
+
+        [Input("adoptExistingChannel")]
+        public Input<bool>? AdoptExistingChannel { get; set; }
 
         /// <summary>
         /// is a unix timestamp.

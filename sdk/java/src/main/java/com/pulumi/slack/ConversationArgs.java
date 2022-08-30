@@ -53,6 +53,13 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.actionOnUpdatePermanentMembers);
     }
 
+    @Import(name="adoptExistingChannel")
+    private @Nullable Output<Boolean> adoptExistingChannel;
+
+    public Optional<Output<Boolean>> adoptExistingChannel() {
+        return Optional.ofNullable(this.adoptExistingChannel);
+    }
+
     /**
      * indicates a conversation is archived. Frozen in time.
      * 
@@ -148,6 +155,7 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
     private ConversationArgs(ConversationArgs $) {
         this.actionOnDestroy = $.actionOnDestroy;
         this.actionOnUpdatePermanentMembers = $.actionOnUpdatePermanentMembers;
+        this.adoptExistingChannel = $.adoptExistingChannel;
         this.isArchived = $.isArchived;
         this.isPrivate = $.isPrivate;
         this.name = $.name;
@@ -220,6 +228,15 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder actionOnUpdatePermanentMembers(String actionOnUpdatePermanentMembers) {
             return actionOnUpdatePermanentMembers(Output.of(actionOnUpdatePermanentMembers));
+        }
+
+        public Builder adoptExistingChannel(@Nullable Output<Boolean> adoptExistingChannel) {
+            $.adoptExistingChannel = adoptExistingChannel;
+            return this;
+        }
+
+        public Builder adoptExistingChannel(Boolean adoptExistingChannel) {
+            return adoptExistingChannel(Output.of(adoptExistingChannel));
         }
 
         /**
