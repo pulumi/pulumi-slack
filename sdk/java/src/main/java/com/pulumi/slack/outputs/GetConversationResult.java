@@ -11,101 +11,72 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConversationResult {
-    private final String channelId;
+    private String channelId;
     /**
      * @return is a unix timestamp.
      * 
      */
-    private final Integer created;
+    private Integer created;
     /**
      * @return is the user ID of the member that created this channel.
      * 
      */
-    private final String creator;
+    private String creator;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
+    private String id;
     /**
      * @return indicates a conversation is archived. Frozen in time.
      * 
      */
-    private final Boolean isArchived;
+    private Boolean isArchived;
     /**
      * @return represents this conversation as being part of a Shared Channel
      * with a remote organization.
      * 
      */
-    private final Boolean isExtShared;
+    private Boolean isExtShared;
     /**
      * @return will be true if this channel is the &#34;general&#34; channel that includes
      * all regular team members.
      * 
      */
-    private final Boolean isGeneral;
+    private Boolean isGeneral;
     /**
      * @return explains whether this shared channel is shared between Enterprise
      * Grid workspaces within the same organization.
      * 
      */
-    private final Boolean isOrgShared;
+    private Boolean isOrgShared;
     /**
      * @return means the conversation is privileged between two or more members.
      * 
      */
-    private final Boolean isPrivate;
+    private Boolean isPrivate;
     /**
      * @return means the conversation is in some way shared between multiple workspaces.
      * 
      */
-    private final Boolean isShared;
+    private Boolean isShared;
     /**
      * @return name of the public or private channel.
      * 
      */
-    private final String name;
+    private String name;
     /**
      * @return purpose of the channel.
      * 
      */
-    private final String purpose;
+    private String purpose;
     /**
      * @return topic for the channel.
      * 
      */
-    private final String topic;
+    private String topic;
 
-    @CustomType.Constructor
-    private GetConversationResult(
-        @CustomType.Parameter("channelId") String channelId,
-        @CustomType.Parameter("created") Integer created,
-        @CustomType.Parameter("creator") String creator,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("isArchived") Boolean isArchived,
-        @CustomType.Parameter("isExtShared") Boolean isExtShared,
-        @CustomType.Parameter("isGeneral") Boolean isGeneral,
-        @CustomType.Parameter("isOrgShared") Boolean isOrgShared,
-        @CustomType.Parameter("isPrivate") Boolean isPrivate,
-        @CustomType.Parameter("isShared") Boolean isShared,
-        @CustomType.Parameter("name") String name,
-        @CustomType.Parameter("purpose") String purpose,
-        @CustomType.Parameter("topic") String topic) {
-        this.channelId = channelId;
-        this.created = created;
-        this.creator = creator;
-        this.id = id;
-        this.isArchived = isArchived;
-        this.isExtShared = isExtShared;
-        this.isGeneral = isGeneral;
-        this.isOrgShared = isOrgShared;
-        this.isPrivate = isPrivate;
-        this.isShared = isShared;
-        this.name = name;
-        this.purpose = purpose;
-        this.topic = topic;
-    }
-
+    private GetConversationResult() {}
     public String channelId() {
         return this.channelId;
     }
@@ -204,7 +175,7 @@ public final class GetConversationResult {
     public static Builder builder(GetConversationResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private String channelId;
         private Integer created;
@@ -219,11 +190,7 @@ public final class GetConversationResult {
         private String name;
         private String purpose;
         private String topic;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetConversationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.channelId = defaults.channelId;
@@ -241,59 +208,87 @@ public final class GetConversationResult {
     	      this.topic = defaults.topic;
         }
 
+        @CustomType.Setter
         public Builder channelId(String channelId) {
             this.channelId = Objects.requireNonNull(channelId);
             return this;
         }
+        @CustomType.Setter
         public Builder created(Integer created) {
             this.created = Objects.requireNonNull(created);
             return this;
         }
+        @CustomType.Setter
         public Builder creator(String creator) {
             this.creator = Objects.requireNonNull(creator);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder isArchived(Boolean isArchived) {
             this.isArchived = Objects.requireNonNull(isArchived);
             return this;
         }
+        @CustomType.Setter
         public Builder isExtShared(Boolean isExtShared) {
             this.isExtShared = Objects.requireNonNull(isExtShared);
             return this;
         }
+        @CustomType.Setter
         public Builder isGeneral(Boolean isGeneral) {
             this.isGeneral = Objects.requireNonNull(isGeneral);
             return this;
         }
+        @CustomType.Setter
         public Builder isOrgShared(Boolean isOrgShared) {
             this.isOrgShared = Objects.requireNonNull(isOrgShared);
             return this;
         }
+        @CustomType.Setter
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = Objects.requireNonNull(isPrivate);
             return this;
         }
+        @CustomType.Setter
         public Builder isShared(Boolean isShared) {
             this.isShared = Objects.requireNonNull(isShared);
             return this;
         }
+        @CustomType.Setter
         public Builder name(String name) {
             this.name = Objects.requireNonNull(name);
             return this;
         }
+        @CustomType.Setter
         public Builder purpose(String purpose) {
             this.purpose = Objects.requireNonNull(purpose);
             return this;
         }
+        @CustomType.Setter
         public Builder topic(String topic) {
             this.topic = Objects.requireNonNull(topic);
             return this;
-        }        public GetConversationResult build() {
-            return new GetConversationResult(channelId, created, creator, id, isArchived, isExtShared, isGeneral, isOrgShared, isPrivate, isShared, name, purpose, topic);
+        }
+        public GetConversationResult build() {
+            final var o = new GetConversationResult();
+            o.channelId = channelId;
+            o.created = created;
+            o.creator = creator;
+            o.id = id;
+            o.isArchived = isArchived;
+            o.isExtShared = isExtShared;
+            o.isGeneral = isGeneral;
+            o.isOrgShared = isOrgShared;
+            o.isPrivate = isPrivate;
+            o.isShared = isShared;
+            o.name = name;
+            o.purpose = purpose;
+            o.topic = topic;
+            return o;
         }
     }
 }
