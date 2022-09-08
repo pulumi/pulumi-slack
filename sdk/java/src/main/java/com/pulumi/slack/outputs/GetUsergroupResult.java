@@ -16,49 +16,32 @@ public final class GetUsergroupResult {
      * @return The channel IDs for which the User Group uses as a default.
      * 
      */
-    private final List<String> channels;
+    private List<String> channels;
     /**
      * @return The short description of the User Group.
      * 
      */
-    private final String description;
+    private String description;
     /**
      * @return The mention handle.
      * 
      */
-    private final String handle;
+    private String handle;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private final String id;
-    private final @Nullable String name;
-    private final @Nullable String usergroupId;
+    private String id;
+    private @Nullable String name;
+    private @Nullable String usergroupId;
     /**
      * @return The user IDs that represent the entire list of users for the
      * User Group.
      * 
      */
-    private final List<String> users;
+    private List<String> users;
 
-    @CustomType.Constructor
-    private GetUsergroupResult(
-        @CustomType.Parameter("channels") List<String> channels,
-        @CustomType.Parameter("description") String description,
-        @CustomType.Parameter("handle") String handle,
-        @CustomType.Parameter("id") String id,
-        @CustomType.Parameter("name") @Nullable String name,
-        @CustomType.Parameter("usergroupId") @Nullable String usergroupId,
-        @CustomType.Parameter("users") List<String> users) {
-        this.channels = channels;
-        this.description = description;
-        this.handle = handle;
-        this.id = id;
-        this.name = name;
-        this.usergroupId = usergroupId;
-        this.users = users;
-    }
-
+    private GetUsergroupResult() {}
     /**
      * @return The channel IDs for which the User Group uses as a default.
      * 
@@ -109,7 +92,7 @@ public final class GetUsergroupResult {
     public static Builder builder(GetUsergroupResult defaults) {
         return new Builder(defaults);
     }
-
+    @CustomType.Builder
     public static final class Builder {
         private List<String> channels;
         private String description;
@@ -118,11 +101,7 @@ public final class GetUsergroupResult {
         private @Nullable String name;
         private @Nullable String usergroupId;
         private List<String> users;
-
-        public Builder() {
-    	      // Empty
-        }
-
+        public Builder() {}
         public Builder(GetUsergroupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.channels = defaults.channels;
@@ -134,6 +113,7 @@ public final class GetUsergroupResult {
     	      this.users = defaults.users;
         }
 
+        @CustomType.Setter
         public Builder channels(List<String> channels) {
             this.channels = Objects.requireNonNull(channels);
             return this;
@@ -141,34 +121,49 @@ public final class GetUsergroupResult {
         public Builder channels(String... channels) {
             return channels(List.of(channels));
         }
+        @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
             return this;
         }
+        @CustomType.Setter
         public Builder handle(String handle) {
             this.handle = Objects.requireNonNull(handle);
             return this;
         }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
         }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
         public Builder usergroupId(@Nullable String usergroupId) {
             this.usergroupId = usergroupId;
             return this;
         }
+        @CustomType.Setter
         public Builder users(List<String> users) {
             this.users = Objects.requireNonNull(users);
             return this;
         }
         public Builder users(String... users) {
             return users(List.of(users));
-        }        public GetUsergroupResult build() {
-            return new GetUsergroupResult(channels, description, handle, id, name, usergroupId, users);
+        }
+        public GetUsergroupResult build() {
+            final var o = new GetUsergroupResult();
+            o.channels = channels;
+            o.description = description;
+            o.handle = handle;
+            o.id = id;
+            o.name = name;
+            o.usergroupId = usergroupId;
+            o.users = users;
+            return o;
         }
     }
 }
