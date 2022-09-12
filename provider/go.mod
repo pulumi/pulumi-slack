@@ -9,7 +9,7 @@ replace (
 )
 
 require (
-	github.com/pablovarela/terraform-provider-slack v1.1.26
+	github.com/pablovarela/terraform-provider-slack v1.1.27
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.28.0
 )
 
@@ -108,7 +108,7 @@ require (
 	github.com/hashicorp/terraform-plugin-go v0.12.0 // indirect
 	github.com/hashicorp/terraform-plugin-log v0.7.0 // indirect
 	github.com/hashicorp/terraform-plugin-sdk v1.9.1 // indirect
-	github.com/hashicorp/terraform-plugin-sdk/v2 v2.21.0 // indirect
+	github.com/hashicorp/terraform-plugin-sdk/v2 v2.22.0 // indirect
 	github.com/hashicorp/terraform-svchost v0.0.0-20200729002733-f050f53b9734 // indirect
 	github.com/hashicorp/vault/api v1.1.1 // indirect
 	github.com/hashicorp/vault/sdk v0.2.1 // indirect
@@ -164,7 +164,7 @@ require (
 	github.com/segmentio/asm v1.1.3 // indirect
 	github.com/segmentio/encoding v0.3.5 // indirect
 	github.com/sergi/go-diff v1.2.0 // indirect
-	github.com/slack-go/slack v0.11.2 // indirect
+	github.com/slack-go/slack v0.11.3 // indirect
 	github.com/spf13/afero v1.9.2 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/cobra v1.5.0 // indirect
