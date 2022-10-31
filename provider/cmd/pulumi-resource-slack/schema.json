@@ -11,6 +11,7 @@
     "license": "Apache-2.0",
     "attribution": "This Pulumi package is based on the [`slack` Terraform Provider](https://github.com/pablovarela/terraform-provider-slack).",
     "repository": "https://github.com/pulumi/pulumi-slack",
+    "logoUrl": "",
     "publisher": "Pulumi",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
