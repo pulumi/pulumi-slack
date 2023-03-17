@@ -5,8 +5,11 @@ package com.pulumi.slack.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
@@ -17,21 +20,53 @@ public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
      * The ID of the channel
      * 
      */
-    @Import(name="channelId", required=true)
-    private Output<String> channelId;
+    @Import(name="channelId")
+    private @Nullable Output<String> channelId;
 
     /**
      * @return The ID of the channel
      * 
      */
-    public Output<String> channelId() {
-        return this.channelId;
+    public Optional<Output<String>> channelId() {
+        return Optional.ofNullable(this.channelId);
+    }
+
+    /**
+     * The conversation is privileged between two or more members
+     * 
+     */
+    @Import(name="isPrivate")
+    private @Nullable Output<Boolean> isPrivate;
+
+    /**
+     * @return The conversation is privileged between two or more members
+     * 
+     */
+    public Optional<Output<Boolean>> isPrivate() {
+        return Optional.ofNullable(this.isPrivate);
+    }
+
+    /**
+     * The name of the public or private channel
+     * 
+     */
+    @Import(name="name")
+    private @Nullable Output<String> name;
+
+    /**
+     * @return The name of the public or private channel
+     * 
+     */
+    public Optional<Output<String>> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private GetConversationArgs() {}
 
     private GetConversationArgs(GetConversationArgs $) {
         this.channelId = $.channelId;
+        this.isPrivate = $.isPrivate;
+        this.name = $.name;
     }
 
     public static Builder builder() {
@@ -58,7 +93,7 @@ public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder channelId(Output<String> channelId) {
+        public Builder channelId(@Nullable Output<String> channelId) {
             $.channelId = channelId;
             return this;
         }
@@ -73,8 +108,49 @@ public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
             return channelId(Output.of(channelId));
         }
 
+        /**
+         * @param isPrivate The conversation is privileged between two or more members
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPrivate(@Nullable Output<Boolean> isPrivate) {
+            $.isPrivate = isPrivate;
+            return this;
+        }
+
+        /**
+         * @param isPrivate The conversation is privileged between two or more members
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPrivate(Boolean isPrivate) {
+            return isPrivate(Output.of(isPrivate));
+        }
+
+        /**
+         * @param name The name of the public or private channel
+         * 
+         * @return builder
+         * 
+         */
+        public Builder name(@Nullable Output<String> name) {
+            $.name = name;
+            return this;
+        }
+
+        /**
+         * @param name The name of the public or private channel
+         * 
+         * @return builder
+         * 
+         */
+        public Builder name(String name) {
+            return name(Output.of(name));
+        }
+
         public GetConversationArgs build() {
-            $.channelId = Objects.requireNonNull($.channelId, "expected parameter 'channelId' to be non-null");
             return $;
         }
     }

@@ -29,19 +29,22 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
  *
- * const test = pulumi.output(slack.getConversation({
+ * const test = slack.getConversation({
  *     channelId: "my-channel",
- * }));
+ * });
+ * const test-name = slack.getConversation({
+ *     name: "my-channel-name",
+ * });
  * ```
  */
-export function getConversation(args: GetConversationArgs, opts?: pulumi.InvokeOptions): Promise<GetConversationResult> {
-    if (!opts) {
-        opts = {}
-    }
+export function getConversation(args?: GetConversationArgs, opts?: pulumi.InvokeOptions): Promise<GetConversationResult> {
+    args = args || {};
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("slack:index/getConversation:getConversation", {
         "channelId": args.channelId,
+        "isPrivate": args.isPrivate,
+        "name": args.name,
     }, opts);
 }
 
@@ -52,14 +55,22 @@ export interface GetConversationArgs {
     /**
      * The ID of the channel
      */
-    channelId: string;
+    channelId?: string;
+    /**
+     * The conversation is privileged between two or more members
+     */
+    isPrivate?: boolean;
+    /**
+     * The name of the public or private channel
+     */
+    name?: string;
 }
 
 /**
  * A collection of values returned by getConversation.
  */
 export interface GetConversationResult {
-    readonly channelId: string;
+    readonly channelId?: string;
     /**
      * is a unix timestamp.
      */
@@ -94,7 +105,7 @@ export interface GetConversationResult {
     /**
      * means the conversation is privileged between two or more members.
      */
-    readonly isPrivate: boolean;
+    readonly isPrivate?: boolean;
     /**
      * means the conversation is in some way shared between multiple workspaces.
      */
@@ -102,7 +113,7 @@ export interface GetConversationResult {
     /**
      * name of the public or private channel.
      */
-    readonly name: string;
+    readonly name?: string;
     /**
      * purpose of the channel.
      */
@@ -112,9 +123,41 @@ export interface GetConversationResult {
      */
     readonly topic: string;
 }
-
-export function getConversationOutput(args: GetConversationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConversationResult> {
-    return pulumi.output(args).apply(a => getConversation(a, opts))
+/**
+ * Use this data source to get information about a Slack conversation for use in other
+ * resources.
+ *
+ * ## Required scopes
+ *
+ * This resource requires the following scopes:
+ *
+ * - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
+ * - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
+ *
+ * The Slack API methods used by the resource are:
+ *
+ * - [conversations.info](https://api.slack.com/methods/conversations.info)
+ * - [conversations.members](https://api.slack.com/methods/conversations.members)
+ *
+ * If you get `missingScope` errors while using this resource check the scopes against
+ * the documentation for the methods above.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as slack from "@pulumi/slack";
+ *
+ * const test = slack.getConversation({
+ *     channelId: "my-channel",
+ * });
+ * const test-name = slack.getConversation({
+ *     name: "my-channel-name",
+ * });
+ * ```
+ */
+export function getConversationOutput(args?: GetConversationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConversationResult> {
+    return pulumi.output(args).apply((a: any) => getConversation(a, opts))
 }
 
 /**
@@ -124,5 +167,13 @@ export interface GetConversationOutputArgs {
     /**
      * The ID of the channel
      */
-    channelId: pulumi.Input<string>;
+    channelId?: pulumi.Input<string>;
+    /**
+     * The conversation is privileged between two or more members
+     */
+    isPrivate?: pulumi.Input<boolean>;
+    /**
+     * The name of the public or private channel
+     */
+    name?: pulumi.Input<string>;
 }

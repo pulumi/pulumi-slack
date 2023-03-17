@@ -4,8 +4,11 @@
 package com.pulumi.slack.inputs;
 
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetConversationPlainArgs extends com.pulumi.resources.InvokeArgs {
@@ -16,21 +19,53 @@ public final class GetConversationPlainArgs extends com.pulumi.resources.InvokeA
      * The ID of the channel
      * 
      */
-    @Import(name="channelId", required=true)
-    private String channelId;
+    @Import(name="channelId")
+    private @Nullable String channelId;
 
     /**
      * @return The ID of the channel
      * 
      */
-    public String channelId() {
-        return this.channelId;
+    public Optional<String> channelId() {
+        return Optional.ofNullable(this.channelId);
+    }
+
+    /**
+     * The conversation is privileged between two or more members
+     * 
+     */
+    @Import(name="isPrivate")
+    private @Nullable Boolean isPrivate;
+
+    /**
+     * @return The conversation is privileged between two or more members
+     * 
+     */
+    public Optional<Boolean> isPrivate() {
+        return Optional.ofNullable(this.isPrivate);
+    }
+
+    /**
+     * The name of the public or private channel
+     * 
+     */
+    @Import(name="name")
+    private @Nullable String name;
+
+    /**
+     * @return The name of the public or private channel
+     * 
+     */
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
 
     private GetConversationPlainArgs() {}
 
     private GetConversationPlainArgs(GetConversationPlainArgs $) {
         this.channelId = $.channelId;
+        this.isPrivate = $.isPrivate;
+        this.name = $.name;
     }
 
     public static Builder builder() {
@@ -57,13 +92,34 @@ public final class GetConversationPlainArgs extends com.pulumi.resources.InvokeA
          * @return builder
          * 
          */
-        public Builder channelId(String channelId) {
+        public Builder channelId(@Nullable String channelId) {
             $.channelId = channelId;
             return this;
         }
 
+        /**
+         * @param isPrivate The conversation is privileged between two or more members
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isPrivate(@Nullable Boolean isPrivate) {
+            $.isPrivate = isPrivate;
+            return this;
+        }
+
+        /**
+         * @param name The name of the public or private channel
+         * 
+         * @return builder
+         * 
+         */
+        public Builder name(@Nullable String name) {
+            $.name = name;
+            return this;
+        }
+
         public GetConversationPlainArgs build() {
-            $.channelId = Objects.requireNonNull($.channelId, "expected parameter 'channelId' to be non-null");
             return $;
         }
     }

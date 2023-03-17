@@ -55,7 +55,7 @@ namespace Pulumi.Slack
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUsergroupResult> InvokeAsync(GetUsergroupArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUsergroupResult>("slack:index/getUsergroup:getUsergroup", args ?? new GetUsergroupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsergroupResult>("slack:index/getUsergroup:getUsergroup", args ?? new GetUsergroupArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about a usergroups for use in other
@@ -101,7 +101,7 @@ namespace Pulumi.Slack
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUsergroupResult> Invoke(GetUsergroupInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUsergroupResult>("slack:index/getUsergroup:getUsergroup", args ?? new GetUsergroupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsergroupResult>("slack:index/getUsergroup:getUsergroup", args ?? new GetUsergroupInvokeArgs(), options.WithDefaults());
     }
 
 

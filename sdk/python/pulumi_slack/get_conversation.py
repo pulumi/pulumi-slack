@@ -64,7 +64,7 @@ class GetConversationResult:
 
     @property
     @pulumi.getter(name="channelId")
-    def channel_id(self) -> str:
+    def channel_id(self) -> Optional[str]:
         return pulumi.get(self, "channel_id")
 
     @property
@@ -128,7 +128,7 @@ class GetConversationResult:
 
     @property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> bool:
+    def is_private(self) -> Optional[bool]:
         """
         means the conversation is privileged between two or more members.
         """
@@ -144,7 +144,7 @@ class GetConversationResult:
 
     @property
     @pulumi.getter
-    def name(self) -> str:
+    def name(self) -> Optional[str]:
         """
         name of the public or private channel.
         """
@@ -189,6 +189,8 @@ class AwaitableGetConversationResult(GetConversationResult):
 
 
 def get_conversation(channel_id: Optional[str] = None,
+                     is_private: Optional[bool] = None,
+                     name: Optional[str] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetConversationResult:
     """
     Use this data source to get information about a Slack conversation for use in other
@@ -216,13 +218,18 @@ def get_conversation(channel_id: Optional[str] = None,
     import pulumi_slack as slack
 
     test = slack.get_conversation(channel_id="my-channel")
+    test_name = slack.get_conversation(name="my-channel-name")
     ```
 
 
     :param str channel_id: The ID of the channel
+    :param bool is_private: The conversation is privileged between two or more members
+    :param str name: The name of the public or private channel
     """
     __args__ = dict()
     __args__['channelId'] = channel_id
+    __args__['isPrivate'] = is_private
+    __args__['name'] = name
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('slack:index/getConversation:getConversation', __args__, opts=opts, typ=GetConversationResult).value
 
@@ -243,7 +250,9 @@ def get_conversation(channel_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_conversation)
-def get_conversation_output(channel_id: Optional[pulumi.Input[str]] = None,
+def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None,
+                            is_private: Optional[pulumi.Input[Optional[bool]]] = None,
+                            name: Optional[pulumi.Input[Optional[str]]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConversationResult]:
     """
     Use this data source to get information about a Slack conversation for use in other
@@ -271,9 +280,12 @@ def get_conversation_output(channel_id: Optional[pulumi.Input[str]] = None,
     import pulumi_slack as slack
 
     test = slack.get_conversation(channel_id="my-channel")
+    test_name = slack.get_conversation(name="my-channel-name")
     ```
 
 
     :param str channel_id: The ID of the channel
+    :param bool is_private: The conversation is privileged between two or more members
+    :param str name: The name of the public or private channel
     """
     ...

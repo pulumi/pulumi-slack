@@ -5,12 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./conversation";
-export * from "./getConversation";
-export * from "./getUser";
-export * from "./getUsergroup";
-export * from "./provider";
-export * from "./usergroup";
+export { ConversationArgs, ConversationState } from "./conversation";
+export type Conversation = import("./conversation").Conversation;
+export const Conversation: typeof import("./conversation").Conversation = null as any;
+utilities.lazyLoad(exports, ["Conversation"], () => require("./conversation"));
+
+export { GetConversationArgs, GetConversationResult, GetConversationOutputArgs } from "./getConversation";
+export const getConversation: typeof import("./getConversation").getConversation = null as any;
+export const getConversationOutput: typeof import("./getConversation").getConversationOutput = null as any;
+utilities.lazyLoad(exports, ["getConversation","getConversationOutput"], () => require("./getConversation"));
+
+export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
+export const getUser: typeof import("./getUser").getUser = null as any;
+export const getUserOutput: typeof import("./getUser").getUserOutput = null as any;
+utilities.lazyLoad(exports, ["getUser","getUserOutput"], () => require("./getUser"));
+
+export { GetUsergroupArgs, GetUsergroupResult, GetUsergroupOutputArgs } from "./getUsergroup";
+export const getUsergroup: typeof import("./getUsergroup").getUsergroup = null as any;
+export const getUsergroupOutput: typeof import("./getUsergroup").getUsergroupOutput = null as any;
+utilities.lazyLoad(exports, ["getUsergroup","getUsergroupOutput"], () => require("./getUsergroup"));
+
+export { ProviderArgs } from "./provider";
+export type Provider = import("./provider").Provider;
+export const Provider: typeof import("./provider").Provider = null as any;
+utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+
+export { UsergroupArgs, UsergroupState } from "./usergroup";
+export type Usergroup = import("./usergroup").Usergroup;
+export const Usergroup: typeof import("./usergroup").Usergroup = null as any;
+utilities.lazyLoad(exports, ["Usergroup"], () => require("./usergroup"));
+
 
 // Export sub-modules:
 import * as config from "./config";
@@ -18,10 +42,6 @@ import * as config from "./config";
 export {
     config,
 };
-
-// Import resources to register:
-import { Conversation } from "./conversation";
-import { Usergroup } from "./usergroup";
 
 const _module = {
     version: utilities.getVersion(),
@@ -38,9 +58,6 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("slack", "index/conversation", _module)
 pulumi.runtime.registerResourceModule("slack", "index/usergroup", _module)
-
-import { Provider } from "./provider";
-
 pulumi.runtime.registerResourcePackage("slack", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

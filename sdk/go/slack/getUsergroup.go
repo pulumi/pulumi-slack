@@ -40,13 +40,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := slack.LookupUsergroup(ctx, &GetUsergroupArgs{
+//			_, err := slack.LookupUsergroup(ctx, &slack.LookupUsergroupArgs{
 //				Name: pulumi.StringRef("my-usergroup"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = slack.LookupUsergroup(ctx, &GetUsergroupArgs{
+//			_, err = slack.LookupUsergroup(ctx, &slack.LookupUsergroupArgs{
 //				UsergroupId: pulumi.StringRef("USERGROUP00"),
 //			}, nil)
 //			if err != nil {
