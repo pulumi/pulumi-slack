@@ -30,7 +30,7 @@ namespace Pulumi.Slack
             }
         }
 
-        private static readonly Pulumi.Config __config = new Pulumi.Config("slack");
+        private static readonly global::Pulumi.Config __config = new global::Pulumi.Config("slack");
 
         private static readonly __Value<string?> _token = new __Value<string?>(() => __config.Get("token"));
         /// <summary>

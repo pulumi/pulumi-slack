@@ -65,6 +65,124 @@ public final class SlackFunctions {
      *             .channelId(&#34;my-channel&#34;)
      *             .build());
      * 
+     *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .name(&#34;my-channel-name&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetConversationResult> getConversation() {
+        return getConversation(GetConversationArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Use this data source to get information about a Slack conversation for use in other
+     * resources.
+     * 
+     * ## Required scopes
+     * 
+     * This resource requires the following scopes:
+     * 
+     * - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
+     * - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
+     * 
+     * The Slack API methods used by the resource are:
+     * 
+     * - [conversations.info](https://api.slack.com/methods/conversations.info)
+     * - [conversations.members](https://api.slack.com/methods/conversations.members)
+     * 
+     * If you get `missing_scope` errors while using this resource check the scopes against
+     * the documentation for the methods above.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.slack.SlackFunctions;
+     * import com.pulumi.slack.inputs.GetConversationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .channelId(&#34;my-channel&#34;)
+     *             .build());
+     * 
+     *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .name(&#34;my-channel-name&#34;)
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetConversationResult> getConversationPlain() {
+        return getConversationPlain(GetConversationPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Use this data source to get information about a Slack conversation for use in other
+     * resources.
+     * 
+     * ## Required scopes
+     * 
+     * This resource requires the following scopes:
+     * 
+     * - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
+     * - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
+     * 
+     * The Slack API methods used by the resource are:
+     * 
+     * - [conversations.info](https://api.slack.com/methods/conversations.info)
+     * - [conversations.members](https://api.slack.com/methods/conversations.members)
+     * 
+     * If you get `missing_scope` errors while using this resource check the scopes against
+     * the documentation for the methods above.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.slack.SlackFunctions;
+     * import com.pulumi.slack.inputs.GetConversationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .channelId(&#34;my-channel&#34;)
+     *             .build());
+     * 
+     *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .name(&#34;my-channel-name&#34;)
+     *             .build());
+     * 
      *     }
      * }
      * ```
@@ -116,6 +234,10 @@ public final class SlackFunctions {
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
      *             .channelId(&#34;my-channel&#34;)
+     *             .build());
+     * 
+     *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .name(&#34;my-channel-name&#34;)
      *             .build());
      * 
      *     }
@@ -171,6 +293,10 @@ public final class SlackFunctions {
      *             .channelId(&#34;my-channel&#34;)
      *             .build());
      * 
+     *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .name(&#34;my-channel-name&#34;)
+     *             .build());
+     * 
      *     }
      * }
      * ```
@@ -222,6 +348,10 @@ public final class SlackFunctions {
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
      *             .channelId(&#34;my-channel&#34;)
+     *             .build());
+     * 
+     *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
+     *             .name(&#34;my-channel-name&#34;)
      *             .build());
      * 
      *     }

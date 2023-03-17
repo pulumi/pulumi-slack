@@ -8,10 +8,12 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConversationResult {
-    private String channelId;
+    private @Nullable String channelId;
     /**
      * @return is a unix timestamp.
      * 
@@ -54,7 +56,7 @@ public final class GetConversationResult {
      * @return means the conversation is privileged between two or more members.
      * 
      */
-    private Boolean isPrivate;
+    private @Nullable Boolean isPrivate;
     /**
      * @return means the conversation is in some way shared between multiple workspaces.
      * 
@@ -64,7 +66,7 @@ public final class GetConversationResult {
      * @return name of the public or private channel.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return purpose of the channel.
      * 
@@ -77,8 +79,8 @@ public final class GetConversationResult {
     private String topic;
 
     private GetConversationResult() {}
-    public String channelId() {
-        return this.channelId;
+    public Optional<String> channelId() {
+        return Optional.ofNullable(this.channelId);
     }
     /**
      * @return is a unix timestamp.
@@ -136,8 +138,8 @@ public final class GetConversationResult {
      * @return means the conversation is privileged between two or more members.
      * 
      */
-    public Boolean isPrivate() {
-        return this.isPrivate;
+    public Optional<Boolean> isPrivate() {
+        return Optional.ofNullable(this.isPrivate);
     }
     /**
      * @return means the conversation is in some way shared between multiple workspaces.
@@ -150,8 +152,8 @@ public final class GetConversationResult {
      * @return name of the public or private channel.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return purpose of the channel.
@@ -177,7 +179,7 @@ public final class GetConversationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String channelId;
+        private @Nullable String channelId;
         private Integer created;
         private String creator;
         private String id;
@@ -185,9 +187,9 @@ public final class GetConversationResult {
         private Boolean isExtShared;
         private Boolean isGeneral;
         private Boolean isOrgShared;
-        private Boolean isPrivate;
+        private @Nullable Boolean isPrivate;
         private Boolean isShared;
-        private String name;
+        private @Nullable String name;
         private String purpose;
         private String topic;
         public Builder() {}
@@ -209,8 +211,8 @@ public final class GetConversationResult {
         }
 
         @CustomType.Setter
-        public Builder channelId(String channelId) {
-            this.channelId = Objects.requireNonNull(channelId);
+        public Builder channelId(@Nullable String channelId) {
+            this.channelId = channelId;
             return this;
         }
         @CustomType.Setter
@@ -249,8 +251,8 @@ public final class GetConversationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder isPrivate(Boolean isPrivate) {
-            this.isPrivate = Objects.requireNonNull(isPrivate);
+        public Builder isPrivate(@Nullable Boolean isPrivate) {
+            this.isPrivate = isPrivate;
             return this;
         }
         @CustomType.Setter
@@ -259,8 +261,8 @@ public final class GetConversationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter

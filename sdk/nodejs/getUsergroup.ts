@@ -27,21 +27,18 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
  *
- * const byName = pulumi.output(slack.getUsergroup({
+ * const byName = slack.getUsergroup({
  *     name: "my-usergroup",
- * }));
- * const byId = pulumi.output(slack.getUsergroup({
+ * });
+ * const byId = slack.getUsergroup({
  *     usergroupId: "USERGROUP00",
- * }));
+ * });
  * ```
  */
 export function getUsergroup(args?: GetUsergroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUsergroupResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("slack:index/getUsergroup:getUsergroup", {
         "name": args.name,
         "usergroupId": args.usergroupId,
@@ -90,9 +87,39 @@ export interface GetUsergroupResult {
      */
     readonly users: string[];
 }
-
+/**
+ * Use this data source to get information about a usergroups for use in other
+ * resources. The data source returns enabled groups only.
+ *
+ * ## Required scopes
+ *
+ * This resource requires the following scopes:
+ *
+ * - [usergroups:read](https://api.slack.com/scopes/usergroups:read)
+ *
+ * The Slack API methods used by the resource are:
+ *
+ * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
+ *
+ * If you get `missingScope` errors while using this resource check the scopes against
+ * the documentation for the methods above.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as slack from "@pulumi/slack";
+ *
+ * const byName = slack.getUsergroup({
+ *     name: "my-usergroup",
+ * });
+ * const byId = slack.getUsergroup({
+ *     usergroupId: "USERGROUP00",
+ * });
+ * ```
+ */
 export function getUsergroupOutput(args?: GetUsergroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsergroupResult> {
-    return pulumi.output(args).apply(a => getUsergroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getUsergroup(a, opts))
 }
 
 /**

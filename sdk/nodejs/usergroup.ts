@@ -32,7 +32,7 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
  *
- * const myGroup = new slack.Usergroup("my_group", {
+ * const myGroup = new slack.Usergroup("myGroup", {
  *     channels: ["CHANNEL00"],
  *     description: "Test user group",
  *     handle: "test",

@@ -42,8 +42,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := slack.LookupConversation(ctx, &GetConversationArgs{
-//				ChannelId: "my-channel",
+//			_, err := slack.LookupConversation(ctx, &slack.LookupConversationArgs{
+//				ChannelId: pulumi.StringRef("my-channel"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			_, err = slack.LookupConversation(ctx, &slack.LookupConversationArgs{
+//				Name: pulumi.StringRef("my-channel-name"),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -65,12 +71,16 @@ func LookupConversation(ctx *pulumi.Context, args *LookupConversationArgs, opts 
 // A collection of arguments for invoking getConversation.
 type LookupConversationArgs struct {
 	// The ID of the channel
-	ChannelId string `pulumi:"channelId"`
+	ChannelId *string `pulumi:"channelId"`
+	// The conversation is privileged between two or more members
+	IsPrivate *bool `pulumi:"isPrivate"`
+	// The name of the public or private channel
+	Name *string `pulumi:"name"`
 }
 
 // A collection of values returned by getConversation.
 type LookupConversationResult struct {
-	ChannelId string `pulumi:"channelId"`
+	ChannelId *string `pulumi:"channelId"`
 	// is a unix timestamp.
 	Created int `pulumi:"created"`
 	// is the user ID of the member that created this channel.
@@ -89,11 +99,11 @@ type LookupConversationResult struct {
 	// Grid workspaces within the same organization.
 	IsOrgShared bool `pulumi:"isOrgShared"`
 	// means the conversation is privileged between two or more members.
-	IsPrivate bool `pulumi:"isPrivate"`
+	IsPrivate *bool `pulumi:"isPrivate"`
 	// means the conversation is in some way shared between multiple workspaces.
 	IsShared bool `pulumi:"isShared"`
 	// name of the public or private channel.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// purpose of the channel.
 	Purpose string `pulumi:"purpose"`
 	// topic for the channel.
@@ -116,7 +126,11 @@ func LookupConversationOutput(ctx *pulumi.Context, args LookupConversationOutput
 // A collection of arguments for invoking getConversation.
 type LookupConversationOutputArgs struct {
 	// The ID of the channel
-	ChannelId pulumi.StringInput `pulumi:"channelId"`
+	ChannelId pulumi.StringPtrInput `pulumi:"channelId"`
+	// The conversation is privileged between two or more members
+	IsPrivate pulumi.BoolPtrInput `pulumi:"isPrivate"`
+	// The name of the public or private channel
+	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
 func (LookupConversationOutputArgs) ElementType() reflect.Type {
@@ -138,8 +152,8 @@ func (o LookupConversationResultOutput) ToLookupConversationResultOutputWithCont
 	return o
 }
 
-func (o LookupConversationResultOutput) ChannelId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConversationResult) string { return v.ChannelId }).(pulumi.StringOutput)
+func (o LookupConversationResultOutput) ChannelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConversationResult) *string { return v.ChannelId }).(pulumi.StringPtrOutput)
 }
 
 // is a unix timestamp.
@@ -181,8 +195,8 @@ func (o LookupConversationResultOutput) IsOrgShared() pulumi.BoolOutput {
 }
 
 // means the conversation is privileged between two or more members.
-func (o LookupConversationResultOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupConversationResult) bool { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o LookupConversationResultOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupConversationResult) *bool { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // means the conversation is in some way shared between multiple workspaces.
@@ -191,8 +205,8 @@ func (o LookupConversationResultOutput) IsShared() pulumi.BoolOutput {
 }
 
 // name of the public or private channel.
-func (o LookupConversationResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConversationResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupConversationResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConversationResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // purpose of the channel.

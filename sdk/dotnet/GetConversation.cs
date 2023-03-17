@@ -46,13 +46,18 @@ namespace Pulumi.Slack
         ///         ChannelId = "my-channel",
         ///     });
         /// 
+        ///     var test_name = Slack.GetConversation.Invoke(new()
+        ///     {
+        ///         Name = "my-channel-name",
+        ///     });
+        /// 
         /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GetConversationResult> InvokeAsync(GetConversationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationArgs(), options.WithDefaults());
+        public static Task<GetConversationResult> InvokeAsync(GetConversationArgs? args = null, InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationArgs(), options.WithDefaults());
 
         /// <summary>
         /// Use this data source to get information about a Slack conversation for use in other
@@ -89,13 +94,18 @@ namespace Pulumi.Slack
         ///         ChannelId = "my-channel",
         ///     });
         /// 
+        ///     var test_name = Slack.GetConversation.Invoke(new()
+        ///     {
+        ///         Name = "my-channel-name",
+        ///     });
+        /// 
         /// });
         /// ```
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GetConversationResult> Invoke(GetConversationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationInvokeArgs(), options.WithDefaults());
+        public static Output<GetConversationResult> Invoke(GetConversationInvokeArgs? args = null, InvokeOptions? options = null)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -104,8 +114,20 @@ namespace Pulumi.Slack
         /// <summary>
         /// The ID of the channel
         /// </summary>
-        [Input("channelId", required: true)]
-        public string ChannelId { get; set; } = null!;
+        [Input("channelId")]
+        public string? ChannelId { get; set; }
+
+        /// <summary>
+        /// The conversation is privileged between two or more members
+        /// </summary>
+        [Input("isPrivate")]
+        public bool? IsPrivate { get; set; }
+
+        /// <summary>
+        /// The name of the public or private channel
+        /// </summary>
+        [Input("name")]
+        public string? Name { get; set; }
 
         public GetConversationArgs()
         {
@@ -118,8 +140,20 @@ namespace Pulumi.Slack
         /// <summary>
         /// The ID of the channel
         /// </summary>
-        [Input("channelId", required: true)]
-        public Input<string> ChannelId { get; set; } = null!;
+        [Input("channelId")]
+        public Input<string>? ChannelId { get; set; }
+
+        /// <summary>
+        /// The conversation is privileged between two or more members
+        /// </summary>
+        [Input("isPrivate")]
+        public Input<bool>? IsPrivate { get; set; }
+
+        /// <summary>
+        /// The name of the public or private channel
+        /// </summary>
+        [Input("name")]
+        public Input<string>? Name { get; set; }
 
         public GetConversationInvokeArgs()
         {
@@ -131,7 +165,7 @@ namespace Pulumi.Slack
     [OutputType]
     public sealed class GetConversationResult
     {
-        public readonly string ChannelId;
+        public readonly string? ChannelId;
         /// <summary>
         /// is a unix timestamp.
         /// </summary>
@@ -166,7 +200,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// means the conversation is privileged between two or more members.
         /// </summary>
-        public readonly bool IsPrivate;
+        public readonly bool? IsPrivate;
         /// <summary>
         /// means the conversation is in some way shared between multiple workspaces.
         /// </summary>
@@ -174,7 +208,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// name of the public or private channel.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// purpose of the channel.
         /// </summary>
@@ -186,7 +220,7 @@ namespace Pulumi.Slack
 
         [OutputConstructor]
         private GetConversationResult(
-            string channelId,
+            string? channelId,
 
             int created,
 
@@ -202,11 +236,11 @@ namespace Pulumi.Slack
 
             bool isOrgShared,
 
-            bool isPrivate,
+            bool? isPrivate,
 
             bool isShared,
 
-            string name,
+            string? name,
 
             string purpose,
 

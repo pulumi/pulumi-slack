@@ -42,13 +42,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := slack.GetUser(ctx, &GetUserArgs{
+//			_, err := slack.GetUser(ctx, &slack.GetUserArgs{
 //				Name: pulumi.StringRef("my-user"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = slack.GetUser(ctx, &GetUserArgs{
+//			_, err = slack.GetUser(ctx, &slack.GetUserArgs{
 //				Email: pulumi.StringRef("my-user@example.com"),
 //			}, nil)
 //			if err != nil {

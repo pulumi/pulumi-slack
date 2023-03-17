@@ -29,21 +29,18 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
  *
- * const byName = pulumi.output(slack.getUser({
+ * const byName = slack.getUser({
  *     name: "my-user",
- * }));
- * const byEmail = pulumi.output(slack.getUser({
+ * });
+ * const byEmail = slack.getUser({
  *     email: "my-user@example.com",
- * }));
+ * });
  * ```
  */
 export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promise<GetUserResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("slack:index/getUser:getUser", {
         "email": args.email,
         "name": args.name,
@@ -75,9 +72,41 @@ export interface GetUserResult {
     readonly id: string;
     readonly name?: string;
 }
-
+/**
+ * Use this data source to get information about a user for use in other
+ * resources.
+ *
+ * ## Required scopes
+ *
+ * This resource requires the following scopes:
+ *
+ * - [users:read](https://api.slack.com/scopes/users:read)
+ * - [users:read.email](https://api.slack.com/scopes/users:read.email)
+ *
+ * The Slack API methods used by the resource are:
+ *
+ * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
+ * - [users.list](https://api.slack.com/methods/users.list)
+ *
+ * If you get `missingScope` errors while using this resource check the scopes against
+ * the documentation for the methods above.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as slack from "@pulumi/slack";
+ *
+ * const byName = slack.getUser({
+ *     name: "my-user",
+ * });
+ * const byEmail = slack.getUser({
+ *     email: "my-user@example.com",
+ * });
+ * ```
+ */
 export function getUserOutput(args?: GetUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserResult> {
-    return pulumi.output(args).apply(a => getUser(a, opts))
+    return pulumi.output(args).apply((a: any) => getUser(a, opts))
 }
 
 /**
