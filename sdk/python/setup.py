@@ -38,6 +38,7 @@ def readme():
 
 
 setup(name='pulumi_slack',
+      python_requires='>=3.7',
       version=VERSION,
       description="A Pulumi package for managing Slack workspaces.",
       long_description=readme(),
