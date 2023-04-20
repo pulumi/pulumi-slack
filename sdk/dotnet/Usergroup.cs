@@ -35,6 +35,7 @@ namespace Pulumi.Slack
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Slack = Pulumi.Slack;
     /// 
@@ -63,6 +64,7 @@ namespace Pulumi.Slack
     /// 
     /// ```csharp
     /// using System.Collections.Generic;
+    /// using System.Linq;
     /// using Pulumi;
     /// using Slack = Pulumi.Slack;
     /// 
