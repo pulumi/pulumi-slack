@@ -58,6 +58,9 @@ export interface GetConversationArgs {
     channelId?: string;
     /**
      * The conversation is privileged between two or more members
+     *
+     * Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
+     * with `name`.
      */
     isPrivate?: boolean;
     /**
@@ -170,6 +173,9 @@ export interface GetConversationOutputArgs {
     channelId?: pulumi.Input<string>;
     /**
      * The conversation is privileged between two or more members
+     *
+     * Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
+     * with `name`.
      */
     isPrivate?: pulumi.Input<boolean>;
     /**

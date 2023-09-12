@@ -117,6 +117,8 @@ namespace Pulumi.Slack
 
         /// <summary>
         /// The id of the usergroup
+        /// 
+        /// The data source expects exactly one of these fields, you can't set both.
         /// </summary>
         [Input("usergroupId")]
         public string? UsergroupId { get; set; }
@@ -137,6 +139,8 @@ namespace Pulumi.Slack
 
         /// <summary>
         /// The id of the usergroup
+        /// 
+        /// The data source expects exactly one of these fields, you can't set both.
         /// </summary>
         [Input("usergroupId")]
         public Input<string>? UsergroupId { get; set; }

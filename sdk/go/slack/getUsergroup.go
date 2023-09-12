@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a usergroups for use in other
@@ -58,6 +60,7 @@ import (
 //
 // ```
 func LookupUsergroup(ctx *pulumi.Context, args *LookupUsergroupArgs, opts ...pulumi.InvokeOption) (*LookupUsergroupResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupUsergroupResult
 	err := ctx.Invoke("slack:index/getUsergroup:getUsergroup", args, &rv, opts...)
 	if err != nil {
@@ -71,6 +74,8 @@ type LookupUsergroupArgs struct {
 	// The name of the usergroup
 	Name *string `pulumi:"name"`
 	// The id of the usergroup
+	//
+	// The data source expects exactly one of these fields, you can't set both.
 	UsergroupId *string `pulumi:"usergroupId"`
 }
 
@@ -109,6 +114,8 @@ type LookupUsergroupOutputArgs struct {
 	// The name of the usergroup
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The id of the usergroup
+	//
+	// The data source expects exactly one of these fields, you can't set both.
 	UsergroupId pulumi.StringPtrInput `pulumi:"usergroupId"`
 }
 
@@ -129,6 +136,12 @@ func (o LookupUsergroupResultOutput) ToLookupUsergroupResultOutput() LookupUserg
 
 func (o LookupUsergroupResultOutput) ToLookupUsergroupResultOutputWithContext(ctx context.Context) LookupUsergroupResultOutput {
 	return o
+}
+
+func (o LookupUsergroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUsergroupResult] {
+	return pulumix.Output[LookupUsergroupResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 // The channel IDs for which the User Group uses as a default.

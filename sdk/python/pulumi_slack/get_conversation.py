@@ -224,6 +224,9 @@ def get_conversation(channel_id: Optional[str] = None,
 
     :param str channel_id: The ID of the channel
     :param bool is_private: The conversation is privileged between two or more members
+           
+           Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+           with `name`.
     :param str name: The name of the public or private channel
     """
     __args__ = dict()
@@ -234,19 +237,19 @@ def get_conversation(channel_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('slack:index/getConversation:getConversation', __args__, opts=opts, typ=GetConversationResult).value
 
     return AwaitableGetConversationResult(
-        channel_id=__ret__.channel_id,
-        created=__ret__.created,
-        creator=__ret__.creator,
-        id=__ret__.id,
-        is_archived=__ret__.is_archived,
-        is_ext_shared=__ret__.is_ext_shared,
-        is_general=__ret__.is_general,
-        is_org_shared=__ret__.is_org_shared,
-        is_private=__ret__.is_private,
-        is_shared=__ret__.is_shared,
-        name=__ret__.name,
-        purpose=__ret__.purpose,
-        topic=__ret__.topic)
+        channel_id=pulumi.get(__ret__, 'channel_id'),
+        created=pulumi.get(__ret__, 'created'),
+        creator=pulumi.get(__ret__, 'creator'),
+        id=pulumi.get(__ret__, 'id'),
+        is_archived=pulumi.get(__ret__, 'is_archived'),
+        is_ext_shared=pulumi.get(__ret__, 'is_ext_shared'),
+        is_general=pulumi.get(__ret__, 'is_general'),
+        is_org_shared=pulumi.get(__ret__, 'is_org_shared'),
+        is_private=pulumi.get(__ret__, 'is_private'),
+        is_shared=pulumi.get(__ret__, 'is_shared'),
+        name=pulumi.get(__ret__, 'name'),
+        purpose=pulumi.get(__ret__, 'purpose'),
+        topic=pulumi.get(__ret__, 'topic'))
 
 
 @_utilities.lift_output_func(get_conversation)
@@ -286,6 +289,9 @@ def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = 
 
     :param str channel_id: The ID of the channel
     :param bool is_private: The conversation is privileged between two or more members
+           
+           Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+           with `name`.
     :param str name: The name of the public or private channel
     """
     ...

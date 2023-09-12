@@ -167,14 +167,22 @@ import javax.annotation.Nullable;
 @ResourceType(type="slack:index/conversation:Conversation")
 public class Conversation extends com.pulumi.resources.CustomResource {
     /**
-     * Either of none or archive
+     * indicates whether the
+     * conversation should be archived or left behind on destroy. Valid values are
+     * `archive | none`. Note that when set to `none` the conversation will be left
+     * as it is  and as a result any subsequent runs of pulumi up with the same
+     * name  will fail.
      * 
      */
     @Export(name="actionOnDestroy", type=String.class, parameters={})
     private Output</* @Nullable */ String> actionOnDestroy;
 
     /**
-     * @return Either of none or archive
+     * @return indicates whether the
+     * conversation should be archived or left behind on destroy. Valid values are
+     * `archive | none`. Note that when set to `none` the conversation will be left
+     * as it is  and as a result any subsequent runs of pulumi up with the same
+     * name  will fail.
      * 
      */
     public Output<Optional<String>> actionOnDestroy() {

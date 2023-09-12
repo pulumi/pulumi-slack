@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a Slack conversation for use in other
@@ -60,6 +62,7 @@ import (
 //
 // ```
 func LookupConversation(ctx *pulumi.Context, args *LookupConversationArgs, opts ...pulumi.InvokeOption) (*LookupConversationResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupConversationResult
 	err := ctx.Invoke("slack:index/getConversation:getConversation", args, &rv, opts...)
 	if err != nil {
@@ -73,6 +76,9 @@ type LookupConversationArgs struct {
 	// The ID of the channel
 	ChannelId *string `pulumi:"channelId"`
 	// The conversation is privileged between two or more members
+	//
+	// Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
+	// with `name`.
 	IsPrivate *bool `pulumi:"isPrivate"`
 	// The name of the public or private channel
 	Name *string `pulumi:"name"`
@@ -128,6 +134,9 @@ type LookupConversationOutputArgs struct {
 	// The ID of the channel
 	ChannelId pulumi.StringPtrInput `pulumi:"channelId"`
 	// The conversation is privileged between two or more members
+	//
+	// Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
+	// with `name`.
 	IsPrivate pulumi.BoolPtrInput `pulumi:"isPrivate"`
 	// The name of the public or private channel
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -150,6 +159,12 @@ func (o LookupConversationResultOutput) ToLookupConversationResultOutput() Looku
 
 func (o LookupConversationResultOutput) ToLookupConversationResultOutputWithContext(ctx context.Context) LookupConversationResultOutput {
 	return o
+}
+
+func (o LookupConversationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConversationResult] {
+	return pulumix.Output[LookupConversationResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o LookupConversationResultOutput) ChannelId() pulumi.StringPtrOutput {

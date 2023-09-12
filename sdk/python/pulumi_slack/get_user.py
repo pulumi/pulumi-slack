@@ -96,6 +96,8 @@ def get_user(email: Optional[str] = None,
 
 
     :param str email: The email of the user
+           
+           The data source expects exactly one of these fields, you can't set both.
     :param str name: The name of the user
     """
     __args__ = dict()
@@ -105,9 +107,9 @@ def get_user(email: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('slack:index/getUser:getUser', __args__, opts=opts, typ=GetUserResult).value
 
     return AwaitableGetUserResult(
-        email=__ret__.email,
-        id=__ret__.id,
-        name=__ret__.name)
+        email=pulumi.get(__ret__, 'email'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'))
 
 
 @_utilities.lift_output_func(get_user)
@@ -145,6 +147,8 @@ def get_user_output(email: Optional[pulumi.Input[Optional[str]]] = None,
 
 
     :param str email: The email of the user
+           
+           The data source expects exactly one of these fields, you can't set both.
     :param str name: The name of the user
     """
     ...
