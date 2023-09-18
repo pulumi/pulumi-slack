@@ -121,6 +121,9 @@ namespace Pulumi.Slack
 
         /// <summary>
         /// The conversation is privileged between two or more members
+        /// 
+        /// Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+        /// with `name`.
         /// </summary>
         [Input("isPrivate")]
         public bool? IsPrivate { get; set; }
@@ -147,6 +150,9 @@ namespace Pulumi.Slack
 
         /// <summary>
         /// The conversation is privileged between two or more members
+        /// 
+        /// Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+        /// with `name`.
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }

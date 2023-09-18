@@ -17,19 +17,19 @@
     },
     "language": {
         "csharp": {
-            "compatibility": "tfbridge20",
-            "namespaces": null,
             "packageReferences": {
                 "Pulumi": "3.*"
-            }
+            },
+            "compatibility": "tfbridge20"
         },
         "go": {
-            "generateExtraInputTypes": true,
+            "importBasePath": "github.com/pulumi/pulumi-slack/sdk/go/slack",
             "generateResourceContainerTypes": true,
-            "importBasePath": "github.com/pulumi/pulumi-slack/sdk/go/slack"
+            "generateExtraInputTypes": true
         },
         "nodejs": {
-            "compatibility": "tfbridge20",
+            "packageDescription": "A Pulumi package for managing Slack workspaces.",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/pablovarela/terraform-provider-slack)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-slack` repo](https://github.com/pulumi/pulumi-slack/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-slack` repo](https://github.com/pablovarela/terraform-provider-slack/issues).",
             "dependencies": {
                 "@pulumi/pulumi": "^3.0.0"
             },
@@ -37,18 +37,16 @@
                 "@types/mime": "^2.0.0",
                 "@types/node": "^10.0.0"
             },
-            "disableUnionOutputTypes": true,
-            "packageDescription": "A Pulumi package for managing Slack workspaces.",
-            "packageName": "",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/pablovarela/terraform-provider-slack)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-slack` repo](https://github.com/pulumi/pulumi-slack/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-slack` repo](https://github.com/pablovarela/terraform-provider-slack/issues).",
-            "typescriptVersion": ""
+            "compatibility": "tfbridge20",
+            "disableUnionOutputTypes": true
         },
         "python": {
-            "compatibility": "tfbridge20",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/pablovarela/terraform-provider-slack)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-slack` repo](https://github.com/pulumi/pulumi-slack/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-slack` repo](https://github.com/pablovarela/terraform-provider-slack/issues).",
             "requires": {
                 "pulumi": "\u003e=3.0.0,\u003c4.0.0"
-            }
+            },
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/pablovarela/terraform-provider-slack)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi-slack` repo](https://github.com/pulumi/pulumi-slack/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-provider-slack` repo](https://github.com/pablovarela/terraform-provider-slack/issues).",
+            "compatibility": "tfbridge20",
+            "pyproject": {}
         }
     },
     "config": {
@@ -89,7 +87,7 @@
             "properties": {
                 "actionOnDestroy": {
                     "type": "string",
-                    "description": "Either of none or archive\n"
+                    "description": "indicates whether the\nconversation should be archived or left behind on destroy. Valid values are\n`archive | none`. Note that when set to `none` the conversation will be left\nas it is  and as a result any subsequent runs of pulumi up with the same\nname  will fail.\n"
                 },
                 "actionOnUpdatePermanentMembers": {
                     "type": "string",
@@ -163,7 +161,7 @@
             "inputProperties": {
                 "actionOnDestroy": {
                     "type": "string",
-                    "description": "Either of none or archive\n"
+                    "description": "indicates whether the\nconversation should be archived or left behind on destroy. Valid values are\n`archive | none`. Note that when set to `none` the conversation will be left\nas it is  and as a result any subsequent runs of pulumi up with the same\nname  will fail.\n"
                 },
                 "actionOnUpdatePermanentMembers": {
                     "type": "string",
@@ -208,7 +206,7 @@
                 "properties": {
                     "actionOnDestroy": {
                         "type": "string",
-                        "description": "Either of none or archive\n"
+                        "description": "indicates whether the\nconversation should be archived or left behind on destroy. Valid values are\n`archive | none`. Note that when set to `none` the conversation will be left\nas it is  and as a result any subsequent runs of pulumi up with the same\nname  will fail.\n"
                     },
                     "actionOnUpdatePermanentMembers": {
                         "type": "string",
@@ -379,7 +377,7 @@
                     },
                     "isPrivate": {
                         "type": "boolean",
-                        "description": "The conversation is privileged between two or more members\n"
+                        "description": "The conversation is privileged between two or more members\n\nEither `channel_id` or `name` must be provided. `is_private` only works in conjunction\nwith `name`.\n"
                     },
                     "name": {
                         "type": "string",
@@ -465,7 +463,7 @@
                 "properties": {
                     "email": {
                         "type": "string",
-                        "description": "The email of the user\n"
+                        "description": "The email of the user\n\nThe data source expects exactly one of these fields, you can't set both.\n"
                     },
                     "name": {
                         "type": "string",
@@ -505,7 +503,7 @@
                     },
                     "usergroupId": {
                         "type": "string",
-                        "description": "The id of the usergroup\n"
+                        "description": "The id of the usergroup\n\nThe data source expects exactly one of these fields, you can't set both.\n"
                     }
                 },
                 "type": "object"

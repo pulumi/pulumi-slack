@@ -123,7 +123,11 @@ namespace Pulumi.Slack
     public partial class Conversation : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Either of none or archive
+        /// indicates whether the
+        /// conversation should be archived or left behind on destroy. Valid values are
+        /// `archive | none`. Note that when set to `none` the conversation will be left
+        /// as it is  and as a result any subsequent runs of pulumi up with the same
+        /// name  will fail.
         /// </summary>
         [Output("actionOnDestroy")]
         public Output<string?> ActionOnDestroy { get; private set; } = null!;
@@ -262,7 +266,11 @@ namespace Pulumi.Slack
     public sealed class ConversationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Either of none or archive
+        /// indicates whether the
+        /// conversation should be archived or left behind on destroy. Valid values are
+        /// `archive | none`. Note that when set to `none` the conversation will be left
+        /// as it is  and as a result any subsequent runs of pulumi up with the same
+        /// name  will fail.
         /// </summary>
         [Input("actionOnDestroy")]
         public Input<string>? ActionOnDestroy { get; set; }
@@ -330,7 +338,11 @@ namespace Pulumi.Slack
     public sealed class ConversationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Either of none or archive
+        /// indicates whether the
+        /// conversation should be archived or left behind on destroy. Valid values are
+        /// `archive | none`. Note that when set to `none` the conversation will be left
+        /// as it is  and as a result any subsequent runs of pulumi up with the same
+        /// name  will fail.
         /// </summary>
         [Input("actionOnDestroy")]
         public Input<string>? ActionOnDestroy { get; set; }

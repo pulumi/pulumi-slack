@@ -18,14 +18,22 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
     public static final ConversationArgs Empty = new ConversationArgs();
 
     /**
-     * Either of none or archive
+     * indicates whether the
+     * conversation should be archived or left behind on destroy. Valid values are
+     * `archive | none`. Note that when set to `none` the conversation will be left
+     * as it is  and as a result any subsequent runs of pulumi up with the same
+     * name  will fail.
      * 
      */
     @Import(name="actionOnDestroy")
     private @Nullable Output<String> actionOnDestroy;
 
     /**
-     * @return Either of none or archive
+     * @return indicates whether the
+     * conversation should be archived or left behind on destroy. Valid values are
+     * `archive | none`. Note that when set to `none` the conversation will be left
+     * as it is  and as a result any subsequent runs of pulumi up with the same
+     * name  will fail.
      * 
      */
     public Optional<Output<String>> actionOnDestroy() {
@@ -183,7 +191,11 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionOnDestroy Either of none or archive
+         * @param actionOnDestroy indicates whether the
+         * conversation should be archived or left behind on destroy. Valid values are
+         * `archive | none`. Note that when set to `none` the conversation will be left
+         * as it is  and as a result any subsequent runs of pulumi up with the same
+         * name  will fail.
          * 
          * @return builder
          * 
@@ -194,7 +206,11 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actionOnDestroy Either of none or archive
+         * @param actionOnDestroy indicates whether the
+         * conversation should be archived or left behind on destroy. Valid values are
+         * `archive | none`. Note that when set to `none` the conversation will be left
+         * as it is  and as a result any subsequent runs of pulumi up with the same
+         * name  will fail.
          * 
          * @return builder
          * 

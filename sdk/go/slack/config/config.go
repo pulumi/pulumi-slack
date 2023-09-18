@@ -4,9 +4,12 @@
 package config
 
 import (
+	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
+
+var _ = internal.GetEnvOrDefault
 
 // The Slack token
 func GetToken(ctx *pulumi.Context) string {

@@ -26,7 +26,11 @@ class ConversationArgs:
         """
         The set of arguments for constructing a Conversation resource.
         :param pulumi.Input[bool] is_private: create a private channel instead of a public one.
-        :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_destroy: indicates whether the
+               conversation should be archived or left behind on destroy. Valid values are
+               `archive | none`. Note that when set to `none` the conversation will be left
+               as it is  and as a result any subsequent runs of pulumi up with the same
+               name  will fail.
         :param pulumi.Input[str] action_on_update_permanent_members: indicate
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
@@ -71,7 +75,11 @@ class ConversationArgs:
     @pulumi.getter(name="actionOnDestroy")
     def action_on_destroy(self) -> Optional[pulumi.Input[str]]:
         """
-        Either of none or archive
+        indicates whether the
+        conversation should be archived or left behind on destroy. Valid values are
+        `archive | none`. Note that when set to `none` the conversation will be left
+        as it is  and as a result any subsequent runs of pulumi up with the same
+        name  will fail.
         """
         return pulumi.get(self, "action_on_destroy")
 
@@ -184,7 +192,11 @@ class _ConversationState:
                  topic: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Conversation resources.
-        :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_destroy: indicates whether the
+               conversation should be archived or left behind on destroy. Valid values are
+               `archive | none`. Note that when set to `none` the conversation will be left
+               as it is  and as a result any subsequent runs of pulumi up with the same
+               name  will fail.
         :param pulumi.Input[str] action_on_update_permanent_members: indicate
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
@@ -240,7 +252,11 @@ class _ConversationState:
     @pulumi.getter(name="actionOnDestroy")
     def action_on_destroy(self) -> Optional[pulumi.Input[str]]:
         """
-        Either of none or archive
+        indicates whether the
+        conversation should be archived or left behind on destroy. Valid values are
+        `archive | none`. Note that when set to `none` the conversation will be left
+        as it is  and as a result any subsequent runs of pulumi up with the same
+        name  will fail.
         """
         return pulumi.get(self, "action_on_destroy")
 
@@ -523,7 +539,11 @@ class Conversation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_destroy: indicates whether the
+               conversation should be archived or left behind on destroy. Valid values are
+               `archive | none`. Note that when set to `none` the conversation will be left
+               as it is  and as a result any subsequent runs of pulumi up with the same
+               name  will fail.
         :param pulumi.Input[str] action_on_update_permanent_members: indicate
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
@@ -709,7 +729,11 @@ class Conversation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] action_on_destroy: Either of none or archive
+        :param pulumi.Input[str] action_on_destroy: indicates whether the
+               conversation should be archived or left behind on destroy. Valid values are
+               `archive | none`. Note that when set to `none` the conversation will be left
+               as it is  and as a result any subsequent runs of pulumi up with the same
+               name  will fail.
         :param pulumi.Input[str] action_on_update_permanent_members: indicate
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
@@ -755,7 +779,11 @@ class Conversation(pulumi.CustomResource):
     @pulumi.getter(name="actionOnDestroy")
     def action_on_destroy(self) -> pulumi.Output[Optional[str]]:
         """
-        Either of none or archive
+        indicates whether the
+        conversation should be archived or left behind on destroy. Valid values are
+        `archive | none`. Note that when set to `none` the conversation will be left
+        as it is  and as a result any subsequent runs of pulumi up with the same
+        name  will fail.
         """
         return pulumi.get(self, "action_on_destroy")
 

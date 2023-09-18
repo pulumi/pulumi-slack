@@ -144,6 +144,8 @@ def get_usergroup(name: Optional[str] = None,
 
     :param str name: The name of the usergroup
     :param str usergroup_id: The id of the usergroup
+           
+           The data source expects exactly one of these fields, you can't set both.
     """
     __args__ = dict()
     __args__['name'] = name
@@ -152,13 +154,13 @@ def get_usergroup(name: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('slack:index/getUsergroup:getUsergroup', __args__, opts=opts, typ=GetUsergroupResult).value
 
     return AwaitableGetUsergroupResult(
-        channels=__ret__.channels,
-        description=__ret__.description,
-        handle=__ret__.handle,
-        id=__ret__.id,
-        name=__ret__.name,
-        usergroup_id=__ret__.usergroup_id,
-        users=__ret__.users)
+        channels=pulumi.get(__ret__, 'channels'),
+        description=pulumi.get(__ret__, 'description'),
+        handle=pulumi.get(__ret__, 'handle'),
+        id=pulumi.get(__ret__, 'id'),
+        name=pulumi.get(__ret__, 'name'),
+        usergroup_id=pulumi.get(__ret__, 'usergroup_id'),
+        users=pulumi.get(__ret__, 'users'))
 
 
 @_utilities.lift_output_func(get_usergroup)
@@ -195,5 +197,7 @@ def get_usergroup_output(name: Optional[pulumi.Input[Optional[str]]] = None,
 
     :param str name: The name of the usergroup
     :param str usergroup_id: The id of the usergroup
+           
+           The data source expects exactly one of these fields, you can't set both.
     """
     ...

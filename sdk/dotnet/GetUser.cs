@@ -115,6 +115,8 @@ namespace Pulumi.Slack
     {
         /// <summary>
         /// The email of the user
+        /// 
+        /// The data source expects exactly one of these fields, you can't set both.
         /// </summary>
         [Input("email")]
         public string? Email { get; set; }
@@ -135,6 +137,8 @@ namespace Pulumi.Slack
     {
         /// <summary>
         /// The email of the user
+        /// 
+        /// The data source expects exactly one of these fields, you can't set both.
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }

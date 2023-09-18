@@ -2,10 +2,23 @@
     "auto-aliasing": {
         "resources": {
             "slack_conversation": {
-                "current": "slack:index/conversation:Conversation"
+                "current": "slack:index/conversation:Conversation",
+                "fields": {
+                    "permanent_members": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "slack_usergroup": {
-                "current": "slack:index/usergroup:Usergroup"
+                "current": "slack:index/usergroup:Usergroup",
+                "fields": {
+                    "channels": {
+                        "maxItemsOne": false
+                    },
+                    "users": {
+                        "maxItemsOne": false
+                    }
+                }
             }
         },
         "datasources": {
@@ -16,7 +29,15 @@
                 "current": "slack:index/getUser:getUser"
             },
             "slack_usergroup": {
-                "current": "slack:index/getUsergroup:getUsergroup"
+                "current": "slack:index/getUsergroup:getUsergroup",
+                "fields": {
+                    "channels": {
+                        "maxItemsOne": false
+                    },
+                    "users": {
+                        "maxItemsOne": false
+                    }
+                }
             }
         }
     },

@@ -32,12 +32,16 @@ public final class GetUsergroupPlainArgs extends com.pulumi.resources.InvokeArgs
     /**
      * The id of the usergroup
      * 
+     * The data source expects exactly one of these fields, you can&#39;t set both.
+     * 
      */
     @Import(name="usergroupId")
     private @Nullable String usergroupId;
 
     /**
      * @return The id of the usergroup
+     * 
+     * The data source expects exactly one of these fields, you can&#39;t set both.
      * 
      */
     public Optional<String> usergroupId() {
@@ -82,6 +86,8 @@ public final class GetUsergroupPlainArgs extends com.pulumi.resources.InvokeArgs
 
         /**
          * @param usergroupId The id of the usergroup
+         * 
+         * The data source expects exactly one of these fields, you can&#39;t set both.
          * 
          * @return builder
          * 

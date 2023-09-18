@@ -17,12 +17,16 @@ public final class GetUserPlainArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * The email of the user
      * 
+     * The data source expects exactly one of these fields, you can&#39;t set both.
+     * 
      */
     @Import(name="email")
     private @Nullable String email;
 
     /**
      * @return The email of the user
+     * 
+     * The data source expects exactly one of these fields, you can&#39;t set both.
      * 
      */
     public Optional<String> email() {
@@ -71,6 +75,8 @@ public final class GetUserPlainArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param email The email of the user
+         * 
+         * The data source expects exactly one of these fields, you can&#39;t set both.
          * 
          * @return builder
          * 

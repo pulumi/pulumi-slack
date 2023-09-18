@@ -122,7 +122,11 @@ export class Conversation extends pulumi.CustomResource {
     }
 
     /**
-     * Either of none or archive
+     * indicates whether the
+     * conversation should be archived or left behind on destroy. Valid values are
+     * `archive | none`. Note that when set to `none` the conversation will be left
+     * as it is  and as a result any subsequent runs of pulumi up with the same
+     * name  will fail.
      */
     public readonly actionOnDestroy!: pulumi.Output<string | undefined>;
     /**
@@ -244,7 +248,11 @@ export class Conversation extends pulumi.CustomResource {
  */
 export interface ConversationState {
     /**
-     * Either of none or archive
+     * indicates whether the
+     * conversation should be archived or left behind on destroy. Valid values are
+     * `archive | none`. Note that when set to `none` the conversation will be left
+     * as it is  and as a result any subsequent runs of pulumi up with the same
+     * name  will fail.
      */
     actionOnDestroy?: pulumi.Input<string>;
     /**
@@ -313,7 +321,11 @@ export interface ConversationState {
  */
 export interface ConversationArgs {
     /**
-     * Either of none or archive
+     * indicates whether the
+     * conversation should be archived or left behind on destroy. Valid values are
+     * `archive | none`. Note that when set to `none` the conversation will be left
+     * as it is  and as a result any subsequent runs of pulumi up with the same
+     * name  will fail.
      */
     actionOnDestroy?: pulumi.Input<string>;
     /**

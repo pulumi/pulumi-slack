@@ -7,7 +7,9 @@ import (
 	"context"
 	"reflect"
 
+	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a user for use in other
@@ -60,6 +62,7 @@ import (
 //
 // ```
 func GetUser(ctx *pulumi.Context, args *GetUserArgs, opts ...pulumi.InvokeOption) (*GetUserResult, error) {
+	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserResult
 	err := ctx.Invoke("slack:index/getUser:getUser", args, &rv, opts...)
 	if err != nil {
@@ -71,6 +74,8 @@ func GetUser(ctx *pulumi.Context, args *GetUserArgs, opts ...pulumi.InvokeOption
 // A collection of arguments for invoking getUser.
 type GetUserArgs struct {
 	// The email of the user
+	//
+	// The data source expects exactly one of these fields, you can't set both.
 	Email *string `pulumi:"email"`
 	// The name of the user
 	Name *string `pulumi:"name"`
@@ -100,6 +105,8 @@ func GetUserOutput(ctx *pulumi.Context, args GetUserOutputArgs, opts ...pulumi.I
 // A collection of arguments for invoking getUser.
 type GetUserOutputArgs struct {
 	// The email of the user
+	//
+	// The data source expects exactly one of these fields, you can't set both.
 	Email pulumi.StringPtrInput `pulumi:"email"`
 	// The name of the user
 	Name pulumi.StringPtrInput `pulumi:"name"`
@@ -122,6 +129,12 @@ func (o GetUserResultOutput) ToGetUserResultOutput() GetUserResultOutput {
 
 func (o GetUserResultOutput) ToGetUserResultOutputWithContext(ctx context.Context) GetUserResultOutput {
 	return o
+}
+
+func (o GetUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserResult] {
+	return pulumix.Output[GetUserResult]{
+		OutputState: o.OutputState,
+	}
 }
 
 func (o GetUserResultOutput) Email() pulumi.StringPtrOutput {

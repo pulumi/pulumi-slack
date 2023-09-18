@@ -53,6 +53,8 @@ export function getUser(args?: GetUserArgs, opts?: pulumi.InvokeOptions): Promis
 export interface GetUserArgs {
     /**
      * The email of the user
+     *
+     * The data source expects exactly one of these fields, you can't set both.
      */
     email?: string;
     /**
@@ -115,6 +117,8 @@ export function getUserOutput(args?: GetUserOutputArgs, opts?: pulumi.InvokeOpti
 export interface GetUserOutputArgs {
     /**
      * The email of the user
+     *
+     * The data source expects exactly one of these fields, you can't set both.
      */
     email?: pulumi.Input<string>;
     /**
