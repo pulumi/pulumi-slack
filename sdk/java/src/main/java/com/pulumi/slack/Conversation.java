@@ -174,7 +174,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * name  will fail.
      * 
      */
-    @Export(name="actionOnDestroy", type=String.class, parameters={})
+    @Export(name="actionOnDestroy", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionOnDestroy;
 
     /**
@@ -195,7 +195,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * a side effect on public channels where user that joined the channel are kicked.
      * 
      */
-    @Export(name="actionOnUpdatePermanentMembers", type=String.class, parameters={})
+    @Export(name="actionOnUpdatePermanentMembers", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> actionOnUpdatePermanentMembers;
 
     /**
@@ -208,7 +208,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> actionOnUpdatePermanentMembers() {
         return Codegen.optional(this.actionOnUpdatePermanentMembers);
     }
-    @Export(name="adoptExistingChannel", type=Boolean.class, parameters={})
+    @Export(name="adoptExistingChannel", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> adoptExistingChannel;
 
     public Output<Optional<Boolean>> adoptExistingChannel() {
@@ -218,7 +218,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * is a unix timestamp.
      * 
      */
-    @Export(name="created", type=Integer.class, parameters={})
+    @Export(name="created", refs={Integer.class}, tree="[0]")
     private Output<Integer> created;
 
     /**
@@ -232,7 +232,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * is the user ID of the member that created this channel.
      * 
      */
-    @Export(name="creator", type=String.class, parameters={})
+    @Export(name="creator", refs={String.class}, tree="[0]")
     private Output<String> creator;
 
     /**
@@ -246,7 +246,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * indicates a conversation is archived. Frozen in time.
      * 
      */
-    @Export(name="isArchived", type=Boolean.class, parameters={})
+    @Export(name="isArchived", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> isArchived;
 
     /**
@@ -261,7 +261,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * with a remote organization.
      * 
      */
-    @Export(name="isExtShared", type=Boolean.class, parameters={})
+    @Export(name="isExtShared", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isExtShared;
 
     /**
@@ -277,7 +277,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * all regular team members.
      * 
      */
-    @Export(name="isGeneral", type=Boolean.class, parameters={})
+    @Export(name="isGeneral", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isGeneral;
 
     /**
@@ -293,7 +293,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * Grid workspaces within the same organization.
      * 
      */
-    @Export(name="isOrgShared", type=Boolean.class, parameters={})
+    @Export(name="isOrgShared", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isOrgShared;
 
     /**
@@ -308,7 +308,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * create a private channel instead of a public one.
      * 
      */
-    @Export(name="isPrivate", type=Boolean.class, parameters={})
+    @Export(name="isPrivate", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isPrivate;
 
     /**
@@ -322,7 +322,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * means the conversation is in some way shared between multiple workspaces.
      * 
      */
-    @Export(name="isShared", type=Boolean.class, parameters={})
+    @Export(name="isShared", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isShared;
 
     /**
@@ -336,7 +336,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * name of the public or private channel.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -350,7 +350,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * user IDs to add to the channel.
      * 
      */
-    @Export(name="permanentMembers", type=List.class, parameters={String.class})
+    @Export(name="permanentMembers", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> permanentMembers;
 
     /**
@@ -364,7 +364,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * purpose of the channel.
      * 
      */
-    @Export(name="purpose", type=String.class, parameters={})
+    @Export(name="purpose", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> purpose;
 
     /**
@@ -378,7 +378,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
      * topic for the channel.
      * 
      */
-    @Export(name="topic", type=String.class, parameters={})
+    @Export(name="topic", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> topic;
 
     /**

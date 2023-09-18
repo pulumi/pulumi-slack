@@ -127,7 +127,7 @@ public class Usergroup extends com.pulumi.resources.CustomResource {
      * channel IDs for which the User Group uses as a default.
      * 
      */
-    @Export(name="channels", type=List.class, parameters={String.class})
+    @Export(name="channels", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> channels;
 
     /**
@@ -141,7 +141,7 @@ public class Usergroup extends com.pulumi.resources.CustomResource {
      * a short description of the User Group.
      * 
      */
-    @Export(name="description", type=String.class, parameters={})
+    @Export(name="description", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> description;
 
     /**
@@ -156,7 +156,7 @@ public class Usergroup extends com.pulumi.resources.CustomResource {
      * and User Groups.
      * 
      */
-    @Export(name="handle", type=String.class, parameters={})
+    @Export(name="handle", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> handle;
 
     /**
@@ -171,7 +171,7 @@ public class Usergroup extends com.pulumi.resources.CustomResource {
      * a name for the User Group. Must be unique among User Groups.
      * 
      */
-    @Export(name="name", type=String.class, parameters={})
+    @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
@@ -186,7 +186,7 @@ public class Usergroup extends com.pulumi.resources.CustomResource {
      * User Group.
      * 
      */
-    @Export(name="users", type=List.class, parameters={String.class})
+    @Export(name="users", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> users;
 
     /**

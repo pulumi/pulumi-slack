@@ -25,7 +25,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
      * The Slack token
      * 
      */
-    @Export(name="token", type=String.class, parameters={})
+    @Export(name="token", refs={String.class}, tree="[0]")
     private Output<String> token;
 
     /**
