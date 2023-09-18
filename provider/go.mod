@@ -10,7 +10,6 @@ replace (
 require (
 	github.com/pablovarela/terraform-provider-slack v1.2.2
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.59.0
-	github.com/pulumi/pulumi/sdk/v3 v3.81.0
 )
 
 require (
@@ -196,6 +195,7 @@ require (
 	github.com/pulumi/pulumi-terraform-bridge/x/muxer v0.0.4 // indirect
 	github.com/pulumi/pulumi-yaml v1.2.2 // indirect
 	github.com/pulumi/pulumi/pkg/v3 v3.81.0 // indirect
+	github.com/pulumi/pulumi/sdk/v3 v3.81.0 // indirect
 	github.com/pulumi/schema-tools v0.1.2 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.2 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
