@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['ConversationArgs', 'Conversation']
@@ -41,23 +41,48 @@ class ConversationArgs:
         :param pulumi.Input[str] purpose: purpose of the channel.
         :param pulumi.Input[str] topic: topic for the channel.
         """
-        pulumi.set(__self__, "is_private", is_private)
+        ConversationArgs._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            is_private=is_private,
+            action_on_destroy=action_on_destroy,
+            action_on_update_permanent_members=action_on_update_permanent_members,
+            adopt_existing_channel=adopt_existing_channel,
+            is_archived=is_archived,
+            name=name,
+            permanent_members=permanent_members,
+            purpose=purpose,
+            topic=topic,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             is_private: pulumi.Input[bool],
+             action_on_destroy: Optional[pulumi.Input[str]] = None,
+             action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
+             adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
+             is_archived: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             purpose: Optional[pulumi.Input[str]] = None,
+             topic: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
+        _setter("is_private", is_private)
         if action_on_destroy is not None:
-            pulumi.set(__self__, "action_on_destroy", action_on_destroy)
+            _setter("action_on_destroy", action_on_destroy)
         if action_on_update_permanent_members is not None:
-            pulumi.set(__self__, "action_on_update_permanent_members", action_on_update_permanent_members)
+            _setter("action_on_update_permanent_members", action_on_update_permanent_members)
         if adopt_existing_channel is not None:
-            pulumi.set(__self__, "adopt_existing_channel", adopt_existing_channel)
+            _setter("adopt_existing_channel", adopt_existing_channel)
         if is_archived is not None:
-            pulumi.set(__self__, "is_archived", is_archived)
+            _setter("is_archived", is_archived)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if permanent_members is not None:
-            pulumi.set(__self__, "permanent_members", permanent_members)
+            _setter("permanent_members", permanent_members)
         if purpose is not None:
-            pulumi.set(__self__, "purpose", purpose)
+            _setter("purpose", purpose)
         if topic is not None:
-            pulumi.set(__self__, "topic", topic)
+            _setter("topic", topic)
 
     @property
     @pulumi.getter(name="isPrivate")
@@ -217,36 +242,73 @@ class _ConversationState:
         :param pulumi.Input[str] purpose: purpose of the channel.
         :param pulumi.Input[str] topic: topic for the channel.
         """
+        _ConversationState._configure(
+            lambda key, value: pulumi.set(__self__, key, value),
+            action_on_destroy=action_on_destroy,
+            action_on_update_permanent_members=action_on_update_permanent_members,
+            adopt_existing_channel=adopt_existing_channel,
+            created=created,
+            creator=creator,
+            is_archived=is_archived,
+            is_ext_shared=is_ext_shared,
+            is_general=is_general,
+            is_org_shared=is_org_shared,
+            is_private=is_private,
+            is_shared=is_shared,
+            name=name,
+            permanent_members=permanent_members,
+            purpose=purpose,
+            topic=topic,
+        )
+    @staticmethod
+    def _configure(
+             _setter: Callable[[Any, Any], None],
+             action_on_destroy: Optional[pulumi.Input[str]] = None,
+             action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
+             adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
+             created: Optional[pulumi.Input[int]] = None,
+             creator: Optional[pulumi.Input[str]] = None,
+             is_archived: Optional[pulumi.Input[bool]] = None,
+             is_ext_shared: Optional[pulumi.Input[bool]] = None,
+             is_general: Optional[pulumi.Input[bool]] = None,
+             is_org_shared: Optional[pulumi.Input[bool]] = None,
+             is_private: Optional[pulumi.Input[bool]] = None,
+             is_shared: Optional[pulumi.Input[bool]] = None,
+             name: Optional[pulumi.Input[str]] = None,
+             permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+             purpose: Optional[pulumi.Input[str]] = None,
+             topic: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions]=None):
         if action_on_destroy is not None:
-            pulumi.set(__self__, "action_on_destroy", action_on_destroy)
+            _setter("action_on_destroy", action_on_destroy)
         if action_on_update_permanent_members is not None:
-            pulumi.set(__self__, "action_on_update_permanent_members", action_on_update_permanent_members)
+            _setter("action_on_update_permanent_members", action_on_update_permanent_members)
         if adopt_existing_channel is not None:
-            pulumi.set(__self__, "adopt_existing_channel", adopt_existing_channel)
+            _setter("adopt_existing_channel", adopt_existing_channel)
         if created is not None:
-            pulumi.set(__self__, "created", created)
+            _setter("created", created)
         if creator is not None:
-            pulumi.set(__self__, "creator", creator)
+            _setter("creator", creator)
         if is_archived is not None:
-            pulumi.set(__self__, "is_archived", is_archived)
+            _setter("is_archived", is_archived)
         if is_ext_shared is not None:
-            pulumi.set(__self__, "is_ext_shared", is_ext_shared)
+            _setter("is_ext_shared", is_ext_shared)
         if is_general is not None:
-            pulumi.set(__self__, "is_general", is_general)
+            _setter("is_general", is_general)
         if is_org_shared is not None:
-            pulumi.set(__self__, "is_org_shared", is_org_shared)
+            _setter("is_org_shared", is_org_shared)
         if is_private is not None:
-            pulumi.set(__self__, "is_private", is_private)
+            _setter("is_private", is_private)
         if is_shared is not None:
-            pulumi.set(__self__, "is_shared", is_shared)
+            _setter("is_shared", is_shared)
         if name is not None:
-            pulumi.set(__self__, "name", name)
+            _setter("name", name)
         if permanent_members is not None:
-            pulumi.set(__self__, "permanent_members", permanent_members)
+            _setter("permanent_members", permanent_members)
         if purpose is not None:
-            pulumi.set(__self__, "purpose", purpose)
+            _setter("purpose", purpose)
         if topic is not None:
-            pulumi.set(__self__, "topic", topic)
+            _setter("topic", topic)
 
     @property
     @pulumi.getter(name="actionOnDestroy")
@@ -657,6 +719,10 @@ class Conversation(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
+            kwargs = kwargs or {}
+            def _setter(key, value):
+                kwargs[key] = value
+            ConversationArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
