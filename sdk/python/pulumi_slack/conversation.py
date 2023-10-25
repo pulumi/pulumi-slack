@@ -56,7 +56,7 @@ class ConversationArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             is_private: pulumi.Input[bool],
+             is_private: Optional[pulumi.Input[bool]] = None,
              action_on_destroy: Optional[pulumi.Input[str]] = None,
              action_on_update_permanent_members: Optional[pulumi.Input[str]] = None,
              adopt_existing_channel: Optional[pulumi.Input[bool]] = None,
@@ -65,7 +65,23 @@ class ConversationArgs:
              permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              purpose: Optional[pulumi.Input[str]] = None,
              topic: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if is_private is None and 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if is_private is None:
+            raise TypeError("Missing 'is_private' argument")
+        if action_on_destroy is None and 'actionOnDestroy' in kwargs:
+            action_on_destroy = kwargs['actionOnDestroy']
+        if action_on_update_permanent_members is None and 'actionOnUpdatePermanentMembers' in kwargs:
+            action_on_update_permanent_members = kwargs['actionOnUpdatePermanentMembers']
+        if adopt_existing_channel is None and 'adoptExistingChannel' in kwargs:
+            adopt_existing_channel = kwargs['adoptExistingChannel']
+        if is_archived is None and 'isArchived' in kwargs:
+            is_archived = kwargs['isArchived']
+        if permanent_members is None and 'permanentMembers' in kwargs:
+            permanent_members = kwargs['permanentMembers']
+
         _setter("is_private", is_private)
         if action_on_destroy is not None:
             _setter("action_on_destroy", action_on_destroy)
@@ -278,7 +294,29 @@ class _ConversationState:
              permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
              purpose: Optional[pulumi.Input[str]] = None,
              topic: Optional[pulumi.Input[str]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if action_on_destroy is None and 'actionOnDestroy' in kwargs:
+            action_on_destroy = kwargs['actionOnDestroy']
+        if action_on_update_permanent_members is None and 'actionOnUpdatePermanentMembers' in kwargs:
+            action_on_update_permanent_members = kwargs['actionOnUpdatePermanentMembers']
+        if adopt_existing_channel is None and 'adoptExistingChannel' in kwargs:
+            adopt_existing_channel = kwargs['adoptExistingChannel']
+        if is_archived is None and 'isArchived' in kwargs:
+            is_archived = kwargs['isArchived']
+        if is_ext_shared is None and 'isExtShared' in kwargs:
+            is_ext_shared = kwargs['isExtShared']
+        if is_general is None and 'isGeneral' in kwargs:
+            is_general = kwargs['isGeneral']
+        if is_org_shared is None and 'isOrgShared' in kwargs:
+            is_org_shared = kwargs['isOrgShared']
+        if is_private is None and 'isPrivate' in kwargs:
+            is_private = kwargs['isPrivate']
+        if is_shared is None and 'isShared' in kwargs:
+            is_shared = kwargs['isShared']
+        if permanent_members is None and 'permanentMembers' in kwargs:
+            permanent_members = kwargs['permanentMembers']
+
         if action_on_destroy is not None:
             _setter("action_on_destroy", action_on_destroy)
         if action_on_update_permanent_members is not None:

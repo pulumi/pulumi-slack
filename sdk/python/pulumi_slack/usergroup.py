@@ -45,7 +45,9 @@ class UsergroupArgs:
              handle: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if channels is not None:
             _setter("channels", channels)
         if description is not None:
@@ -154,7 +156,9 @@ class _UsergroupState:
              handle: Optional[pulumi.Input[str]] = None,
              name: Optional[pulumi.Input[str]] = None,
              users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions]=None):
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+
         if channels is not None:
             _setter("channels", channels)
         if description is not None:
