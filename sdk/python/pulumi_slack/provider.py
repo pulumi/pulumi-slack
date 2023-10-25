@@ -26,8 +26,12 @@ class ProviderArgs:
     @staticmethod
     def _configure(
              _setter: Callable[[Any, Any], None],
-             token: pulumi.Input[str],
-             opts: Optional[pulumi.ResourceOptions]=None):
+             token: Optional[pulumi.Input[str]] = None,
+             opts: Optional[pulumi.ResourceOptions] = None,
+             **kwargs):
+        if token is None:
+            raise TypeError("Missing 'token' argument")
+
         _setter("token", token)
 
     @property
