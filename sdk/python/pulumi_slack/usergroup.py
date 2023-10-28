@@ -6,7 +6,7 @@ import copy
 import warnings
 import pulumi
 import pulumi.runtime
-from typing import Any, Callable, Mapping, Optional, Sequence, Union, overload
+from typing import Any, Mapping, Optional, Sequence, Union, overload
 from . import _utilities
 
 __all__ = ['UsergroupArgs', 'Usergroup']
@@ -29,35 +29,16 @@ class UsergroupArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] users: user IDs that represent the entire list of users for the
                User Group.
         """
-        UsergroupArgs._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            channels=channels,
-            description=description,
-            handle=handle,
-            name=name,
-            users=users,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             channels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             handle: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if channels is not None:
-            _setter("channels", channels)
+            pulumi.set(__self__, "channels", channels)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if handle is not None:
-            _setter("handle", handle)
+            pulumi.set(__self__, "handle", handle)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if users is not None:
-            _setter("users", users)
+            pulumi.set(__self__, "users", users)
 
     @property
     @pulumi.getter
@@ -140,35 +121,16 @@ class _UsergroupState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] users: user IDs that represent the entire list of users for the
                User Group.
         """
-        _UsergroupState._configure(
-            lambda key, value: pulumi.set(__self__, key, value),
-            channels=channels,
-            description=description,
-            handle=handle,
-            name=name,
-            users=users,
-        )
-    @staticmethod
-    def _configure(
-             _setter: Callable[[Any, Any], None],
-             channels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             description: Optional[pulumi.Input[str]] = None,
-             handle: Optional[pulumi.Input[str]] = None,
-             name: Optional[pulumi.Input[str]] = None,
-             users: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-             opts: Optional[pulumi.ResourceOptions] = None,
-             **kwargs):
-
         if channels is not None:
-            _setter("channels", channels)
+            pulumi.set(__self__, "channels", channels)
         if description is not None:
-            _setter("description", description)
+            pulumi.set(__self__, "description", description)
         if handle is not None:
-            _setter("handle", handle)
+            pulumi.set(__self__, "handle", handle)
         if name is not None:
-            _setter("name", name)
+            pulumi.set(__self__, "name", name)
         if users is not None:
-            _setter("users", users)
+            pulumi.set(__self__, "users", users)
 
     @property
     @pulumi.getter
@@ -392,10 +354,6 @@ class Usergroup(pulumi.CustomResource):
         if resource_args is not None:
             __self__._internal_init(resource_name, opts, **resource_args.__dict__)
         else:
-            kwargs = kwargs or {}
-            def _setter(key, value):
-                kwargs[key] = value
-            UsergroupArgs._configure(_setter, **kwargs)
             __self__._internal_init(resource_name, *args, **kwargs)
 
     def _internal_init(__self__,
