@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a Slack conversation for use in other
@@ -159,12 +158,6 @@ func (o LookupConversationResultOutput) ToLookupConversationResultOutput() Looku
 
 func (o LookupConversationResultOutput) ToLookupConversationResultOutputWithContext(ctx context.Context) LookupConversationResultOutput {
 	return o
-}
-
-func (o LookupConversationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConversationResult] {
-	return pulumix.Output[LookupConversationResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o LookupConversationResultOutput) ChannelId() pulumi.StringPtrOutput {
