@@ -9,7 +9,7 @@ replace (
 
 require (
 	github.com/pablovarela/terraform-provider-slack v1.2.2
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.63.2
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.63.3-0.20231107155650-cd5f02b099d0
 )
 
 require (
