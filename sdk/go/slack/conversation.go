@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Manages a Slack channel
@@ -389,12 +388,6 @@ func (i *Conversation) ToConversationOutputWithContext(ctx context.Context) Conv
 	return pulumi.ToOutputWithContext(ctx, i).(ConversationOutput)
 }
 
-func (i *Conversation) ToOutput(ctx context.Context) pulumix.Output[*Conversation] {
-	return pulumix.Output[*Conversation]{
-		OutputState: i.ToConversationOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ConversationArrayInput is an input type that accepts ConversationArray and ConversationArrayOutput values.
 // You can construct a concrete instance of `ConversationArrayInput` via:
 //
@@ -418,12 +411,6 @@ func (i ConversationArray) ToConversationArrayOutput() ConversationArrayOutput {
 
 func (i ConversationArray) ToConversationArrayOutputWithContext(ctx context.Context) ConversationArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ConversationArrayOutput)
-}
-
-func (i ConversationArray) ToOutput(ctx context.Context) pulumix.Output[[]*Conversation] {
-	return pulumix.Output[[]*Conversation]{
-		OutputState: i.ToConversationArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ConversationMapInput is an input type that accepts ConversationMap and ConversationMapOutput values.
@@ -451,12 +438,6 @@ func (i ConversationMap) ToConversationMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(ConversationMapOutput)
 }
 
-func (i ConversationMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Conversation] {
-	return pulumix.Output[map[string]*Conversation]{
-		OutputState: i.ToConversationMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ConversationOutput struct{ *pulumi.OutputState }
 
 func (ConversationOutput) ElementType() reflect.Type {
@@ -469,12 +450,6 @@ func (o ConversationOutput) ToConversationOutput() ConversationOutput {
 
 func (o ConversationOutput) ToConversationOutputWithContext(ctx context.Context) ConversationOutput {
 	return o
-}
-
-func (o ConversationOutput) ToOutput(ctx context.Context) pulumix.Output[*Conversation] {
-	return pulumix.Output[*Conversation]{
-		OutputState: o.OutputState,
-	}
 }
 
 // indicates whether the
@@ -575,12 +550,6 @@ func (o ConversationArrayOutput) ToConversationArrayOutputWithContext(ctx contex
 	return o
 }
 
-func (o ConversationArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Conversation] {
-	return pulumix.Output[[]*Conversation]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ConversationArrayOutput) Index(i pulumi.IntInput) ConversationOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Conversation {
 		return vs[0].([]*Conversation)[vs[1].(int)]
@@ -599,12 +568,6 @@ func (o ConversationMapOutput) ToConversationMapOutput() ConversationMapOutput {
 
 func (o ConversationMapOutput) ToConversationMapOutputWithContext(ctx context.Context) ConversationMapOutput {
 	return o
-}
-
-func (o ConversationMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Conversation] {
-	return pulumix.Output[map[string]*Conversation]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ConversationMapOutput) MapIndex(k pulumi.StringInput) ConversationOutput {
