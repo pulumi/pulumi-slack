@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Manages a Slack User Group.
@@ -249,12 +248,6 @@ func (i *Usergroup) ToUsergroupOutputWithContext(ctx context.Context) UsergroupO
 	return pulumi.ToOutputWithContext(ctx, i).(UsergroupOutput)
 }
 
-func (i *Usergroup) ToOutput(ctx context.Context) pulumix.Output[*Usergroup] {
-	return pulumix.Output[*Usergroup]{
-		OutputState: i.ToUsergroupOutputWithContext(ctx).OutputState,
-	}
-}
-
 // UsergroupArrayInput is an input type that accepts UsergroupArray and UsergroupArrayOutput values.
 // You can construct a concrete instance of `UsergroupArrayInput` via:
 //
@@ -278,12 +271,6 @@ func (i UsergroupArray) ToUsergroupArrayOutput() UsergroupArrayOutput {
 
 func (i UsergroupArray) ToUsergroupArrayOutputWithContext(ctx context.Context) UsergroupArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(UsergroupArrayOutput)
-}
-
-func (i UsergroupArray) ToOutput(ctx context.Context) pulumix.Output[[]*Usergroup] {
-	return pulumix.Output[[]*Usergroup]{
-		OutputState: i.ToUsergroupArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // UsergroupMapInput is an input type that accepts UsergroupMap and UsergroupMapOutput values.
@@ -311,12 +298,6 @@ func (i UsergroupMap) ToUsergroupMapOutputWithContext(ctx context.Context) Userg
 	return pulumi.ToOutputWithContext(ctx, i).(UsergroupMapOutput)
 }
 
-func (i UsergroupMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Usergroup] {
-	return pulumix.Output[map[string]*Usergroup]{
-		OutputState: i.ToUsergroupMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type UsergroupOutput struct{ *pulumi.OutputState }
 
 func (UsergroupOutput) ElementType() reflect.Type {
@@ -329,12 +310,6 @@ func (o UsergroupOutput) ToUsergroupOutput() UsergroupOutput {
 
 func (o UsergroupOutput) ToUsergroupOutputWithContext(ctx context.Context) UsergroupOutput {
 	return o
-}
-
-func (o UsergroupOutput) ToOutput(ctx context.Context) pulumix.Output[*Usergroup] {
-	return pulumix.Output[*Usergroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 // channel IDs for which the User Group uses as a default.
@@ -378,12 +353,6 @@ func (o UsergroupArrayOutput) ToUsergroupArrayOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o UsergroupArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Usergroup] {
-	return pulumix.Output[[]*Usergroup]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o UsergroupArrayOutput) Index(i pulumi.IntInput) UsergroupOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Usergroup {
 		return vs[0].([]*Usergroup)[vs[1].(int)]
@@ -402,12 +371,6 @@ func (o UsergroupMapOutput) ToUsergroupMapOutput() UsergroupMapOutput {
 
 func (o UsergroupMapOutput) ToUsergroupMapOutputWithContext(ctx context.Context) UsergroupMapOutput {
 	return o
-}
-
-func (o UsergroupMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Usergroup] {
-	return pulumix.Output[map[string]*Usergroup]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o UsergroupMapOutput) MapIndex(k pulumi.StringInput) UsergroupOutput {
