@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a usergroups for use in other
@@ -136,12 +135,6 @@ func (o LookupUsergroupResultOutput) ToLookupUsergroupResultOutput() LookupUserg
 
 func (o LookupUsergroupResultOutput) ToLookupUsergroupResultOutputWithContext(ctx context.Context) LookupUsergroupResultOutput {
 	return o
-}
-
-func (o LookupUsergroupResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupUsergroupResult] {
-	return pulumix.Output[LookupUsergroupResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The channel IDs for which the User Group uses as a default.

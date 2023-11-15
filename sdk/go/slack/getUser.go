@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-slack/sdk/go/slack/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // Use this data source to get information about a user for use in other
@@ -129,12 +128,6 @@ func (o GetUserResultOutput) ToGetUserResultOutput() GetUserResultOutput {
 
 func (o GetUserResultOutput) ToGetUserResultOutputWithContext(ctx context.Context) GetUserResultOutput {
 	return o
-}
-
-func (o GetUserResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetUserResult] {
-	return pulumix.Output[GetUserResult]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetUserResultOutput) Email() pulumi.StringPtrOutput {
