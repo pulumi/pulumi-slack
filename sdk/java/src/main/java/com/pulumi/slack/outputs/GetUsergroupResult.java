@@ -155,15 +155,15 @@ public final class GetUsergroupResult {
             return users(List.of(users));
         }
         public GetUsergroupResult build() {
-            final var o = new GetUsergroupResult();
-            o.channels = channels;
-            o.description = description;
-            o.handle = handle;
-            o.id = id;
-            o.name = name;
-            o.usergroupId = usergroupId;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetUsergroupResult();
+            _resultValue.channels = channels;
+            _resultValue.description = description;
+            _resultValue.handle = handle;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.usergroupId = usergroupId;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }
