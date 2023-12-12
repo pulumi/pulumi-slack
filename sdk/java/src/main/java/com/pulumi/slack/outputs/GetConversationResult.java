@@ -276,21 +276,21 @@ public final class GetConversationResult {
             return this;
         }
         public GetConversationResult build() {
-            final var o = new GetConversationResult();
-            o.channelId = channelId;
-            o.created = created;
-            o.creator = creator;
-            o.id = id;
-            o.isArchived = isArchived;
-            o.isExtShared = isExtShared;
-            o.isGeneral = isGeneral;
-            o.isOrgShared = isOrgShared;
-            o.isPrivate = isPrivate;
-            o.isShared = isShared;
-            o.name = name;
-            o.purpose = purpose;
-            o.topic = topic;
-            return o;
+            final var _resultValue = new GetConversationResult();
+            _resultValue.channelId = channelId;
+            _resultValue.created = created;
+            _resultValue.creator = creator;
+            _resultValue.id = id;
+            _resultValue.isArchived = isArchived;
+            _resultValue.isExtShared = isExtShared;
+            _resultValue.isGeneral = isGeneral;
+            _resultValue.isOrgShared = isOrgShared;
+            _resultValue.isPrivate = isPrivate;
+            _resultValue.isShared = isShared;
+            _resultValue.name = name;
+            _resultValue.purpose = purpose;
+            _resultValue.topic = topic;
+            return _resultValue;
         }
     }
 }
