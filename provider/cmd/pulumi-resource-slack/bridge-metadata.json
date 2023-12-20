@@ -41,6 +41,7 @@
             }
         }
     },
+    "auto-settings": {},
     "renames": {
         "resources": {
             "slack:index/conversation:Conversation": "slack_conversation",
