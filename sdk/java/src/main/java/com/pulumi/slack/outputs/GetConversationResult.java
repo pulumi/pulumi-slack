@@ -4,6 +4,7 @@
 package com.pulumi.slack.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -212,67 +213,100 @@ public final class GetConversationResult {
 
         @CustomType.Setter
         public Builder channelId(@Nullable String channelId) {
+
             this.channelId = channelId;
             return this;
         }
         @CustomType.Setter
         public Builder created(Integer created) {
-            this.created = Objects.requireNonNull(created);
+            if (created == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "created");
+            }
+            this.created = created;
             return this;
         }
         @CustomType.Setter
         public Builder creator(String creator) {
-            this.creator = Objects.requireNonNull(creator);
+            if (creator == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "creator");
+            }
+            this.creator = creator;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder isArchived(Boolean isArchived) {
-            this.isArchived = Objects.requireNonNull(isArchived);
+            if (isArchived == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "isArchived");
+            }
+            this.isArchived = isArchived;
             return this;
         }
         @CustomType.Setter
         public Builder isExtShared(Boolean isExtShared) {
-            this.isExtShared = Objects.requireNonNull(isExtShared);
+            if (isExtShared == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "isExtShared");
+            }
+            this.isExtShared = isExtShared;
             return this;
         }
         @CustomType.Setter
         public Builder isGeneral(Boolean isGeneral) {
-            this.isGeneral = Objects.requireNonNull(isGeneral);
+            if (isGeneral == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "isGeneral");
+            }
+            this.isGeneral = isGeneral;
             return this;
         }
         @CustomType.Setter
         public Builder isOrgShared(Boolean isOrgShared) {
-            this.isOrgShared = Objects.requireNonNull(isOrgShared);
+            if (isOrgShared == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "isOrgShared");
+            }
+            this.isOrgShared = isOrgShared;
             return this;
         }
         @CustomType.Setter
         public Builder isPrivate(@Nullable Boolean isPrivate) {
+
             this.isPrivate = isPrivate;
             return this;
         }
         @CustomType.Setter
         public Builder isShared(Boolean isShared) {
-            this.isShared = Objects.requireNonNull(isShared);
+            if (isShared == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "isShared");
+            }
+            this.isShared = isShared;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder purpose(String purpose) {
-            this.purpose = Objects.requireNonNull(purpose);
+            if (purpose == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "purpose");
+            }
+            this.purpose = purpose;
             return this;
         }
         @CustomType.Setter
         public Builder topic(String topic) {
-            this.topic = Objects.requireNonNull(topic);
+            if (topic == null) {
+              throw new MissingRequiredPropertyException("GetConversationResult", "topic");
+            }
+            this.topic = topic;
             return this;
         }
         public GetConversationResult build() {

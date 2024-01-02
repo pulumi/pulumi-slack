@@ -4,6 +4,7 @@
 package com.pulumi.slack.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -115,7 +116,10 @@ public final class GetUsergroupResult {
 
         @CustomType.Setter
         public Builder channels(List<String> channels) {
-            this.channels = Objects.requireNonNull(channels);
+            if (channels == null) {
+              throw new MissingRequiredPropertyException("GetUsergroupResult", "channels");
+            }
+            this.channels = channels;
             return this;
         }
         public Builder channels(String... channels) {
@@ -123,32 +127,46 @@ public final class GetUsergroupResult {
         }
         @CustomType.Setter
         public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+            if (description == null) {
+              throw new MissingRequiredPropertyException("GetUsergroupResult", "description");
+            }
+            this.description = description;
             return this;
         }
         @CustomType.Setter
         public Builder handle(String handle) {
-            this.handle = Objects.requireNonNull(handle);
+            if (handle == null) {
+              throw new MissingRequiredPropertyException("GetUsergroupResult", "handle");
+            }
+            this.handle = handle;
             return this;
         }
         @CustomType.Setter
         public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+            if (id == null) {
+              throw new MissingRequiredPropertyException("GetUsergroupResult", "id");
+            }
+            this.id = id;
             return this;
         }
         @CustomType.Setter
         public Builder name(@Nullable String name) {
+
             this.name = name;
             return this;
         }
         @CustomType.Setter
         public Builder usergroupId(@Nullable String usergroupId) {
+
             this.usergroupId = usergroupId;
             return this;
         }
         @CustomType.Setter
         public Builder users(List<String> users) {
-            this.users = Objects.requireNonNull(users);
+            if (users == null) {
+              throw new MissingRequiredPropertyException("GetUsergroupResult", "users");
+            }
+            this.users = users;
             return this;
         }
         public Builder users(String... users) {
