@@ -5,6 +5,7 @@ package com.pulumi.slack;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -392,7 +393,9 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ConversationArgs build() {
-            $.isPrivate = Objects.requireNonNull($.isPrivate, "expected parameter 'isPrivate' to be non-null");
+            if ($.isPrivate == null) {
+                throw new MissingRequiredPropertyException("ConversationArgs", "isPrivate");
+            }
             return $;
         }
     }
