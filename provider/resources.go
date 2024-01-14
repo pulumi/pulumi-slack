@@ -16,16 +16,18 @@ package slack
 
 import (
 	"fmt"
-	// embed is used to store bridge-metadata.json in the compiled binary
-	_ "embed"
 	"path/filepath"
 
+	// embed is used to store bridge-metadata.json in the compiled binary
+	_ "embed"
+
 	"github.com/pablovarela/terraform-provider-slack/slack"
+
+	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	tfbridgetokens "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge/tokens"
+	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 
 	"github.com/pulumi/pulumi-slack/provider/pkg/version"
-	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
-	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 )
 
 // all of the token components used below.
