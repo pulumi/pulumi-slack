@@ -116,7 +116,7 @@ namespace Pulumi.Slack
     /// `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
     /// 
     /// ```sh
-    ///  $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
+    /// $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
     /// ```
     /// </summary>
     [SlackResourceType("slack:index/conversation:Conversation")]

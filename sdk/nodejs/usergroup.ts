@@ -65,7 +65,7 @@ import * as utilities from "./utilities";
  * `slack_usergroup` can be imported using the ID of the group, e.g.
  *
  * ```sh
- *  $ pulumi import slack:index/usergroup:Usergroup my_group S022GE79E9G
+ * $ pulumi import slack:index/usergroup:Usergroup my_group S022GE79E9G
  * ```
  */
 export class Usergroup extends pulumi.CustomResource {
