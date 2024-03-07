@@ -50,6 +50,7 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -60,7 +61,9 @@ import * as utilities from "./utilities";
  *     topic: "The topic for my channel",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -72,7 +75,9 @@ import * as utilities from "./utilities";
  *     topic: "The channel won't be archived on destroy",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
+ * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -84,6 +89,7 @@ import * as utilities from "./utilities";
  *     topic: "Adopt existing, don't kick members",
  * });
  * ```
+ * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

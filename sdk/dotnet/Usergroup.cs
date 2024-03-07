@@ -33,6 +33,7 @@ namespace Pulumi.Slack
     /// 
     /// ## Example Usage
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -57,11 +58,13 @@ namespace Pulumi.Slack
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// Note that if a channel is removed from the `channels` list users are
     /// **not** removed from the channel. In order to keep the users in the
     /// groups and in the channel in sync set `permanent_users` in the channel:
     /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -89,6 +92,7 @@ namespace Pulumi.Slack
     /// 
     /// });
     /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 
