@@ -213,6 +213,7 @@ def get_conversation(channel_id: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_slack as slack
@@ -220,6 +221,7 @@ def get_conversation(channel_id: Optional[str] = None,
     test = slack.get_conversation(channel_id="my-channel")
     test_name = slack.get_conversation(name="my-channel-name")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str channel_id: The ID of the channel
@@ -278,6 +280,7 @@ def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = 
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_slack as slack
@@ -285,6 +288,7 @@ def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = 
     test = slack.get_conversation(channel_id="my-channel")
     test_name = slack.get_conversation(name="my-channel-name")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str channel_id: The ID of the channel
