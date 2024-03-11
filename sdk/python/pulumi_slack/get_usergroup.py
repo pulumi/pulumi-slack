@@ -133,6 +133,7 @@ def get_usergroup(name: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_slack as slack
@@ -140,6 +141,7 @@ def get_usergroup(name: Optional[str] = None,
     by_name = slack.get_usergroup(name="my-usergroup")
     by_id = slack.get_usergroup(usergroup_id="USERGROUP00")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: The name of the usergroup
@@ -186,6 +188,7 @@ def get_usergroup_output(name: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_slack as slack
@@ -193,6 +196,7 @@ def get_usergroup_output(name: Optional[pulumi.Input[Optional[str]]] = None,
     by_name = slack.get_usergroup(name="my-usergroup")
     by_id = slack.get_usergroup(usergroup_id="USERGROUP00")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str name: The name of the usergroup

@@ -40,6 +40,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -72,6 +74,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConversationResult> getConversation() {
@@ -97,6 +100,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -129,6 +134,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConversationResult> getConversationPlain() {
@@ -154,6 +160,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -186,6 +194,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConversationResult> getConversation(GetConversationArgs args) {
@@ -211,6 +220,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -243,6 +254,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConversationResult> getConversationPlain(GetConversationPlainArgs args) {
@@ -268,6 +280,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -300,6 +314,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetConversationResult> getConversation(GetConversationArgs args, InvokeOptions options) {
@@ -325,6 +340,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -357,6 +374,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetConversationResult> getConversationPlain(GetConversationPlainArgs args, InvokeOptions options) {
@@ -382,6 +400,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -414,6 +434,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserResult> getUser() {
@@ -439,6 +460,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -471,6 +494,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain() {
@@ -496,6 +520,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -528,6 +554,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args) {
@@ -553,6 +580,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -585,6 +614,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args) {
@@ -610,6 +640,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -642,6 +674,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUserResult> getUser(GetUserArgs args, InvokeOptions options) {
@@ -667,6 +700,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -699,6 +734,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUserResult> getUserPlain(GetUserPlainArgs args, InvokeOptions options) {
@@ -722,6 +758,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -754,6 +792,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsergroupResult> getUsergroup() {
@@ -777,6 +816,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -809,6 +850,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsergroupResult> getUsergroupPlain() {
@@ -832,6 +874,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -864,6 +908,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsergroupResult> getUsergroup(GetUsergroupArgs args) {
@@ -887,6 +932,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -919,6 +966,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsergroupResult> getUsergroupPlain(GetUsergroupPlainArgs args) {
@@ -942,6 +990,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -974,6 +1024,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static Output<GetUsergroupResult> getUsergroup(GetUsergroupArgs args, InvokeOptions options) {
@@ -997,6 +1048,8 @@ public final class SlackFunctions {
      * the documentation for the methods above.
      * 
      * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
      * ```java
      * package generated_program;
      * 
@@ -1029,6 +1082,7 @@ public final class SlackFunctions {
      *     }
      * }
      * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
     public static CompletableFuture<GetUsergroupResult> getUsergroupPlain(GetUsergroupPlainArgs args, InvokeOptions options) {

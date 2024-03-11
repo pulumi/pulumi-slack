@@ -30,10 +30,9 @@ namespace Pulumi.Slack
         /// If you get `missing_scope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -54,8 +53,7 @@ namespace Pulumi.Slack
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetConversationResult> InvokeAsync(GetConversationArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationArgs(), options.WithDefaults());
@@ -79,10 +77,9 @@ namespace Pulumi.Slack
         /// If you get `missing_scope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
-        /// {{% examples %}}
         /// ## Example Usage
-        /// {{% example %}}
         /// 
+        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -103,8 +100,7 @@ namespace Pulumi.Slack
         /// 
         /// });
         /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
+        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetConversationResult> Invoke(GetConversationInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationInvokeArgs(), options.WithDefaults());
