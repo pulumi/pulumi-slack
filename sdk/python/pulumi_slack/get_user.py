@@ -86,6 +86,7 @@ def get_user(email: Optional[str] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_slack as slack
@@ -93,6 +94,7 @@ def get_user(email: Optional[str] = None,
     by_name = slack.get_user(name="my-user")
     by_email = slack.get_user(email="my-user@example.com")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email: The email of the user
@@ -137,6 +139,7 @@ def get_user_output(email: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
+    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_slack as slack
@@ -144,6 +147,7 @@ def get_user_output(email: Optional[pulumi.Input[Optional[str]]] = None,
     by_name = slack.get_user(name="my-user")
     by_email = slack.get_user(email="my-user@example.com")
     ```
+    <!--End PulumiCodeChooser -->
 
 
     :param str email: The email of the user
