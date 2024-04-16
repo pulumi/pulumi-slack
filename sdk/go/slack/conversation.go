@@ -71,9 +71,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := slack.NewConversation(ctx, "test", &slack.ConversationArgs{
-//				IsPrivate:        pulumi.Bool(true),
-//				PermanentMembers: pulumi.StringArray{},
+//				Name:             pulumi.String("my-channel"),
 //				Topic:            pulumi.String("The topic for my channel"),
+//				PermanentMembers: pulumi.StringArray{},
+//				IsPrivate:        pulumi.Bool(true),
 //			})
 //			if err != nil {
 //				return err
@@ -99,10 +100,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := slack.NewConversation(ctx, "nonadmin", &slack.ConversationArgs{
-//				ActionOnDestroy:  pulumi.String("none"),
-//				IsPrivate:        pulumi.Bool(true),
-//				PermanentMembers: pulumi.StringArray{},
+//				Name:             pulumi.String("my-channel01"),
 //				Topic:            pulumi.String("The channel won't be archived on destroy"),
+//				PermanentMembers: pulumi.StringArray{},
+//				IsPrivate:        pulumi.Bool(true),
+//				ActionOnDestroy:  pulumi.String("none"),
 //			})
 //			if err != nil {
 //				return err
@@ -128,10 +130,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := slack.NewConversation(ctx, "adopted", &slack.ConversationArgs{
-//				ActionOnUpdatePermanentMembers: pulumi.String("none"),
-//				AdoptExistingChannel:           pulumi.Bool(true),
-//				PermanentMembers:               pulumi.StringArray{},
+//				Name:                           pulumi.String("my-channel02"),
 //				Topic:                          pulumi.String("Adopt existing, don't kick members"),
+//				PermanentMembers:               pulumi.StringArray{},
+//				AdoptExistingChannel:           pulumi.Bool(true),
+//				ActionOnUpdatePermanentMembers: pulumi.String("none"),
 //			})
 //			if err != nil {
 //				return err

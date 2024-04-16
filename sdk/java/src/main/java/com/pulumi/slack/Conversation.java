@@ -86,9 +86,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var test = new Conversation(&#34;test&#34;, ConversationArgs.builder()        
- *             .isPrivate(true)
- *             .permanentMembers()
+ *             .name(&#34;my-channel&#34;)
  *             .topic(&#34;The topic for my channel&#34;)
+ *             .permanentMembers()
+ *             .isPrivate(true)
  *             .build());
  * 
  *     }
@@ -119,10 +120,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var nonadmin = new Conversation(&#34;nonadmin&#34;, ConversationArgs.builder()        
- *             .actionOnDestroy(&#34;none&#34;)
- *             .isPrivate(true)
- *             .permanentMembers()
+ *             .name(&#34;my-channel01&#34;)
  *             .topic(&#34;The channel won&#39;t be archived on destroy&#34;)
+ *             .permanentMembers()
+ *             .isPrivate(true)
+ *             .actionOnDestroy(&#34;none&#34;)
  *             .build());
  * 
  *     }
@@ -153,10 +155,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var adopted = new Conversation(&#34;adopted&#34;, ConversationArgs.builder()        
- *             .actionOnUpdatePermanentMembers(&#34;none&#34;)
- *             .adoptExistingChannel(true)
- *             .permanentMembers()
+ *             .name(&#34;my-channel02&#34;)
  *             .topic(&#34;Adopt existing, don&#39;t kick members&#34;)
+ *             .permanentMembers()
+ *             .adoptExistingChannel(true)
+ *             .actionOnUpdatePermanentMembers(&#34;none&#34;)
  *             .build());
  * 
  *     }

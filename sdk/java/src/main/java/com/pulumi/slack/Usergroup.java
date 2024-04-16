@@ -62,10 +62,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var myGroup = new Usergroup(&#34;myGroup&#34;, UsergroupArgs.builder()        
- *             .channels(&#34;CHANNEL00&#34;)
- *             .description(&#34;Test user group&#34;)
+ *             .name(&#34;TestGroup&#34;)
  *             .handle(&#34;test&#34;)
+ *             .description(&#34;Test user group&#34;)
  *             .users(&#34;USER00&#34;)
+ *             .channels(&#34;CHANNEL00&#34;)
  *             .build());
  * 
  *     }
@@ -102,12 +103,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var myGroup = new Usergroup(&#34;myGroup&#34;, UsergroupArgs.builder()        
+ *             .name(&#34;TestGroup&#34;)
  *             .handle(&#34;test&#34;)
  *             .description(&#34;Test user group&#34;)
  *             .users(&#34;USER00&#34;)
  *             .build());
  * 
  *         var test = new Conversation(&#34;test&#34;, ConversationArgs.builder()        
+ *             .name(&#34;my-channel&#34;)
  *             .topic(&#34;The topic for my channel&#34;)
  *             .permanentMembers(myGroup.users())
  *             .isPrivate(true)

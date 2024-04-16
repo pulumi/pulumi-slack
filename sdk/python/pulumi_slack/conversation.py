@@ -503,9 +503,10 @@ class Conversation(pulumi.CustomResource):
         import pulumi_slack as slack
 
         test = slack.Conversation("test",
-            is_private=True,
+            name="my-channel",
+            topic="The topic for my channel",
             permanent_members=[],
-            topic="The topic for my channel")
+            is_private=True)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -515,10 +516,11 @@ class Conversation(pulumi.CustomResource):
         import pulumi_slack as slack
 
         nonadmin = slack.Conversation("nonadmin",
-            action_on_destroy="none",
-            is_private=True,
+            name="my-channel01",
+            topic="The channel won't be archived on destroy",
             permanent_members=[],
-            topic="The channel won't be archived on destroy")
+            is_private=True,
+            action_on_destroy="none")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -528,10 +530,11 @@ class Conversation(pulumi.CustomResource):
         import pulumi_slack as slack
 
         adopted = slack.Conversation("adopted",
-            action_on_update_permanent_members="none",
-            adopt_existing_channel=True,
+            name="my-channel02",
+            topic="Adopt existing, don't kick members",
             permanent_members=[],
-            topic="Adopt existing, don't kick members")
+            adopt_existing_channel=True,
+            action_on_update_permanent_members="none")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -619,9 +622,10 @@ class Conversation(pulumi.CustomResource):
         import pulumi_slack as slack
 
         test = slack.Conversation("test",
-            is_private=True,
+            name="my-channel",
+            topic="The topic for my channel",
             permanent_members=[],
-            topic="The topic for my channel")
+            is_private=True)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -631,10 +635,11 @@ class Conversation(pulumi.CustomResource):
         import pulumi_slack as slack
 
         nonadmin = slack.Conversation("nonadmin",
-            action_on_destroy="none",
-            is_private=True,
+            name="my-channel01",
+            topic="The channel won't be archived on destroy",
             permanent_members=[],
-            topic="The channel won't be archived on destroy")
+            is_private=True,
+            action_on_destroy="none")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -644,10 +649,11 @@ class Conversation(pulumi.CustomResource):
         import pulumi_slack as slack
 
         adopted = slack.Conversation("adopted",
-            action_on_update_permanent_members="none",
-            adopt_existing_channel=True,
+            name="my-channel02",
+            topic="Adopt existing, don't kick members",
             permanent_members=[],
-            topic="Adopt existing, don't kick members")
+            adopt_existing_channel=True,
+            action_on_update_permanent_members="none")
         ```
         <!--End PulumiCodeChooser -->
 
