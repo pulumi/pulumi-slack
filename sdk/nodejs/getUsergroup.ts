@@ -23,7 +23,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -35,7 +34,6 @@ import * as utilities from "./utilities";
  *     usergroupId: "USERGROUP00",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsergroup(args?: GetUsergroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUsergroupResult> {
     args = args || {};
@@ -110,7 +108,6 @@ export interface GetUsergroupResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -122,7 +119,6 @@ export interface GetUsergroupResult {
  *     usergroupId: "USERGROUP00",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsergroupOutput(args?: GetUsergroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsergroupResult> {
     return pulumi.output(args).apply((a: any) => getUsergroup(a, opts))

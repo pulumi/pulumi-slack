@@ -497,7 +497,6 @@ class Conversation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -507,9 +506,7 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             topic="The topic for my channel")
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -520,9 +517,7 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             topic="The channel won't be archived on destroy")
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -533,7 +528,6 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             topic="Adopt existing, don't kick members")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -613,7 +607,6 @@ class Conversation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -623,9 +616,7 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             topic="The topic for my channel")
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -636,9 +627,7 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             topic="The channel won't be archived on destroy")
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -649,7 +638,6 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             topic="Adopt existing, don't kick members")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

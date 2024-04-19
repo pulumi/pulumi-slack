@@ -34,7 +34,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -65,13 +64,11 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // Note that if a channel is removed from the `channels` list users are
 // **not** removed from the channel. In order to keep the users in the
 // groups and in the channel in sync set `permanentUsers` in the channel:
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -107,7 +104,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ## Import
 //
