@@ -42,17 +42,18 @@ namespace Pulumi.Slack
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var myGroup = new Slack.Usergroup("myGroup", new()
+    ///     var myGroup = new Slack.Usergroup("my_group", new()
     ///     {
-    ///         Channels = new[]
-    ///         {
-    ///             "CHANNEL00",
-    ///         },
-    ///         Description = "Test user group",
+    ///         Name = "TestGroup",
     ///         Handle = "test",
+    ///         Description = "Test user group",
     ///         Users = new[]
     ///         {
     ///             "USER00",
+    ///         },
+    ///         Channels = new[]
+    ///         {
+    ///             "CHANNEL00",
     ///         },
     ///     });
     /// 
@@ -73,8 +74,9 @@ namespace Pulumi.Slack
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var myGroup = new Slack.Usergroup("myGroup", new()
+    ///     var myGroup = new Slack.Usergroup("my_group", new()
     ///     {
+    ///         Name = "TestGroup",
     ///         Handle = "test",
     ///         Description = "Test user group",
     ///         Users = new[]
@@ -85,6 +87,7 @@ namespace Pulumi.Slack
     /// 
     ///     var test = new Slack.Conversation("test", new()
     ///     {
+    ///         Name = "my-channel",
     ///         Topic = "The topic for my channel",
     ///         PermanentMembers = myGroup.Users,
     ///         IsPrivate = true,

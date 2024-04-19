@@ -66,9 +66,10 @@ namespace Pulumi.Slack
     /// {
     ///     var test = new Slack.Conversation("test", new()
     ///     {
-    ///         IsPrivate = true,
-    ///         PermanentMembers = new[] {},
+    ///         Name = "my-channel",
     ///         Topic = "The topic for my channel",
+    ///         PermanentMembers = new[] {},
+    ///         IsPrivate = true,
     ///     });
     /// 
     /// });
@@ -86,10 +87,11 @@ namespace Pulumi.Slack
     /// {
     ///     var nonadmin = new Slack.Conversation("nonadmin", new()
     ///     {
-    ///         ActionOnDestroy = "none",
-    ///         IsPrivate = true,
-    ///         PermanentMembers = new[] {},
+    ///         Name = "my-channel01",
     ///         Topic = "The channel won't be archived on destroy",
+    ///         PermanentMembers = new[] {},
+    ///         IsPrivate = true,
+    ///         ActionOnDestroy = "none",
     ///     });
     /// 
     /// });
@@ -107,10 +109,11 @@ namespace Pulumi.Slack
     /// {
     ///     var adopted = new Slack.Conversation("adopted", new()
     ///     {
-    ///         ActionOnUpdatePermanentMembers = "none",
-    ///         AdoptExistingChannel = true,
-    ///         PermanentMembers = new[] {},
+    ///         Name = "my-channel02",
     ///         Topic = "Adopt existing, don't kick members",
+    ///         PermanentMembers = new[] {},
+    ///         AdoptExistingChannel = true,
+    ///         ActionOnUpdatePermanentMembers = "none",
     ///     });
     /// 
     /// });

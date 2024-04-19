@@ -235,11 +235,12 @@ class Usergroup(pulumi.CustomResource):
         import pulumi
         import pulumi_slack as slack
 
-        my_group = slack.Usergroup("myGroup",
-            channels=["CHANNEL00"],
-            description="Test user group",
+        my_group = slack.Usergroup("my_group",
+            name="TestGroup",
             handle="test",
-            users=["USER00"])
+            description="Test user group",
+            users=["USER00"],
+            channels=["CHANNEL00"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -252,11 +253,13 @@ class Usergroup(pulumi.CustomResource):
         import pulumi
         import pulumi_slack as slack
 
-        my_group = slack.Usergroup("myGroup",
+        my_group = slack.Usergroup("my_group",
+            name="TestGroup",
             handle="test",
             description="Test user group",
             users=["USER00"])
         test = slack.Conversation("test",
+            name="my-channel",
             topic="The topic for my channel",
             permanent_members=my_group.users,
             is_private=True)
@@ -316,11 +319,12 @@ class Usergroup(pulumi.CustomResource):
         import pulumi
         import pulumi_slack as slack
 
-        my_group = slack.Usergroup("myGroup",
-            channels=["CHANNEL00"],
-            description="Test user group",
+        my_group = slack.Usergroup("my_group",
+            name="TestGroup",
             handle="test",
-            users=["USER00"])
+            description="Test user group",
+            users=["USER00"],
+            channels=["CHANNEL00"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -333,11 +337,13 @@ class Usergroup(pulumi.CustomResource):
         import pulumi
         import pulumi_slack as slack
 
-        my_group = slack.Usergroup("myGroup",
+        my_group = slack.Usergroup("my_group",
+            name="TestGroup",
             handle="test",
             description="Test user group",
             users=["USER00"])
         test = slack.Conversation("test",
+            name="my-channel",
             topic="The topic for my channel",
             permanent_members=my_group.users,
             is_private=True)

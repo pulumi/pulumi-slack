@@ -47,14 +47,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := slack.NewUsergroup(ctx, "myGroup", &slack.UsergroupArgs{
-//				Channels: pulumi.StringArray{
-//					pulumi.String("CHANNEL00"),
-//				},
-//				Description: pulumi.String("Test user group"),
+//			_, err := slack.NewUsergroup(ctx, "my_group", &slack.UsergroupArgs{
+//				Name:        pulumi.String("TestGroup"),
 //				Handle:      pulumi.String("test"),
+//				Description: pulumi.String("Test user group"),
 //				Users: pulumi.StringArray{
 //					pulumi.String("USER00"),
+//				},
+//				Channels: pulumi.StringArray{
+//					pulumi.String("CHANNEL00"),
 //				},
 //			})
 //			if err != nil {
@@ -84,7 +85,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			myGroup, err := slack.NewUsergroup(ctx, "myGroup", &slack.UsergroupArgs{
+//			myGroup, err := slack.NewUsergroup(ctx, "my_group", &slack.UsergroupArgs{
+//				Name:        pulumi.String("TestGroup"),
 //				Handle:      pulumi.String("test"),
 //				Description: pulumi.String("Test user group"),
 //				Users: pulumi.StringArray{
@@ -95,6 +97,7 @@ import (
 //				return err
 //			}
 //			_, err = slack.NewConversation(ctx, "test", &slack.ConversationArgs{
+//				Name:             pulumi.String("my-channel"),
 //				Topic:            pulumi.String("The topic for my channel"),
 //				PermanentMembers: myGroup.Users,
 //				IsPrivate:        pulumi.Bool(true),

@@ -56,9 +56,10 @@ import * as utilities from "./utilities";
  * import * as slack from "@pulumi/slack";
  *
  * const test = new slack.Conversation("test", {
- *     isPrivate: true,
- *     permanentMembers: [],
+ *     name: "my-channel",
  *     topic: "The topic for my channel",
+ *     permanentMembers: [],
+ *     isPrivate: true,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -69,10 +70,11 @@ import * as utilities from "./utilities";
  * import * as slack from "@pulumi/slack";
  *
  * const nonadmin = new slack.Conversation("nonadmin", {
- *     actionOnDestroy: "none",
- *     isPrivate: true,
- *     permanentMembers: [],
+ *     name: "my-channel01",
  *     topic: "The channel won't be archived on destroy",
+ *     permanentMembers: [],
+ *     isPrivate: true,
+ *     actionOnDestroy: "none",
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -83,10 +85,11 @@ import * as utilities from "./utilities";
  * import * as slack from "@pulumi/slack";
  *
  * const adopted = new slack.Conversation("adopted", {
- *     actionOnUpdatePermanentMembers: "none",
- *     adoptExistingChannel: true,
- *     permanentMembers: [],
+ *     name: "my-channel02",
  *     topic: "Adopt existing, don't kick members",
+ *     permanentMembers: [],
+ *     adoptExistingChannel: true,
+ *     actionOnUpdatePermanentMembers: "none",
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -33,11 +33,12 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
  *
- * const myGroup = new slack.Usergroup("myGroup", {
- *     channels: ["CHANNEL00"],
- *     description: "Test user group",
+ * const myGroup = new slack.Usergroup("my_group", {
+ *     name: "TestGroup",
  *     handle: "test",
+ *     description: "Test user group",
  *     users: ["USER00"],
+ *     channels: ["CHANNEL00"],
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -51,12 +52,14 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
  *
- * const myGroup = new slack.Usergroup("myGroup", {
+ * const myGroup = new slack.Usergroup("my_group", {
+ *     name: "TestGroup",
  *     handle: "test",
  *     description: "Test user group",
  *     users: ["USER00"],
  * });
  * const test = new slack.Conversation("test", {
+ *     name: "my-channel",
  *     topic: "The topic for my channel",
  *     permanentMembers: myGroup.users,
  *     isPrivate: true,
