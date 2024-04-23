@@ -50,7 +50,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -62,9 +61,7 @@ import * as utilities from "./utilities";
  *     isPrivate: true,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -77,9 +74,7 @@ import * as utilities from "./utilities";
  *     actionOnDestroy: "none",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -92,7 +87,6 @@ import * as utilities from "./utilities";
  *     actionOnUpdatePermanentMembers: "none",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

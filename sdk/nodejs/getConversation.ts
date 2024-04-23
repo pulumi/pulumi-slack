@@ -25,7 +25,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -37,7 +36,6 @@ import * as utilities from "./utilities";
  *     name: "my-channel-name",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConversation(args?: GetConversationArgs, opts?: pulumi.InvokeOptions): Promise<GetConversationResult> {
     args = args || {};
@@ -149,7 +147,6 @@ export interface GetConversationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -161,7 +158,6 @@ export interface GetConversationResult {
  *     name: "my-channel-name",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConversationOutput(args?: GetConversationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConversationResult> {
     return pulumi.output(args).apply((a: any) => getConversation(a, opts))

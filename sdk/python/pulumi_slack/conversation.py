@@ -497,7 +497,6 @@ class Conversation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -508,9 +507,7 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             is_private=True)
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -522,9 +519,7 @@ class Conversation(pulumi.CustomResource):
             is_private=True,
             action_on_destroy="none")
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -536,7 +531,6 @@ class Conversation(pulumi.CustomResource):
             adopt_existing_channel=True,
             action_on_update_permanent_members="none")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -616,7 +610,6 @@ class Conversation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -627,9 +620,7 @@ class Conversation(pulumi.CustomResource):
             permanent_members=[],
             is_private=True)
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -641,9 +632,7 @@ class Conversation(pulumi.CustomResource):
             is_private=True,
             action_on_destroy="none")
         ```
-        <!--End PulumiCodeChooser -->
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -655,7 +644,6 @@ class Conversation(pulumi.CustomResource):
             adopt_existing_channel=True,
             action_on_update_permanent_members="none")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

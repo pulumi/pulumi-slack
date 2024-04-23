@@ -230,7 +230,6 @@ class Usergroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -242,13 +241,11 @@ class Usergroup(pulumi.CustomResource):
             users=["USER00"],
             channels=["CHANNEL00"])
         ```
-        <!--End PulumiCodeChooser -->
 
         Note that if a channel is removed from the `channels` list users are
         **not** removed from the channel. In order to keep the users in the
         groups and in the channel in sync set `permanent_users` in the channel:
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -264,7 +261,6 @@ class Usergroup(pulumi.CustomResource):
             permanent_members=my_group.users,
             is_private=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -314,7 +310,6 @@ class Usergroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -326,13 +321,11 @@ class Usergroup(pulumi.CustomResource):
             users=["USER00"],
             channels=["CHANNEL00"])
         ```
-        <!--End PulumiCodeChooser -->
 
         Note that if a channel is removed from the `channels` list users are
         **not** removed from the channel. In order to keep the users in the
         groups and in the channel in sync set `permanent_users` in the channel:
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_slack as slack
@@ -348,7 +341,6 @@ class Usergroup(pulumi.CustomResource):
             permanent_members=my_group.users,
             is_private=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
