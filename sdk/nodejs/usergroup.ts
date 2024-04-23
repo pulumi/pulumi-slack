@@ -28,7 +28,6 @@ import * as utilities from "./utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -41,13 +40,11 @@ import * as utilities from "./utilities";
  *     channels: ["CHANNEL00"],
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * Note that if a channel is removed from the `channels` list users are
  * **not** removed from the channel. In order to keep the users in the
  * groups and in the channel in sync set `permanentUsers` in the channel:
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as slack from "@pulumi/slack";
@@ -65,7 +62,6 @@ import * as utilities from "./utilities";
  *     isPrivate: true,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *
