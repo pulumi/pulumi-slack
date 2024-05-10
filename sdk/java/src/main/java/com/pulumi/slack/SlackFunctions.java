@@ -42,7 +42,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -64,16 +65,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .channelId(&#34;my-channel&#34;)
+     *             .channelId("my-channel")
      *             .build());
      * 
      *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .name(&#34;my-channel-name&#34;)
+     *             .name("my-channel-name")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -102,7 +104,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -124,16 +127,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .channelId(&#34;my-channel&#34;)
+     *             .channelId("my-channel")
      *             .build());
      * 
      *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .name(&#34;my-channel-name&#34;)
+     *             .name("my-channel-name")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -162,7 +166,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -184,16 +189,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .channelId(&#34;my-channel&#34;)
+     *             .channelId("my-channel")
      *             .build());
      * 
      *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .name(&#34;my-channel-name&#34;)
+     *             .name("my-channel-name")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -222,7 +228,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -244,16 +251,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .channelId(&#34;my-channel&#34;)
+     *             .channelId("my-channel")
      *             .build());
      * 
      *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .name(&#34;my-channel-name&#34;)
+     *             .name("my-channel-name")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -282,7 +290,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -304,16 +313,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .channelId(&#34;my-channel&#34;)
+     *             .channelId("my-channel")
      *             .build());
      * 
      *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .name(&#34;my-channel-name&#34;)
+     *             .name("my-channel-name")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -342,7 +352,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -364,16 +375,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var test = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .channelId(&#34;my-channel&#34;)
+     *             .channelId("my-channel")
      *             .build());
      * 
      *         final var test-name = SlackFunctions.getConversation(GetConversationArgs.builder()
-     *             .name(&#34;my-channel-name&#34;)
+     *             .name("my-channel-name")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -402,7 +414,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -424,16 +437,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .name(&#34;my-user&#34;)
+     *             .name("my-user")
      *             .build());
      * 
      *         final var byEmail = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;my-user@example.com&#34;)
+     *             .email("my-user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -462,7 +476,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -484,16 +499,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .name(&#34;my-user&#34;)
+     *             .name("my-user")
      *             .build());
      * 
      *         final var byEmail = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;my-user@example.com&#34;)
+     *             .email("my-user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -522,7 +538,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -544,16 +561,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .name(&#34;my-user&#34;)
+     *             .name("my-user")
      *             .build());
      * 
      *         final var byEmail = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;my-user@example.com&#34;)
+     *             .email("my-user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -582,7 +600,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -604,16 +623,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .name(&#34;my-user&#34;)
+     *             .name("my-user")
      *             .build());
      * 
      *         final var byEmail = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;my-user@example.com&#34;)
+     *             .email("my-user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -642,7 +662,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -664,16 +685,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .name(&#34;my-user&#34;)
+     *             .name("my-user")
      *             .build());
      * 
      *         final var byEmail = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;my-user@example.com&#34;)
+     *             .email("my-user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -702,7 +724,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -724,16 +747,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .name(&#34;my-user&#34;)
+     *             .name("my-user")
      *             .build());
      * 
      *         final var byEmail = SlackFunctions.getUser(GetUserArgs.builder()
-     *             .email(&#34;my-user@example.com&#34;)
+     *             .email("my-user{@literal @}example.com")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -760,7 +784,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -782,16 +807,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .name(&#34;my-usergroup&#34;)
+     *             .name("my-usergroup")
      *             .build());
      * 
      *         final var byId = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .usergroupId(&#34;USERGROUP00&#34;)
+     *             .usergroupId("USERGROUP00")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -818,7 +844,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -840,16 +867,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .name(&#34;my-usergroup&#34;)
+     *             .name("my-usergroup")
      *             .build());
      * 
      *         final var byId = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .usergroupId(&#34;USERGROUP00&#34;)
+     *             .usergroupId("USERGROUP00")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -876,7 +904,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -898,16 +927,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .name(&#34;my-usergroup&#34;)
+     *             .name("my-usergroup")
      *             .build());
      * 
      *         final var byId = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .usergroupId(&#34;USERGROUP00&#34;)
+     *             .usergroupId("USERGROUP00")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -934,7 +964,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -956,16 +987,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .name(&#34;my-usergroup&#34;)
+     *             .name("my-usergroup")
      *             .build());
      * 
      *         final var byId = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .usergroupId(&#34;USERGROUP00&#34;)
+     *             .usergroupId("USERGROUP00")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -992,7 +1024,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1014,16 +1047,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .name(&#34;my-usergroup&#34;)
+     *             .name("my-usergroup")
      *             .build());
      * 
      *         final var byId = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .usergroupId(&#34;USERGROUP00&#34;)
+     *             .usergroupId("USERGROUP00")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -1050,7 +1084,8 @@ public final class SlackFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
-     * ```java
+     * <pre>
+     * {@code
      * package generated_program;
      * 
      * import com.pulumi.Context;
@@ -1072,16 +1107,17 @@ public final class SlackFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var byName = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .name(&#34;my-usergroup&#34;)
+     *             .name("my-usergroup")
      *             .build());
      * 
      *         final var byId = SlackFunctions.getUsergroup(GetUsergroupArgs.builder()
-     *             .usergroupId(&#34;USERGROUP00&#34;)
+     *             .usergroupId("USERGROUP00")
      *             .build());
      * 
      *     }
      * }
-     * ```
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

@@ -64,7 +64,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -85,20 +86,22 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var test = new Conversation(&#34;test&#34;, ConversationArgs.builder()        
- *             .name(&#34;my-channel&#34;)
- *             .topic(&#34;The topic for my channel&#34;)
+ *         var test = new Conversation("test", ConversationArgs.builder()        
+ *             .name("my-channel")
+ *             .topic("The topic for my channel")
  *             .permanentMembers()
  *             .isPrivate(true)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -119,21 +122,23 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var nonadmin = new Conversation(&#34;nonadmin&#34;, ConversationArgs.builder()        
- *             .name(&#34;my-channel01&#34;)
- *             .topic(&#34;The channel won&#39;t be archived on destroy&#34;)
+ *         var nonadmin = new Conversation("nonadmin", ConversationArgs.builder()        
+ *             .name("my-channel01")
+ *             .topic("The channel won't be archived on destroy")
  *             .permanentMembers()
  *             .isPrivate(true)
- *             .actionOnDestroy(&#34;none&#34;)
+ *             .actionOnDestroy("none")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -154,17 +159,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var adopted = new Conversation(&#34;adopted&#34;, ConversationArgs.builder()        
- *             .name(&#34;my-channel02&#34;)
- *             .topic(&#34;Adopt existing, don&#39;t kick members&#34;)
+ *         var adopted = new Conversation("adopted", ConversationArgs.builder()        
+ *             .name("my-channel02")
+ *             .topic("Adopt existing, don't kick members")
  *             .permanentMembers()
  *             .adoptExistingChannel(true)
- *             .actionOnUpdatePermanentMembers(&#34;none&#34;)
+ *             .actionOnUpdatePermanentMembers("none")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -40,7 +40,8 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -61,17 +62,18 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var myGroup = new Usergroup(&#34;myGroup&#34;, UsergroupArgs.builder()        
- *             .name(&#34;TestGroup&#34;)
- *             .handle(&#34;test&#34;)
- *             .description(&#34;Test user group&#34;)
- *             .users(&#34;USER00&#34;)
- *             .channels(&#34;CHANNEL00&#34;)
+ *         var myGroup = new Usergroup("myGroup", UsergroupArgs.builder()        
+ *             .name("TestGroup")
+ *             .handle("test")
+ *             .description("Test user group")
+ *             .users("USER00")
+ *             .channels("CHANNEL00")
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * Note that if a channel is removed from the `channels` list users are
@@ -79,7 +81,8 @@ import javax.annotation.Nullable;
  * groups and in the channel in sync set `permanent_users` in the channel:
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * ```java
+ * <pre>
+ * {@code
  * package generated_program;
  * 
  * import com.pulumi.Context;
@@ -102,23 +105,24 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var myGroup = new Usergroup(&#34;myGroup&#34;, UsergroupArgs.builder()        
- *             .name(&#34;TestGroup&#34;)
- *             .handle(&#34;test&#34;)
- *             .description(&#34;Test user group&#34;)
- *             .users(&#34;USER00&#34;)
+ *         var myGroup = new Usergroup("myGroup", UsergroupArgs.builder()        
+ *             .name("TestGroup")
+ *             .handle("test")
+ *             .description("Test user group")
+ *             .users("USER00")
  *             .build());
  * 
- *         var test = new Conversation(&#34;test&#34;, ConversationArgs.builder()        
- *             .name(&#34;my-channel&#34;)
- *             .topic(&#34;The topic for my channel&#34;)
+ *         var test = new Conversation("test", ConversationArgs.builder()        
+ *             .name("my-channel")
+ *             .topic("The topic for my channel")
  *             .permanentMembers(myGroup.users())
  *             .isPrivate(true)
  *             .build());
  * 
  *     }
  * }
- * ```
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
