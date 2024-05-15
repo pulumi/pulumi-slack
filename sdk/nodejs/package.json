@@ -1,6 +1,6 @@
 {
     "name": "@pulumi/slack",
-    "version": "${VERSION}",
+    "version": "1.0.0-alpha.0+dev",
     "description": "A Pulumi package for managing Slack workspaces.",
     "keywords": [
         "pulumi",
@@ -23,6 +23,7 @@
     },
     "pulumi": {
         "resource": true,
-        "name": "slack"
+        "name": "slack",
+        "version": "1.0.0-alpha.0+dev"
     }
 }
