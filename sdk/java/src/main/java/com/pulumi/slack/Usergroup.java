@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var myGroup = new Usergroup("myGroup", UsergroupArgs.builder()        
+ *         var myGroup = new Usergroup("myGroup", UsergroupArgs.builder()
  *             .name("TestGroup")
  *             .handle("test")
  *             .description("Test user group")
@@ -105,14 +105,14 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var myGroup = new Usergroup("myGroup", UsergroupArgs.builder()        
+ *         var myGroup = new Usergroup("myGroup", UsergroupArgs.builder()
  *             .name("TestGroup")
  *             .handle("test")
  *             .description("Test user group")
  *             .users("USER00")
  *             .build());
  * 
- *         var test = new Conversation("test", ConversationArgs.builder()        
+ *         var test = new Conversation("test", ConversationArgs.builder()
  *             .name("my-channel")
  *             .topic("The topic for my channel")
  *             .permanentMembers(myGroup.users())
