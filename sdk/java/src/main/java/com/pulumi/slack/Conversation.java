@@ -86,7 +86,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var test = new Conversation("test", ConversationArgs.builder()        
+ *         var test = new Conversation("test", ConversationArgs.builder()
  *             .name("my-channel")
  *             .topic("The topic for my channel")
  *             .permanentMembers()
@@ -122,7 +122,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var nonadmin = new Conversation("nonadmin", ConversationArgs.builder()        
+ *         var nonadmin = new Conversation("nonadmin", ConversationArgs.builder()
  *             .name("my-channel01")
  *             .topic("The channel won't be archived on destroy")
  *             .permanentMembers()
@@ -159,7 +159,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var adopted = new Conversation("adopted", ConversationArgs.builder()        
+ *         var adopted = new Conversation("adopted", ConversationArgs.builder()
  *             .name("my-channel02")
  *             .topic("Adopt existing, don't kick members")
  *             .permanentMembers()
