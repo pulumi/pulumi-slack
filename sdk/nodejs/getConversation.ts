@@ -39,7 +39,6 @@ import * as utilities from "./utilities";
  */
 export function getConversation(args?: GetConversationArgs, opts?: pulumi.InvokeOptions): Promise<GetConversationResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("slack:index/getConversation:getConversation", {
         "channelId": args.channelId,
@@ -160,7 +159,13 @@ export interface GetConversationResult {
  * ```
  */
 export function getConversationOutput(args?: GetConversationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConversationResult> {
-    return pulumi.output(args).apply((a: any) => getConversation(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("slack:index/getConversation:getConversation", {
+        "channelId": args.channelId,
+        "isPrivate": args.isPrivate,
+        "name": args.name,
+    }, opts);
 }
 
 /**

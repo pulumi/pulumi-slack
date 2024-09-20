@@ -117,14 +117,20 @@ type LookupConversationResult struct {
 
 func LookupConversationOutput(ctx *pulumi.Context, args LookupConversationOutputArgs, opts ...pulumi.InvokeOption) LookupConversationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (LookupConversationResult, error) {
+		ApplyT(func(v interface{}) (LookupConversationResultOutput, error) {
 			args := v.(LookupConversationArgs)
-			r, err := LookupConversation(ctx, &args, opts...)
-			var s LookupConversationResult
-			if r != nil {
-				s = *r
+			opts = internal.PkgInvokeDefaultOpts(opts)
+			var rv LookupConversationResult
+			secret, err := ctx.InvokePackageRaw("slack:index/getConversation:getConversation", args, &rv, "", opts...)
+			if err != nil {
+				return LookupConversationResultOutput{}, err
 			}
-			return s, err
+
+			output := pulumi.ToOutput(rv).(LookupConversationResultOutput)
+			if secret {
+				return pulumi.ToSecret(output).(LookupConversationResultOutput), nil
+			}
+			return output, nil
 		}).(LookupConversationResultOutput)
 }
 
