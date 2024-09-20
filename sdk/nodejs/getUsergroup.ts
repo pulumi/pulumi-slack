@@ -37,7 +37,6 @@ import * as utilities from "./utilities";
  */
 export function getUsergroup(args?: GetUsergroupArgs, opts?: pulumi.InvokeOptions): Promise<GetUsergroupResult> {
     args = args || {};
-
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("slack:index/getUsergroup:getUsergroup", {
         "name": args.name,
@@ -121,7 +120,12 @@ export interface GetUsergroupResult {
  * ```
  */
 export function getUsergroupOutput(args?: GetUsergroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsergroupResult> {
-    return pulumi.output(args).apply((a: any) => getUsergroup(a, opts))
+    args = args || {};
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
+    return pulumi.runtime.invokeOutput("slack:index/getUsergroup:getUsergroup", {
+        "name": args.name,
+        "usergroupId": args.usergroupId,
+    }, opts);
 }
 
 /**
