@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -161,9 +166,6 @@ def get_usergroup(name: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         usergroup_id=pulumi.get(__ret__, 'usergroup_id'),
         users=pulumi.get(__ret__, 'users'))
-
-
-@_utilities.lift_output_func(get_usergroup)
 def get_usergroup_output(name: Optional[pulumi.Input[Optional[str]]] = None,
                          usergroup_id: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUsergroupResult]:
@@ -200,4 +202,16 @@ def get_usergroup_output(name: Optional[pulumi.Input[Optional[str]]] = None,
            
            The data source expects exactly one of these fields, you can't set both.
     """
-    ...
+    __args__ = dict()
+    __args__['name'] = name
+    __args__['usergroupId'] = usergroup_id
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('slack:index/getUsergroup:getUsergroup', __args__, opts=opts, typ=GetUsergroupResult)
+    return __ret__.apply(lambda __response__: GetUsergroupResult(
+        channels=pulumi.get(__response__, 'channels'),
+        description=pulumi.get(__response__, 'description'),
+        handle=pulumi.get(__response__, 'handle'),
+        id=pulumi.get(__response__, 'id'),
+        name=pulumi.get(__response__, 'name'),
+        usergroup_id=pulumi.get(__response__, 'usergroup_id'),
+        users=pulumi.get(__response__, 'users')))
