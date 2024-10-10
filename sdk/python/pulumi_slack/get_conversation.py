@@ -4,9 +4,14 @@
 
 import copy
 import warnings
+import sys
 import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
+if sys.version_info >= (3, 11):
+    from typing import NotRequired, TypedDict, TypeAlias
+else:
+    from typing_extensions import NotRequired, TypedDict, TypeAlias
 from . import _utilities
 
 __all__ = [
@@ -250,9 +255,6 @@ def get_conversation(channel_id: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'),
         purpose=pulumi.get(__ret__, 'purpose'),
         topic=pulumi.get(__ret__, 'topic'))
-
-
-@_utilities.lift_output_func(get_conversation)
 def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None,
                             is_private: Optional[pulumi.Input[Optional[bool]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -294,4 +296,23 @@ def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = 
            with `name`.
     :param str name: The name of the public or private channel
     """
-    ...
+    __args__ = dict()
+    __args__['channelId'] = channel_id
+    __args__['isPrivate'] = is_private
+    __args__['name'] = name
+    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    __ret__ = pulumi.runtime.invoke_output('slack:index/getConversation:getConversation', __args__, opts=opts, typ=GetConversationResult)
+    return __ret__.apply(lambda __response__: GetConversationResult(
+        channel_id=pulumi.get(__response__, 'channel_id'),
+        created=pulumi.get(__response__, 'created'),
+        creator=pulumi.get(__response__, 'creator'),
+        id=pulumi.get(__response__, 'id'),
+        is_archived=pulumi.get(__response__, 'is_archived'),
+        is_ext_shared=pulumi.get(__response__, 'is_ext_shared'),
+        is_general=pulumi.get(__response__, 'is_general'),
+        is_org_shared=pulumi.get(__response__, 'is_org_shared'),
+        is_private=pulumi.get(__response__, 'is_private'),
+        is_shared=pulumi.get(__response__, 'is_shared'),
+        name=pulumi.get(__response__, 'name'),
+        purpose=pulumi.get(__response__, 'purpose'),
+        topic=pulumi.get(__response__, 'topic')))
