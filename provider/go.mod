@@ -11,7 +11,7 @@ replace (
 
 require (
 	github.com/pablovarela/terraform-provider-slack v1.2.2
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.93.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.93.1
 )
 
 require (
