@@ -6,7 +6,7 @@ layout: package
 ---
 ## Installation
 
-The slack provider is available as a package in all Pulumi languages:
+The Slack provider is available as a package in all Pulumi languages:
 
 * JavaScript/TypeScript: [`@pulumi/slack`](https://www.npmjs.com/package/@pulumi/slack)
 * Python: [`pulumi-slack`](https://pypi.org/project/pulumi-slack/)
