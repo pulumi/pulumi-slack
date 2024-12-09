@@ -258,7 +258,7 @@ def get_conversation(channel_id: Optional[str] = None,
 def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None,
                             is_private: Optional[pulumi.Input[Optional[bool]]] = None,
                             name: Optional[pulumi.Input[Optional[str]]] = None,
-                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetConversationResult]:
+                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConversationResult]:
     """
     Use this data source to get information about a Slack conversation for use in other
     resources.
@@ -300,7 +300,7 @@ def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[str]]] = 
     __args__['channelId'] = channel_id
     __args__['isPrivate'] = is_private
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('slack:index/getConversation:getConversation', __args__, opts=opts, typ=GetConversationResult)
     return __ret__.apply(lambda __response__: GetConversationResult(
         channel_id=pulumi.get(__response__, 'channel_id'),
