@@ -117,7 +117,7 @@ def get_user(email: Optional[str] = None,
         name=pulumi.get(__ret__, 'name'))
 def get_user_output(email: Optional[pulumi.Input[Optional[str]]] = None,
                     name: Optional[pulumi.Input[Optional[str]]] = None,
-                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetUserResult]:
+                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUserResult]:
     """
     Use this data source to get information about a user for use in other
     resources.
@@ -156,7 +156,7 @@ def get_user_output(email: Optional[pulumi.Input[Optional[str]]] = None,
     __args__ = dict()
     __args__['email'] = email
     __args__['name'] = name
-    opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
+    opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('slack:index/getUser:getUser', __args__, opts=opts, typ=GetUserResult)
     return __ret__.apply(lambda __response__: GetUserResult(
         email=pulumi.get(__response__, 'email'),
