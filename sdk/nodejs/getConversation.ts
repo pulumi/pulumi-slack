@@ -158,7 +158,7 @@ export interface GetConversationResult {
  * });
  * ```
  */
-export function getConversationOutput(args?: GetConversationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConversationResult> {
+export function getConversationOutput(args?: GetConversationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConversationResult> {
     args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("slack:index/getConversation:getConversation", {
