@@ -100,6 +100,51 @@ namespace Pulumi.Slack
         /// </summary>
         public static Output<GetUserResult> Invoke(GetUserInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("slack:index/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about a user for use in other
+        /// resources.
+        /// 
+        /// ## Required scopes
+        /// 
+        /// This resource requires the following scopes:
+        /// 
+        /// - [users:read](https://api.slack.com/scopes/users:read)
+        /// - [users:read.email](https://api.slack.com/scopes/users:read.email)
+        /// 
+        /// The Slack API methods used by the resource are:
+        /// 
+        /// - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
+        /// - [users.list](https://api.slack.com/methods/users.list)
+        /// 
+        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// the documentation for the methods above.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Slack = Pulumi.Slack;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var byName = Slack.GetUser.Invoke(new()
+        ///     {
+        ///         Name = "my-user",
+        ///     });
+        /// 
+        ///     var byEmail = Slack.GetUser.Invoke(new()
+        ///     {
+        ///         Email = "my-user@example.com",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUserResult> Invoke(GetUserInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserResult>("slack:index/getUser:getUser", args ?? new GetUserInvokeArgs(), options.WithDefaults());
     }
 
 
