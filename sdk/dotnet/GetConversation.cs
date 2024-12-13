@@ -100,6 +100,51 @@ namespace Pulumi.Slack
         /// </summary>
         public static Output<GetConversationResult> Invoke(GetConversationInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about a Slack conversation for use in other
+        /// resources.
+        /// 
+        /// ## Required scopes
+        /// 
+        /// This resource requires the following scopes:
+        /// 
+        /// - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
+        /// - [groups:read](https://api.slack.com/scopes/groups:read) (private channels)
+        /// 
+        /// The Slack API methods used by the resource are:
+        /// 
+        /// - [conversations.info](https://api.slack.com/methods/conversations.info)
+        /// - [conversations.members](https://api.slack.com/methods/conversations.members)
+        /// 
+        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// the documentation for the methods above.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Slack = Pulumi.Slack;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var test = Slack.GetConversation.Invoke(new()
+        ///     {
+        ///         ChannelId = "my-channel",
+        ///     });
+        /// 
+        ///     var test_name = Slack.GetConversation.Invoke(new()
+        ///     {
+        ///         Name = "my-channel-name",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetConversationResult> Invoke(GetConversationInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetConversationResult>("slack:index/getConversation:getConversation", args ?? new GetConversationInvokeArgs(), options.WithDefaults());
     }
 
 

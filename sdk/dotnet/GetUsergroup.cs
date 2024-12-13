@@ -96,6 +96,49 @@ namespace Pulumi.Slack
         /// </summary>
         public static Output<GetUsergroupResult> Invoke(GetUsergroupInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUsergroupResult>("slack:index/getUsergroup:getUsergroup", args ?? new GetUsergroupInvokeArgs(), options.WithDefaults());
+
+        /// <summary>
+        /// Use this data source to get information about a usergroups for use in other
+        /// resources. The data source returns enabled groups only.
+        /// 
+        /// ## Required scopes
+        /// 
+        /// This resource requires the following scopes:
+        /// 
+        /// - [usergroups:read](https://api.slack.com/scopes/usergroups:read)
+        /// 
+        /// The Slack API methods used by the resource are:
+        /// 
+        /// - [usergroups.list](https://api.slack.com/methods/usergroups.list)
+        /// 
+        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// the documentation for the methods above.
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Slack = Pulumi.Slack;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var byName = Slack.GetUsergroup.Invoke(new()
+        ///     {
+        ///         Name = "my-usergroup",
+        ///     });
+        /// 
+        ///     var byId = Slack.GetUsergroup.Invoke(new()
+        ///     {
+        ///         UsergroupId = "USERGROUP00",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// </summary>
+        public static Output<GetUsergroupResult> Invoke(GetUsergroupInvokeArgs args, InvokeOutputOptions options)
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsergroupResult>("slack:index/getUsergroup:getUsergroup", args ?? new GetUsergroupInvokeArgs(), options.WithDefaults());
     }
 
 
