@@ -32,7 +32,7 @@ import * as utilities from "./utilities";
  * const test = slack.getConversation({
  *     channelId: "my-channel",
  * });
- * const test-name = slack.getConversation({
+ * const test_name = slack.getConversation({
  *     name: "my-channel-name",
  * });
  * ```
@@ -153,7 +153,7 @@ export interface GetConversationResult {
  * const test = slack.getConversation({
  *     channelId: "my-channel",
  * });
- * const test-name = slack.getConversation({
+ * const test_name = slack.getConversation({
  *     name: "my-channel-name",
  * });
  * ```
