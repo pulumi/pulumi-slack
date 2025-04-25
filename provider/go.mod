@@ -1,8 +1,8 @@
 module github.com/pulumi/pulumi-slack/provider
 
-go 1.22.3
+go 1.23
 
-toolchain go1.22.7
+toolchain go1.23.8
 
 replace (
 	github.com/hashicorp/go-getter v1.5.0 => github.com/hashicorp/go-getter v1.4.0
@@ -11,7 +11,7 @@ replace (
 
 require (
 	github.com/pablovarela/terraform-provider-slack v1.2.2
-	github.com/pulumi/pulumi-terraform-bridge/v3 v3.106.0
+	github.com/pulumi/pulumi-terraform-bridge/v3 v3.106.1-0.20250424184649-6b65634cd288
 )
 
 require (
@@ -127,12 +127,12 @@ require (
 	github.com/pkg/term v1.1.0 // indirect
 	github.com/posener/complete v1.2.3 // indirect
 	github.com/pulumi/appdash v0.0.0-20231130102222-75f619a67231 // indirect
-	github.com/pulumi/esc v0.10.0 // indirect
+	github.com/pulumi/esc v0.13.0 // indirect
 	github.com/pulumi/inflector v0.1.1 // indirect
 	github.com/pulumi/pulumi-java/pkg v1.8.0 // indirect
 	github.com/pulumi/pulumi-yaml v1.15.1 // indirect
-	github.com/pulumi/pulumi/pkg/v3 v3.160.0 // indirect
-	github.com/pulumi/pulumi/sdk/v3 v3.160.0 // indirect
+	github.com/pulumi/pulumi/pkg/v3 v3.163.0 // indirect
+	github.com/pulumi/pulumi/sdk/v3 v3.163.0 // indirect
 	github.com/pulumi/schema-tools v0.1.2 // indirect
 	github.com/pulumi/terraform-diff-reader v0.0.2 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
