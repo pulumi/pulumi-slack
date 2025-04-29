@@ -443,6 +443,9 @@ class _ConversationState:
 
 
 class Conversation(pulumi.CustomResource):
+
+    pulumi_type = "slack:index/conversation:Conversation"
+
     @overload
     def __init__(__self__,
                  resource_name: str,
