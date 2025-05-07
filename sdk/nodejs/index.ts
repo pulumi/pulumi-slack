@@ -25,10 +25,8 @@ export const getUsergroup: typeof import("./getUsergroup").getUsergroup = null a
 export const getUsergroupOutput: typeof import("./getUsergroup").getUsergroupOutput = null as any;
 utilities.lazyLoad(exports, ["getUsergroup","getUsergroupOutput"], () => require("./getUsergroup"));
 
-export { ProviderArgs } from "./provider";
-export type Provider = import("./provider").Provider;
-export const Provider: typeof import("./provider").Provider = null as any;
-utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+export * from "./provider";
+import { Provider } from "./provider";
 
 export { UsergroupArgs, UsergroupState } from "./usergroup";
 export type Usergroup = import("./usergroup").Usergroup;
