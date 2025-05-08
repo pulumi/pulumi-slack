@@ -201,10 +201,8 @@ class _UsergroupState:
         pulumi.set(self, "users", value)
 
 
+@pulumi.type_token("slack:index/usergroup:Usergroup")
 class Usergroup(pulumi.CustomResource):
-
-    pulumi_type = "slack:index/usergroup:Usergroup"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
