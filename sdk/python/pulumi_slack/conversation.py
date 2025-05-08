@@ -442,10 +442,8 @@ class _ConversationState:
         pulumi.set(self, "topic", value)
 
 
+@pulumi.type_token("slack:index/conversation:Conversation")
 class Conversation(pulumi.CustomResource):
-
-    pulumi_type = "slack:index/conversation:Conversation"
-
     @overload
     def __init__(__self__,
                  resource_name: str,
