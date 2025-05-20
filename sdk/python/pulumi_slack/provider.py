@@ -20,23 +20,24 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
-                 token: pulumi.Input[builtins.str]):
+                 token: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Provider resource.
         :param pulumi.Input[builtins.str] token: The Slack token
         """
-        pulumi.set(__self__, "token", token)
+        if token is not None:
+            pulumi.set(__self__, "token", token)
 
     @property
     @pulumi.getter
-    def token(self) -> pulumi.Input[builtins.str]:
+    def token(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         The Slack token
         """
         return pulumi.get(self, "token")
 
     @token.setter
-    def token(self, value: pulumi.Input[builtins.str]):
+    def token(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "token", value)
 
 
@@ -62,7 +63,7 @@ class Provider(pulumi.ProviderResource):
     @overload
     def __init__(__self__,
                  resource_name: str,
-                 args: ProviderArgs,
+                 args: Optional[ProviderArgs] = None,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         The provider type for the slack package. By default, resources use package-wide configuration
@@ -95,8 +96,6 @@ class Provider(pulumi.ProviderResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
-            if token is None and not opts.urn:
-                raise TypeError("Missing required property 'token'")
             __props__.__dict__["token"] = token
         super(Provider, __self__).__init__(
             'slack',
@@ -106,7 +105,7 @@ class Provider(pulumi.ProviderResource):
 
     @property
     @pulumi.getter
-    def token(self) -> pulumi.Output[builtins.str]:
+    def token(self) -> pulumi.Output[Optional[builtins.str]]:
         """
         The Slack token
         """

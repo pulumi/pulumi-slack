@@ -28,7 +28,7 @@ export class Provider extends pulumi.ProviderResource {
     /**
      * The Slack token
      */
-    public readonly token!: pulumi.Output<string>;
+    public readonly token!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Provider resource with the given unique name, arguments, and options.
@@ -37,13 +37,10 @@ export class Provider extends pulumi.ProviderResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: ProviderArgs, opts?: pulumi.ResourceOptions) {
+    constructor(name: string, args?: ProviderArgs, opts?: pulumi.ResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
         {
-            if ((!args || args.token === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'token'");
-            }
             resourceInputs["token"] = args ? args.token : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -67,7 +64,7 @@ export interface ProviderArgs {
     /**
      * The Slack token
      */
-    token: pulumi.Input<string>;
+    token?: pulumi.Input<string>;
 }
 
 export namespace Provider {
