@@ -5,9 +5,10 @@ package com.pulumi.slack;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
@@ -18,15 +19,15 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
      * The Slack token
      * 
      */
-    @Import(name="token", required=true)
-    private Output<String> token;
+    @Import(name="token")
+    private @Nullable Output<String> token;
 
     /**
      * @return The Slack token
      * 
      */
-    public Output<String> token() {
-        return this.token;
+    public Optional<Output<String>> token() {
+        return Optional.ofNullable(this.token);
     }
 
     private ProviderArgs() {}
@@ -59,7 +60,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder token(Output<String> token) {
+        public Builder token(@Nullable Output<String> token) {
             $.token = token;
             return this;
         }
@@ -75,9 +76,6 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         public ProviderArgs build() {
-            if ($.token == null) {
-                throw new MissingRequiredPropertyException("ProviderArgs", "token");
-            }
             return $;
         }
     }
