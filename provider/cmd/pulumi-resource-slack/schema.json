@@ -68,18 +68,12 @@
                 "description": "The Slack token\n"
             }
         },
-        "required": [
-            "token"
-        ],
         "inputProperties": {
             "token": {
                 "type": "string",
                 "description": "The Slack token\n"
             }
         },
-        "requiredInputs": [
-            "token"
-        ],
         "methods": {
             "terraformConfig": "pulumi:providers:slack/terraformConfig"
         }
