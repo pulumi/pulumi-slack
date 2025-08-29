@@ -53,7 +53,7 @@
         "variables": {
             "token": {
                 "type": "string",
-                "description": "The Slack token\n"
+                "description": "The Slack token"
             }
         },
         "defaults": [
@@ -65,13 +65,13 @@
         "properties": {
             "token": {
                 "type": "string",
-                "description": "The Slack token\n"
+                "description": "The Slack token"
             }
         },
         "inputProperties": {
             "token": {
                 "type": "string",
-                "description": "The Slack token\n"
+                "description": "The Slack token"
             }
         },
         "methods": {
@@ -427,7 +427,7 @@
                         "type": "string"
                     },
                     "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.\n",
+                        "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
                     "isArchived": {
@@ -505,7 +505,7 @@
                         "type": "string"
                     },
                     "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.\n",
+                        "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
                     "name": {
@@ -553,7 +553,7 @@
                         "type": "string"
                     },
                     "id": {
-                        "description": "The provider-assigned unique ID for this managed resource.\n",
+                        "description": "The provider-assigned unique ID for this managed resource.",
                         "type": "string"
                     },
                     "name": {
