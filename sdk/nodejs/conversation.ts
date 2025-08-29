@@ -131,66 +131,66 @@ export class Conversation extends pulumi.CustomResource {
      * as it is  and as a result any subsequent runs of pulumi up with the same
      * name  will fail.
      */
-    public readonly actionOnDestroy!: pulumi.Output<string | undefined>;
+    declare public readonly actionOnDestroy: pulumi.Output<string | undefined>;
     /**
      * indicate
      * whether the members should be kick of the channel when removed from
      * `permanentMembers`. When set to `none` the user are never kicked, this prevent
      * a side effect on public channels where user that joined the channel are kicked.
      */
-    public readonly actionOnUpdatePermanentMembers!: pulumi.Output<string | undefined>;
-    public readonly adoptExistingChannel!: pulumi.Output<boolean | undefined>;
+    declare public readonly actionOnUpdatePermanentMembers: pulumi.Output<string | undefined>;
+    declare public readonly adoptExistingChannel: pulumi.Output<boolean | undefined>;
     /**
      * is a unix timestamp.
      */
-    public /*out*/ readonly created!: pulumi.Output<number>;
+    declare public /*out*/ readonly created: pulumi.Output<number>;
     /**
      * is the user ID of the member that created this channel.
      */
-    public /*out*/ readonly creator!: pulumi.Output<string>;
+    declare public /*out*/ readonly creator: pulumi.Output<string>;
     /**
      * indicates a conversation is archived. Frozen in time.
      */
-    public readonly isArchived!: pulumi.Output<boolean | undefined>;
+    declare public readonly isArchived: pulumi.Output<boolean | undefined>;
     /**
      * represents this conversation as being part of a Shared Channel
      * with a remote organization.
      */
-    public /*out*/ readonly isExtShared!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isExtShared: pulumi.Output<boolean>;
     /**
      * will be true if this channel is the "general" channel that includes
      * all regular team members.
      */
-    public /*out*/ readonly isGeneral!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isGeneral: pulumi.Output<boolean>;
     /**
      * explains whether this shared channel is shared between Enterprise
      * Grid workspaces within the same organization.
      */
-    public /*out*/ readonly isOrgShared!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isOrgShared: pulumi.Output<boolean>;
     /**
      * create a private channel instead of a public one.
      */
-    public readonly isPrivate!: pulumi.Output<boolean>;
+    declare public readonly isPrivate: pulumi.Output<boolean>;
     /**
      * means the conversation is in some way shared between multiple workspaces.
      */
-    public /*out*/ readonly isShared!: pulumi.Output<boolean>;
+    declare public /*out*/ readonly isShared: pulumi.Output<boolean>;
     /**
      * name of the public or private channel.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * user IDs to add to the channel.
      */
-    public readonly permanentMembers!: pulumi.Output<string[] | undefined>;
+    declare public readonly permanentMembers: pulumi.Output<string[] | undefined>;
     /**
      * purpose of the channel.
      */
-    public readonly purpose!: pulumi.Output<string | undefined>;
+    declare public readonly purpose: pulumi.Output<string | undefined>;
     /**
      * topic for the channel.
      */
-    public readonly topic!: pulumi.Output<string | undefined>;
+    declare public readonly topic: pulumi.Output<string | undefined>;
 
     /**
      * Create a Conversation resource with the given unique name, arguments, and options.
@@ -205,35 +205,35 @@ export class Conversation extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as ConversationState | undefined;
-            resourceInputs["actionOnDestroy"] = state ? state.actionOnDestroy : undefined;
-            resourceInputs["actionOnUpdatePermanentMembers"] = state ? state.actionOnUpdatePermanentMembers : undefined;
-            resourceInputs["adoptExistingChannel"] = state ? state.adoptExistingChannel : undefined;
-            resourceInputs["created"] = state ? state.created : undefined;
-            resourceInputs["creator"] = state ? state.creator : undefined;
-            resourceInputs["isArchived"] = state ? state.isArchived : undefined;
-            resourceInputs["isExtShared"] = state ? state.isExtShared : undefined;
-            resourceInputs["isGeneral"] = state ? state.isGeneral : undefined;
-            resourceInputs["isOrgShared"] = state ? state.isOrgShared : undefined;
-            resourceInputs["isPrivate"] = state ? state.isPrivate : undefined;
-            resourceInputs["isShared"] = state ? state.isShared : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["permanentMembers"] = state ? state.permanentMembers : undefined;
-            resourceInputs["purpose"] = state ? state.purpose : undefined;
-            resourceInputs["topic"] = state ? state.topic : undefined;
+            resourceInputs["actionOnDestroy"] = state?.actionOnDestroy;
+            resourceInputs["actionOnUpdatePermanentMembers"] = state?.actionOnUpdatePermanentMembers;
+            resourceInputs["adoptExistingChannel"] = state?.adoptExistingChannel;
+            resourceInputs["created"] = state?.created;
+            resourceInputs["creator"] = state?.creator;
+            resourceInputs["isArchived"] = state?.isArchived;
+            resourceInputs["isExtShared"] = state?.isExtShared;
+            resourceInputs["isGeneral"] = state?.isGeneral;
+            resourceInputs["isOrgShared"] = state?.isOrgShared;
+            resourceInputs["isPrivate"] = state?.isPrivate;
+            resourceInputs["isShared"] = state?.isShared;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["permanentMembers"] = state?.permanentMembers;
+            resourceInputs["purpose"] = state?.purpose;
+            resourceInputs["topic"] = state?.topic;
         } else {
             const args = argsOrState as ConversationArgs | undefined;
-            if ((!args || args.isPrivate === undefined) && !opts.urn) {
+            if (args?.isPrivate === undefined && !opts.urn) {
                 throw new Error("Missing required property 'isPrivate'");
             }
-            resourceInputs["actionOnDestroy"] = args ? args.actionOnDestroy : undefined;
-            resourceInputs["actionOnUpdatePermanentMembers"] = args ? args.actionOnUpdatePermanentMembers : undefined;
-            resourceInputs["adoptExistingChannel"] = args ? args.adoptExistingChannel : undefined;
-            resourceInputs["isArchived"] = args ? args.isArchived : undefined;
-            resourceInputs["isPrivate"] = args ? args.isPrivate : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["permanentMembers"] = args ? args.permanentMembers : undefined;
-            resourceInputs["purpose"] = args ? args.purpose : undefined;
-            resourceInputs["topic"] = args ? args.topic : undefined;
+            resourceInputs["actionOnDestroy"] = args?.actionOnDestroy;
+            resourceInputs["actionOnUpdatePermanentMembers"] = args?.actionOnUpdatePermanentMembers;
+            resourceInputs["adoptExistingChannel"] = args?.adoptExistingChannel;
+            resourceInputs["isArchived"] = args?.isArchived;
+            resourceInputs["isPrivate"] = args?.isPrivate;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["permanentMembers"] = args?.permanentMembers;
+            resourceInputs["purpose"] = args?.purpose;
+            resourceInputs["topic"] = args?.topic;
             resourceInputs["created"] = undefined /*out*/;
             resourceInputs["creator"] = undefined /*out*/;
             resourceInputs["isExtShared"] = undefined /*out*/;
