@@ -102,25 +102,25 @@ export class Usergroup extends pulumi.CustomResource {
     /**
      * channel IDs for which the User Group uses as a default.
      */
-    public readonly channels!: pulumi.Output<string[] | undefined>;
+    declare public readonly channels: pulumi.Output<string[] | undefined>;
     /**
      * a short description of the User Group.
      */
-    public readonly description!: pulumi.Output<string | undefined>;
+    declare public readonly description: pulumi.Output<string | undefined>;
     /**
      * a mention handle. Must be unique among channels, users
      * and User Groups.
      */
-    public readonly handle!: pulumi.Output<string | undefined>;
+    declare public readonly handle: pulumi.Output<string | undefined>;
     /**
      * a name for the User Group. Must be unique among User Groups.
      */
-    public readonly name!: pulumi.Output<string>;
+    declare public readonly name: pulumi.Output<string>;
     /**
      * user IDs that represent the entire list of users for the
      * User Group.
      */
-    public readonly users!: pulumi.Output<string[] | undefined>;
+    declare public readonly users: pulumi.Output<string[] | undefined>;
 
     /**
      * Create a Usergroup resource with the given unique name, arguments, and options.
@@ -135,18 +135,18 @@ export class Usergroup extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UsergroupState | undefined;
-            resourceInputs["channels"] = state ? state.channels : undefined;
-            resourceInputs["description"] = state ? state.description : undefined;
-            resourceInputs["handle"] = state ? state.handle : undefined;
-            resourceInputs["name"] = state ? state.name : undefined;
-            resourceInputs["users"] = state ? state.users : undefined;
+            resourceInputs["channels"] = state?.channels;
+            resourceInputs["description"] = state?.description;
+            resourceInputs["handle"] = state?.handle;
+            resourceInputs["name"] = state?.name;
+            resourceInputs["users"] = state?.users;
         } else {
             const args = argsOrState as UsergroupArgs | undefined;
-            resourceInputs["channels"] = args ? args.channels : undefined;
-            resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["handle"] = args ? args.handle : undefined;
-            resourceInputs["name"] = args ? args.name : undefined;
-            resourceInputs["users"] = args ? args.users : undefined;
+            resourceInputs["channels"] = args?.channels;
+            resourceInputs["description"] = args?.description;
+            resourceInputs["handle"] = args?.handle;
+            resourceInputs["name"] = args?.name;
+            resourceInputs["users"] = args?.users;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Usergroup.__pulumiType, name, resourceInputs, opts);
