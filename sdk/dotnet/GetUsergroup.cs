@@ -25,7 +25,7 @@ namespace Pulumi.Slack
         /// 
         /// - [usergroups.list](https://api.slack.com/methods/usergroups.list)
         /// 
-        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// If you get `MissingScope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Slack
         /// 
         /// - [usergroups.list](https://api.slack.com/methods/usergroups.list)
         /// 
-        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// If you get `MissingScope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
         /// ## Example Usage
@@ -111,7 +111,7 @@ namespace Pulumi.Slack
         /// 
         /// - [usergroups.list](https://api.slack.com/methods/usergroups.list)
         /// 
-        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// If you get `MissingScope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
         /// ## Example Usage
