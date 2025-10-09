@@ -27,7 +27,7 @@ namespace Pulumi.Slack
         /// - [conversations.info](https://api.slack.com/methods/conversations.info)
         /// - [conversations.members](https://api.slack.com/methods/conversations.members)
         /// 
-        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// If you get `MissingScope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
         /// ## Example Usage
@@ -72,7 +72,7 @@ namespace Pulumi.Slack
         /// - [conversations.info](https://api.slack.com/methods/conversations.info)
         /// - [conversations.members](https://api.slack.com/methods/conversations.members)
         /// 
-        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// If you get `MissingScope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
         /// ## Example Usage
@@ -117,7 +117,7 @@ namespace Pulumi.Slack
         /// - [conversations.info](https://api.slack.com/methods/conversations.info)
         /// - [conversations.members](https://api.slack.com/methods/conversations.members)
         /// 
-        /// If you get `missing_scope` errors while using this resource check the scopes against
+        /// If you get `MissingScope` errors while using this resource check the scopes against
         /// the documentation for the methods above.
         /// 
         /// ## Example Usage
@@ -159,8 +159,8 @@ namespace Pulumi.Slack
         /// <summary>
         /// The conversation is privileged between two or more members
         /// 
-        /// Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
-        /// with `name`.
+        /// Either `ChannelId` or `Name` must be provided. `IsPrivate` only works in conjunction
+        /// with `Name`.
         /// </summary>
         [Input("isPrivate")]
         public bool? IsPrivate { get; set; }
@@ -188,8 +188,8 @@ namespace Pulumi.Slack
         /// <summary>
         /// The conversation is privileged between two or more members
         /// 
-        /// Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
-        /// with `name`.
+        /// Either `ChannelId` or `Name` must be provided. `IsPrivate` only works in conjunction
+        /// with `Name`.
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }
