@@ -28,7 +28,7 @@ namespace Pulumi.Slack
     /// - [usergroups.list](https://api.slack.com/methods/usergroups.list)
     /// - [usergroups.users.update](https://api.slack.com/methods/usergroups.users.update)
     /// 
-    /// If you get `missing_scope` errors while using this resource check the scopes against
+    /// If you get `MissingScope` errors while using this resource check the scopes against
     /// the documentation for the methods above.
     /// 
     /// ## Example Usage
@@ -59,9 +59,9 @@ namespace Pulumi.Slack
     /// });
     /// ```
     /// 
-    /// Note that if a channel is removed from the `channels` list users are
+    /// Note that if a channel is removed from the `Channels` list users are
     /// **not** removed from the channel. In order to keep the users in the
-    /// groups and in the channel in sync set `permanent_users` in the channel:
+    /// groups and in the channel in sync set `PermanentUsers` in the channel:
     /// 
     /// ```csharp
     /// using System.Collections.Generic;

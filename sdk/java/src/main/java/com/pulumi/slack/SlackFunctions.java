@@ -37,7 +37,7 @@ public final class SlackFunctions {
      * - [conversations.info](https://api.slack.com/methods/conversations.info)
      * - [conversations.members](https://api.slack.com/methods/conversations.members)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -97,7 +97,7 @@ public final class SlackFunctions {
      * - [conversations.info](https://api.slack.com/methods/conversations.info)
      * - [conversations.members](https://api.slack.com/methods/conversations.members)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -157,7 +157,7 @@ public final class SlackFunctions {
      * - [conversations.info](https://api.slack.com/methods/conversations.info)
      * - [conversations.members](https://api.slack.com/methods/conversations.members)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -217,7 +217,7 @@ public final class SlackFunctions {
      * - [conversations.info](https://api.slack.com/methods/conversations.info)
      * - [conversations.members](https://api.slack.com/methods/conversations.members)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -277,7 +277,7 @@ public final class SlackFunctions {
      * - [conversations.info](https://api.slack.com/methods/conversations.info)
      * - [conversations.members](https://api.slack.com/methods/conversations.members)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -337,7 +337,7 @@ public final class SlackFunctions {
      * - [conversations.info](https://api.slack.com/methods/conversations.info)
      * - [conversations.members](https://api.slack.com/methods/conversations.members)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -397,7 +397,7 @@ public final class SlackFunctions {
      * - [conversations.info](https://api.slack.com/methods/conversations.info)
      * - [conversations.members](https://api.slack.com/methods/conversations.members)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -457,7 +457,7 @@ public final class SlackFunctions {
      * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
      * - [users.list](https://api.slack.com/methods/users.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -517,7 +517,7 @@ public final class SlackFunctions {
      * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
      * - [users.list](https://api.slack.com/methods/users.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -577,7 +577,7 @@ public final class SlackFunctions {
      * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
      * - [users.list](https://api.slack.com/methods/users.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -637,7 +637,7 @@ public final class SlackFunctions {
      * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
      * - [users.list](https://api.slack.com/methods/users.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -697,7 +697,7 @@ public final class SlackFunctions {
      * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
      * - [users.list](https://api.slack.com/methods/users.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -757,7 +757,7 @@ public final class SlackFunctions {
      * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
      * - [users.list](https://api.slack.com/methods/users.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -817,7 +817,7 @@ public final class SlackFunctions {
      * - [users.lookupByEmail](https://api.slack.com/methods/users.lookupByEmail)
      * - [users.list](https://api.slack.com/methods/users.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -875,7 +875,7 @@ public final class SlackFunctions {
      * 
      * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -933,7 +933,7 @@ public final class SlackFunctions {
      * 
      * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -991,7 +991,7 @@ public final class SlackFunctions {
      * 
      * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -1049,7 +1049,7 @@ public final class SlackFunctions {
      * 
      * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -1107,7 +1107,7 @@ public final class SlackFunctions {
      * 
      * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -1165,7 +1165,7 @@ public final class SlackFunctions {
      * 
      * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
@@ -1223,7 +1223,7 @@ public final class SlackFunctions {
      * 
      * - [usergroups.list](https://api.slack.com/methods/usergroups.list)
      * 
-     * If you get `missing_scope` errors while using this resource check the scopes against
+     * If you get `missingScope` errors while using this resource check the scopes against
      * the documentation for the methods above.
      * 
      * ## Example Usage
