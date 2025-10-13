@@ -16,7 +16,7 @@ namespace Pulumi.Slack
     /// 
     /// This resource requires the following scopes:
     /// 
-    /// If using `bot` tokens:
+    /// If using `Bot` tokens:
     /// 
     /// - [channels:read](https://api.slack.com/scopes/channels:read)
     ///   (public channels)
@@ -29,7 +29,7 @@ namespace Pulumi.Slack
     /// - [groups:write](https://api.slack.com/scopes/groups:write)
     ///   (private channels)
     /// 
-    /// If using `user` tokens:
+    /// If using `User` tokens:
     /// 
     /// - [channels:read](https://api.slack.com/scopes/channels:read) (public channels)
     /// - [channels:write](https://api.slack.com/scopes/channels:manage) (public channels)
@@ -50,7 +50,7 @@ namespace Pulumi.Slack
     /// - [conversations.archive](https://api.slack.com/methods/conversations.archive)
     /// - [conversations.unarchive](https://api.slack.com/methods/conversations.unarchive)
     /// 
-    /// If you get `missing_scope` errors while using this resource check the scopes against
+    /// If you get `MissingScope` errors while using this resource check the scopes against
     /// the documentation for the methods above.
     /// 
     /// ## Example Usage
@@ -128,7 +128,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// indicates whether the
         /// conversation should be archived or left behind on destroy. Valid values are
-        /// `archive | none`. Note that when set to `none` the conversation will be left
+        /// `archive | none`. Note that when set to `None` the conversation will be left
         /// as it is  and as a result any subsequent runs of pulumi up with the same
         /// name  will fail.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// indicate
         /// whether the members should be kick of the channel when removed from
-        /// `permanent_members`. When set to `none` the user are never kicked, this prevent
+        /// `PermanentMembers`. When set to `None` the user are never kicked, this prevent
         /// a side effect on public channels where user that joined the channel are kicked.
         /// </summary>
         [Output("actionOnUpdatePermanentMembers")]
@@ -271,7 +271,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// indicates whether the
         /// conversation should be archived or left behind on destroy. Valid values are
-        /// `archive | none`. Note that when set to `none` the conversation will be left
+        /// `archive | none`. Note that when set to `None` the conversation will be left
         /// as it is  and as a result any subsequent runs of pulumi up with the same
         /// name  will fail.
         /// </summary>
@@ -281,7 +281,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// indicate
         /// whether the members should be kick of the channel when removed from
-        /// `permanent_members`. When set to `none` the user are never kicked, this prevent
+        /// `PermanentMembers`. When set to `None` the user are never kicked, this prevent
         /// a side effect on public channels where user that joined the channel are kicked.
         /// </summary>
         [Input("actionOnUpdatePermanentMembers")]
@@ -343,7 +343,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// indicates whether the
         /// conversation should be archived or left behind on destroy. Valid values are
-        /// `archive | none`. Note that when set to `none` the conversation will be left
+        /// `archive | none`. Note that when set to `None` the conversation will be left
         /// as it is  and as a result any subsequent runs of pulumi up with the same
         /// name  will fail.
         /// </summary>
@@ -353,7 +353,7 @@ namespace Pulumi.Slack
         /// <summary>
         /// indicate
         /// whether the members should be kick of the channel when removed from
-        /// `permanent_members`. When set to `none` the user are never kicked, this prevent
+        /// `PermanentMembers`. When set to `None` the user are never kicked, this prevent
         /// a side effect on public channels where user that joined the channel are kicked.
         /// </summary>
         [Input("actionOnUpdatePermanentMembers")]

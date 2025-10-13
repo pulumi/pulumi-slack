@@ -44,7 +44,7 @@ public final class ConversationState extends com.pulumi.resources.ResourceArgs {
     /**
      * indicate
      * whether the members should be kick of the channel when removed from
-     * `permanent_members`. When set to `none` the user are never kicked, this prevent
+     * `permanentMembers`. When set to `none` the user are never kicked, this prevent
      * a side effect on public channels where user that joined the channel are kicked.
      * 
      */
@@ -54,7 +54,7 @@ public final class ConversationState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return indicate
      * whether the members should be kick of the channel when removed from
-     * `permanent_members`. When set to `none` the user are never kicked, this prevent
+     * `permanentMembers`. When set to `none` the user are never kicked, this prevent
      * a side effect on public channels where user that joined the channel are kicked.
      * 
      */
@@ -325,7 +325,7 @@ public final class ConversationState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param actionOnUpdatePermanentMembers indicate
          * whether the members should be kick of the channel when removed from
-         * `permanent_members`. When set to `none` the user are never kicked, this prevent
+         * `permanentMembers`. When set to `none` the user are never kicked, this prevent
          * a side effect on public channels where user that joined the channel are kicked.
          * 
          * @return builder
@@ -339,7 +339,7 @@ public final class ConversationState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param actionOnUpdatePermanentMembers indicate
          * whether the members should be kick of the channel when removed from
-         * `permanent_members`. When set to `none` the user are never kicked, this prevent
+         * `permanentMembers`. When set to `none` the user are never kicked, this prevent
          * a side effect on public channels where user that joined the channel are kicked.
          * 
          * @return builder

@@ -34,7 +34,7 @@ public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * The conversation is privileged between two or more members
      * 
-     * Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+     * Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
      * with `name`.
      * 
      */
@@ -44,7 +44,7 @@ public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
     /**
      * @return The conversation is privileged between two or more members
      * 
-     * Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+     * Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
      * with `name`.
      * 
      */
@@ -117,7 +117,7 @@ public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
         /**
          * @param isPrivate The conversation is privileged between two or more members
          * 
-         * Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+         * Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
          * with `name`.
          * 
          * @return builder
@@ -131,7 +131,7 @@ public final class GetConversationArgs extends com.pulumi.resources.InvokeArgs {
         /**
          * @param isPrivate The conversation is privileged between two or more members
          * 
-         * Either `channel_id` or `name` must be provided. `is_private` only works in conjunction
+         * Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
          * with `name`.
          * 
          * @return builder
