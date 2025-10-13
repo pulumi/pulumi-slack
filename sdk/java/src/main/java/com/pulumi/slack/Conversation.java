@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * - [conversations.archive](https://api.slack.com/methods/conversations.archive)
  * - [conversations.unarchive](https://api.slack.com/methods/conversations.unarchive)
  * 
- * If you get `missing_scope` errors while using this resource check the scopes against
+ * If you get `missingScope` errors while using this resource check the scopes against
  * the documentation for the methods above.
  * 
  * ## Example Usage
@@ -203,7 +203,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
     /**
      * indicate
      * whether the members should be kick of the channel when removed from
-     * `permanent_members`. When set to `none` the user are never kicked, this prevent
+     * `permanentMembers`. When set to `none` the user are never kicked, this prevent
      * a side effect on public channels where user that joined the channel are kicked.
      * 
      */
@@ -213,7 +213,7 @@ public class Conversation extends com.pulumi.resources.CustomResource {
     /**
      * @return indicate
      * whether the members should be kick of the channel when removed from
-     * `permanent_members`. When set to `none` the user are never kicked, this prevent
+     * `permanentMembers`. When set to `none` the user are never kicked, this prevent
      * a side effect on public channels where user that joined the channel are kicked.
      * 
      */
