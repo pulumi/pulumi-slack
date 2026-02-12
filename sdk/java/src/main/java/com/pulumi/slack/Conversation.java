@@ -169,7 +169,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
+ * `slack.Conversation` can be imported using the ID of the conversation/channel, e.g.
  * 
  * ```sh
  * $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
@@ -220,9 +220,25 @@ public class Conversation extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> actionOnUpdatePermanentMembers() {
         return Codegen.optional(this.actionOnUpdatePermanentMembers);
     }
+    /**
+     * indicates that an
+     * existing channel with the same name should be adopted by terraform and put under
+     * state management. If the existing channel is archived, it will be unarchived.
+     * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+     * a user token, not a bot token, due to bugs in the Slack API)
+     * 
+     */
     @Export(name="adoptExistingChannel", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> adoptExistingChannel;
 
+    /**
+     * @return indicates that an
+     * existing channel with the same name should be adopted by terraform and put under
+     * state management. If the existing channel is archived, it will be unarchived.
+     * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+     * a user token, not a bot token, due to bugs in the Slack API)
+     * 
+     */
     public Output<Optional<Boolean>> adoptExistingChannel() {
         return Codegen.optional(this.adoptExistingChannel);
     }

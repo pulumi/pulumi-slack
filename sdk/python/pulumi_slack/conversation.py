@@ -40,6 +40,11 @@ class ConversationArgs:
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
                a side effect on public channels where user that joined the channel are kicked.
+        :param pulumi.Input[_builtins.bool] adopt_existing_channel: indicates that an
+               existing channel with the same name should be adopted by terraform and put under
+               state management. If the existing channel is archived, it will be unarchived.
+               (Note: for unarchiving of existing channels to work correctly, you_must_ use
+               a user token, not a bot token, due to bugs in the Slack API)
         :param pulumi.Input[_builtins.bool] is_archived: indicates a conversation is archived. Frozen in time.
         :param pulumi.Input[_builtins.str] name: name of the public or private channel.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] permanent_members: user IDs to add to the channel.
@@ -110,6 +115,13 @@ class ConversationArgs:
     @_builtins.property
     @pulumi.getter(name="adoptExistingChannel")
     def adopt_existing_channel(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        indicates that an
+        existing channel with the same name should be adopted by terraform and put under
+        state management. If the existing channel is archived, it will be unarchived.
+        (Note: for unarchiving of existing channels to work correctly, you_must_ use
+        a user token, not a bot token, due to bugs in the Slack API)
+        """
         return pulumi.get(self, "adopt_existing_channel")
 
     @adopt_existing_channel.setter
@@ -206,6 +218,11 @@ class _ConversationState:
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
                a side effect on public channels where user that joined the channel are kicked.
+        :param pulumi.Input[_builtins.bool] adopt_existing_channel: indicates that an
+               existing channel with the same name should be adopted by terraform and put under
+               state management. If the existing channel is archived, it will be unarchived.
+               (Note: for unarchiving of existing channels to work correctly, you_must_ use
+               a user token, not a bot token, due to bugs in the Slack API)
         :param pulumi.Input[_builtins.int] created: is a unix timestamp.
         :param pulumi.Input[_builtins.str] creator: is the user ID of the member that created this channel.
         :param pulumi.Input[_builtins.bool] is_archived: indicates a conversation is archived. Frozen in time.
@@ -287,6 +304,13 @@ class _ConversationState:
     @_builtins.property
     @pulumi.getter(name="adoptExistingChannel")
     def adopt_existing_channel(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        indicates that an
+        existing channel with the same name should be adopted by terraform and put under
+        state management. If the existing channel is archived, it will be unarchived.
+        (Note: for unarchiving of existing channels to work correctly, you_must_ use
+        a user token, not a bot token, due to bugs in the Slack API)
+        """
         return pulumi.get(self, "adopt_existing_channel")
 
     @adopt_existing_channel.setter
@@ -540,7 +564,7 @@ class Conversation(pulumi.CustomResource):
 
         ## Import
 
-        `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
+        `Conversation` can be imported using the ID of the conversation/channel, e.g.
 
         ```sh
         $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
@@ -557,6 +581,11 @@ class Conversation(pulumi.CustomResource):
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
                a side effect on public channels where user that joined the channel are kicked.
+        :param pulumi.Input[_builtins.bool] adopt_existing_channel: indicates that an
+               existing channel with the same name should be adopted by terraform and put under
+               state management. If the existing channel is archived, it will be unarchived.
+               (Note: for unarchiving of existing channels to work correctly, you_must_ use
+               a user token, not a bot token, due to bugs in the Slack API)
         :param pulumi.Input[_builtins.bool] is_archived: indicates a conversation is archived. Frozen in time.
         :param pulumi.Input[_builtins.bool] is_private: create a private channel instead of a public one.
         :param pulumi.Input[_builtins.str] name: name of the public or private channel.
@@ -653,7 +682,7 @@ class Conversation(pulumi.CustomResource):
 
         ## Import
 
-        `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
+        `Conversation` can be imported using the ID of the conversation/channel, e.g.
 
         ```sh
         $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
@@ -750,6 +779,11 @@ class Conversation(pulumi.CustomResource):
                whether the members should be kick of the channel when removed from
                `permanent_members`. When set to `none` the user are never kicked, this prevent
                a side effect on public channels where user that joined the channel are kicked.
+        :param pulumi.Input[_builtins.bool] adopt_existing_channel: indicates that an
+               existing channel with the same name should be adopted by terraform and put under
+               state management. If the existing channel is archived, it will be unarchived.
+               (Note: for unarchiving of existing channels to work correctly, you_must_ use
+               a user token, not a bot token, due to bugs in the Slack API)
         :param pulumi.Input[_builtins.int] created: is a unix timestamp.
         :param pulumi.Input[_builtins.str] creator: is the user ID of the member that created this channel.
         :param pulumi.Input[_builtins.bool] is_archived: indicates a conversation is archived. Frozen in time.
@@ -813,6 +847,13 @@ class Conversation(pulumi.CustomResource):
     @_builtins.property
     @pulumi.getter(name="adoptExistingChannel")
     def adopt_existing_channel(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        indicates that an
+        existing channel with the same name should be adopted by terraform and put under
+        state management. If the existing channel is archived, it will be unarchived.
+        (Note: for unarchiving of existing channels to work correctly, you_must_ use
+        a user token, not a bot token, due to bugs in the Slack API)
+        """
         return pulumi.get(self, "adopt_existing_channel")
 
     @_builtins.property
