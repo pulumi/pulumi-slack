@@ -116,7 +116,7 @@ namespace Pulumi.Slack
     /// 
     /// ## Import
     /// 
-    /// `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
+    /// `slack.Conversation` can be imported using the ID of the conversation/channel, e.g.
     /// 
     /// ```sh
     /// $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
@@ -144,6 +144,13 @@ namespace Pulumi.Slack
         [Output("actionOnUpdatePermanentMembers")]
         public Output<string?> ActionOnUpdatePermanentMembers { get; private set; } = null!;
 
+        /// <summary>
+        /// indicates that an
+        /// existing channel with the same name should be adopted by terraform and put under
+        /// state management. If the existing channel is archived, it will be unarchived.
+        /// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+        /// a user token, not a bot token, due to bugs in the Slack API)
+        /// </summary>
         [Output("adoptExistingChannel")]
         public Output<bool?> AdoptExistingChannel { get; private set; } = null!;
 
@@ -287,6 +294,13 @@ namespace Pulumi.Slack
         [Input("actionOnUpdatePermanentMembers")]
         public Input<string>? ActionOnUpdatePermanentMembers { get; set; }
 
+        /// <summary>
+        /// indicates that an
+        /// existing channel with the same name should be adopted by terraform and put under
+        /// state management. If the existing channel is archived, it will be unarchived.
+        /// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+        /// a user token, not a bot token, due to bugs in the Slack API)
+        /// </summary>
         [Input("adoptExistingChannel")]
         public Input<bool>? AdoptExistingChannel { get; set; }
 
@@ -359,6 +373,13 @@ namespace Pulumi.Slack
         [Input("actionOnUpdatePermanentMembers")]
         public Input<string>? ActionOnUpdatePermanentMembers { get; set; }
 
+        /// <summary>
+        /// indicates that an
+        /// existing channel with the same name should be adopted by terraform and put under
+        /// state management. If the existing channel is archived, it will be unarchived.
+        /// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+        /// a user token, not a bot token, due to bugs in the Slack API)
+        /// </summary>
         [Input("adoptExistingChannel")]
         public Input<bool>? AdoptExistingChannel { get; set; }
 

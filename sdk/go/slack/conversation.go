@@ -142,7 +142,7 @@ import (
 //
 // ## Import
 //
-// `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
+// `Conversation` can be imported using the ID of the conversation/channel, e.g.
 //
 // ```sh
 // $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
@@ -161,7 +161,12 @@ type Conversation struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers pulumi.StringPtrOutput `pulumi:"actionOnUpdatePermanentMembers"`
-	AdoptExistingChannel           pulumi.BoolPtrOutput   `pulumi:"adoptExistingChannel"`
+	// indicates that an
+	// existing channel with the same name should be adopted by terraform and put under
+	// state management. If the existing channel is archived, it will be unarchived.
+	// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+	// a user token, not a bot token, due to bugs in the Slack API)
+	AdoptExistingChannel pulumi.BoolPtrOutput `pulumi:"adoptExistingChannel"`
 	// is a unix timestamp.
 	Created pulumi.IntOutput `pulumi:"created"`
 	// is the user ID of the member that created this channel.
@@ -235,7 +240,12 @@ type conversationState struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers *string `pulumi:"actionOnUpdatePermanentMembers"`
-	AdoptExistingChannel           *bool   `pulumi:"adoptExistingChannel"`
+	// indicates that an
+	// existing channel with the same name should be adopted by terraform and put under
+	// state management. If the existing channel is archived, it will be unarchived.
+	// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+	// a user token, not a bot token, due to bugs in the Slack API)
+	AdoptExistingChannel *bool `pulumi:"adoptExistingChannel"`
 	// is a unix timestamp.
 	Created *int `pulumi:"created"`
 	// is the user ID of the member that created this channel.
@@ -277,7 +287,12 @@ type ConversationState struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers pulumi.StringPtrInput
-	AdoptExistingChannel           pulumi.BoolPtrInput
+	// indicates that an
+	// existing channel with the same name should be adopted by terraform and put under
+	// state management. If the existing channel is archived, it will be unarchived.
+	// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+	// a user token, not a bot token, due to bugs in the Slack API)
+	AdoptExistingChannel pulumi.BoolPtrInput
 	// is a unix timestamp.
 	Created pulumi.IntPtrInput
 	// is the user ID of the member that created this channel.
@@ -323,7 +338,12 @@ type conversationArgs struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers *string `pulumi:"actionOnUpdatePermanentMembers"`
-	AdoptExistingChannel           *bool   `pulumi:"adoptExistingChannel"`
+	// indicates that an
+	// existing channel with the same name should be adopted by terraform and put under
+	// state management. If the existing channel is archived, it will be unarchived.
+	// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+	// a user token, not a bot token, due to bugs in the Slack API)
+	AdoptExistingChannel *bool `pulumi:"adoptExistingChannel"`
 	// indicates a conversation is archived. Frozen in time.
 	IsArchived *bool `pulumi:"isArchived"`
 	// create a private channel instead of a public one.
@@ -351,7 +371,12 @@ type ConversationArgs struct {
 	// `permanentMembers`. When set to `none` the user are never kicked, this prevent
 	// a side effect on public channels where user that joined the channel are kicked.
 	ActionOnUpdatePermanentMembers pulumi.StringPtrInput
-	AdoptExistingChannel           pulumi.BoolPtrInput
+	// indicates that an
+	// existing channel with the same name should be adopted by terraform and put under
+	// state management. If the existing channel is archived, it will be unarchived.
+	// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+	// a user token, not a bot token, due to bugs in the Slack API)
+	AdoptExistingChannel pulumi.BoolPtrInput
 	// indicates a conversation is archived. Frozen in time.
 	IsArchived pulumi.BoolPtrInput
 	// create a private channel instead of a public one.
@@ -470,6 +495,11 @@ func (o ConversationOutput) ActionOnUpdatePermanentMembers() pulumi.StringPtrOut
 	return o.ApplyT(func(v *Conversation) pulumi.StringPtrOutput { return v.ActionOnUpdatePermanentMembers }).(pulumi.StringPtrOutput)
 }
 
+// indicates that an
+// existing channel with the same name should be adopted by terraform and put under
+// state management. If the existing channel is archived, it will be unarchived.
+// (Note: for unarchiving of existing channels to work correctly, you_must_ use
+// a user token, not a bot token, due to bugs in the Slack API)
 func (o ConversationOutput) AdoptExistingChannel() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Conversation) pulumi.BoolPtrOutput { return v.AdoptExistingChannel }).(pulumi.BoolPtrOutput)
 }

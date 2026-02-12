@@ -123,7 +123,7 @@ import javax.annotation.Nullable;
  * 
  * ## Import
  * 
- * `slack_usergroup` can be imported using the ID of the group, e.g.
+ * `slack.Usergroup` can be imported using the ID of the group, e.g.
  * 
  * ```sh
  * $ pulumi import slack:index/usergroup:Usergroup my_group S022GE79E9G

@@ -62,9 +62,25 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.actionOnUpdatePermanentMembers);
     }
 
+    /**
+     * indicates that an
+     * existing channel with the same name should be adopted by terraform and put under
+     * state management. If the existing channel is archived, it will be unarchived.
+     * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+     * a user token, not a bot token, due to bugs in the Slack API)
+     * 
+     */
     @Import(name="adoptExistingChannel")
     private @Nullable Output<Boolean> adoptExistingChannel;
 
+    /**
+     * @return indicates that an
+     * existing channel with the same name should be adopted by terraform and put under
+     * state management. If the existing channel is archived, it will be unarchived.
+     * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+     * a user token, not a bot token, due to bugs in the Slack API)
+     * 
+     */
     public Optional<Output<Boolean>> adoptExistingChannel() {
         return Optional.ofNullable(this.adoptExistingChannel);
     }
@@ -247,11 +263,31 @@ public final class ConversationArgs extends com.pulumi.resources.ResourceArgs {
             return actionOnUpdatePermanentMembers(Output.of(actionOnUpdatePermanentMembers));
         }
 
+        /**
+         * @param adoptExistingChannel indicates that an
+         * existing channel with the same name should be adopted by terraform and put under
+         * state management. If the existing channel is archived, it will be unarchived.
+         * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+         * a user token, not a bot token, due to bugs in the Slack API)
+         * 
+         * @return builder
+         * 
+         */
         public Builder adoptExistingChannel(@Nullable Output<Boolean> adoptExistingChannel) {
             $.adoptExistingChannel = adoptExistingChannel;
             return this;
         }
 
+        /**
+         * @param adoptExistingChannel indicates that an
+         * existing channel with the same name should be adopted by terraform and put under
+         * state management. If the existing channel is archived, it will be unarchived.
+         * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+         * a user token, not a bot token, due to bugs in the Slack API)
+         * 
+         * @return builder
+         * 
+         */
         public Builder adoptExistingChannel(Boolean adoptExistingChannel) {
             return adoptExistingChannel(Output.of(adoptExistingChannel));
         }

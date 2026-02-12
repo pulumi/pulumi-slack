@@ -90,7 +90,7 @@ import * as utilities from "./utilities";
  *
  * ## Import
  *
- * `slack_conversation` can be imported using the ID of the conversation/channel, e.g.
+ * `slack.Conversation` can be imported using the ID of the conversation/channel, e.g.
  *
  * ```sh
  * $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
@@ -139,6 +139,13 @@ export class Conversation extends pulumi.CustomResource {
      * a side effect on public channels where user that joined the channel are kicked.
      */
     declare public readonly actionOnUpdatePermanentMembers: pulumi.Output<string | undefined>;
+    /**
+     * indicates that an
+     * existing channel with the same name should be adopted by terraform and put under
+     * state management. If the existing channel is archived, it will be unarchived.
+     * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+     * a user token, not a bot token, due to bugs in the Slack API)
+     */
     declare public readonly adoptExistingChannel: pulumi.Output<boolean | undefined>;
     /**
      * is a unix timestamp.
@@ -265,6 +272,13 @@ export interface ConversationState {
      * a side effect on public channels where user that joined the channel are kicked.
      */
     actionOnUpdatePermanentMembers?: pulumi.Input<string>;
+    /**
+     * indicates that an
+     * existing channel with the same name should be adopted by terraform and put under
+     * state management. If the existing channel is archived, it will be unarchived.
+     * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+     * a user token, not a bot token, due to bugs in the Slack API)
+     */
     adoptExistingChannel?: pulumi.Input<boolean>;
     /**
      * is a unix timestamp.
@@ -338,6 +352,13 @@ export interface ConversationArgs {
      * a side effect on public channels where user that joined the channel are kicked.
      */
     actionOnUpdatePermanentMembers?: pulumi.Input<string>;
+    /**
+     * indicates that an
+     * existing channel with the same name should be adopted by terraform and put under
+     * state management. If the existing channel is archived, it will be unarchived.
+     * (Note: for unarchiving of existing channels to work correctly, you_must_ use
+     * a user token, not a bot token, due to bugs in the Slack API)
+     */
     adoptExistingChannel?: pulumi.Input<boolean>;
     /**
      * indicates a conversation is archived. Frozen in time.
