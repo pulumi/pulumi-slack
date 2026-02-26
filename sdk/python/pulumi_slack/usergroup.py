@@ -26,6 +26,7 @@ class UsergroupArgs:
                  users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Usergroup resource.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] channels: channel IDs for which the User Group uses as a default.
         :param pulumi.Input[_builtins.str] description: a short description of the User Group.
         :param pulumi.Input[_builtins.str] handle: a mention handle. Must be unique among channels, users
@@ -118,6 +119,7 @@ class _UsergroupState:
                  users: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering Usergroup resources.
+
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] channels: channel IDs for which the User Group uses as a default.
         :param pulumi.Input[_builtins.str] description: a short description of the User Group.
         :param pulumi.Input[_builtins.str] handle: a mention handle. Must be unique among channels, users
@@ -276,6 +278,7 @@ class Usergroup(pulumi.CustomResource):
         $ pulumi import slack:index/usergroup:Usergroup my_group S022GE79E9G
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] channels: channel IDs for which the User Group uses as a default.
@@ -355,6 +358,7 @@ class Usergroup(pulumi.CustomResource):
         ```sh
         $ pulumi import slack:index/usergroup:Usergroup my_group S022GE79E9G
         ```
+
 
         :param str resource_name: The name of the resource.
         :param UsergroupArgs args: The arguments to use to populate this resource's properties.
