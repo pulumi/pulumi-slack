@@ -30,6 +30,7 @@ class ConversationArgs:
                  topic: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a Conversation resource.
+
         :param pulumi.Input[_builtins.bool] is_private: create a private channel instead of a public one.
         :param pulumi.Input[_builtins.str] action_on_destroy: indicates whether the
                conversation should be archived or left behind on destroy. Valid values are
@@ -209,6 +210,7 @@ class _ConversationState:
                  topic: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Conversation resources.
+
         :param pulumi.Input[_builtins.str] action_on_destroy: indicates whether the
                conversation should be archived or left behind on destroy. Valid values are
                `archive | none`. Note that when set to `none` the conversation will be left
@@ -570,6 +572,7 @@ class Conversation(pulumi.CustomResource):
         $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
         ```
 
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action_on_destroy: indicates whether the
@@ -687,6 +690,7 @@ class Conversation(pulumi.CustomResource):
         ```sh
         $ pulumi import slack:index/conversation:Conversation my_conversation C023X7QTFHQ
         ```
+
 
         :param str resource_name: The name of the resource.
         :param ConversationArgs args: The arguments to use to populate this resource's properties.
