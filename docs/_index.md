@@ -175,7 +175,7 @@ func main() {
 			Handle:      pulumi.String("test"),
 			Description: pulumi.String("Test user group"),
 			Users: pulumi.StringArray{
-				pulumi.String(testUser00.Id),
+				pulumi.String(pulumi.String(testUser00.Id)),
 			},
 		})
 		if err != nil {
