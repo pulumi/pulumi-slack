@@ -40,12 +40,12 @@ namespace Pulumi.Slack
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var byName = Slack.GetUser.Invoke(new()
+        ///     var byName = Slack.Index.GetUser.Invoke(new()
         ///     {
         ///         Name = "my-user",
         ///     });
         /// 
-        ///     var byEmail = Slack.GetUser.Invoke(new()
+        ///     var byEmail = Slack.Index.GetUser.Invoke(new()
         ///     {
         ///         Email = "my-user@example.com",
         ///     });
@@ -85,12 +85,12 @@ namespace Pulumi.Slack
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var byName = Slack.GetUser.Invoke(new()
+        ///     var byName = Slack.Index.GetUser.Invoke(new()
         ///     {
         ///         Name = "my-user",
         ///     });
         /// 
-        ///     var byEmail = Slack.GetUser.Invoke(new()
+        ///     var byEmail = Slack.Index.GetUser.Invoke(new()
         ///     {
         ///         Email = "my-user@example.com",
         ///     });
@@ -130,12 +130,12 @@ namespace Pulumi.Slack
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var byName = Slack.GetUser.Invoke(new()
+        ///     var byName = Slack.Index.GetUser.Invoke(new()
         ///     {
         ///         Name = "my-user",
         ///     });
         /// 
-        ///     var byEmail = Slack.GetUser.Invoke(new()
+        ///     var byEmail = Slack.Index.GetUser.Invoke(new()
         ///     {
         ///         Email = "my-user@example.com",
         ///     });

@@ -111,13 +111,13 @@ using Slack = Pulumi.Slack;
 
 return await Deployment.RunAsync(() =>
 {
-    var testUser00 = Slack.GetUser.Invoke(new()
+    var testUser00 = Slack.Index.GetUser.Invoke(new()
     {
         Name = "contact_test-user-ter",
     });
 
     // Create a User Group
-    var myGroup = new Slack.Usergroup("my_group", new()
+    var myGroup = new Slack.Index.Usergroup("my_group", new()
     {
         Name = "TestGroup",
         Handle = "test",
@@ -129,7 +129,7 @@ return await Deployment.RunAsync(() =>
     });
 
     // Create a Slack channel
-    var test = new Slack.Conversation("test", new()
+    var test = new Slack.Index.Conversation("test", new()
     {
         Name = "my-channel",
         Topic = "The topic for my channel",

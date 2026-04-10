@@ -63,7 +63,7 @@ namespace Pulumi.Slack
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var test = new Slack.Conversation("test", new()
+    ///     var test = new Slack.Index.Conversation("test", new()
     ///     {
     ///         Name = "my-channel",
     ///         Topic = "The topic for my channel",
@@ -82,7 +82,7 @@ namespace Pulumi.Slack
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var nonadmin = new Slack.Conversation("nonadmin", new()
+    ///     var nonadmin = new Slack.Index.Conversation("nonadmin", new()
     ///     {
     ///         Name = "my-channel01",
     ///         Topic = "The channel won't be archived on destroy",
@@ -102,7 +102,7 @@ namespace Pulumi.Slack
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var adopted = new Slack.Conversation("adopted", new()
+    ///     var adopted = new Slack.Index.Conversation("adopted", new()
     ///     {
     ///         Name = "my-channel02",
     ///         Topic = "Adopt existing, don't kick members",

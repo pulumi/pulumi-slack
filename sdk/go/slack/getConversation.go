@@ -43,13 +43,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := slack.LookupConversation(ctx, &slack.LookupConversationArgs{
+//			_, err := slack.GetConversation(ctx, &slack.LookupConversationArgs{
 //				ChannelId: pulumi.StringRef("my-channel"),
 //			}, nil)
 //			if err != nil {
 //				return err
 //			}
-//			_, err = slack.LookupConversation(ctx, &slack.LookupConversationArgs{
+//			_, err = slack.GetConversation(ctx, &slack.LookupConversationArgs{
 //				Name: pulumi.StringRef("my-channel-name"),
 //			}, nil)
 //			if err != nil {

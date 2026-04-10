@@ -41,7 +41,7 @@ namespace Pulumi.Slack
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var myGroup = new Slack.Usergroup("my_group", new()
+    ///     var myGroup = new Slack.Index.Usergroup("my_group", new()
     ///     {
     ///         Name = "TestGroup",
     ///         Handle = "test",
@@ -71,7 +71,7 @@ namespace Pulumi.Slack
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var myGroup = new Slack.Usergroup("my_group", new()
+    ///     var myGroup = new Slack.Index.Usergroup("my_group", new()
     ///     {
     ///         Name = "TestGroup",
     ///         Handle = "test",
@@ -82,7 +82,7 @@ namespace Pulumi.Slack
     ///         },
     ///     });
     /// 
-    ///     var test = new Slack.Conversation("test", new()
+    ///     var test = new Slack.Index.Conversation("test", new()
     ///     {
     ///         Name = "my-channel",
     ///         Topic = "The topic for my channel",

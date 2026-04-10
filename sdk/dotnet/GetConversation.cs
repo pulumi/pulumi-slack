@@ -40,12 +40,12 @@ namespace Pulumi.Slack
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Slack.GetConversation.Invoke(new()
+        ///     var test = Slack.Index.GetConversation.Invoke(new()
         ///     {
         ///         ChannelId = "my-channel",
         ///     });
         /// 
-        ///     var test_name = Slack.GetConversation.Invoke(new()
+        ///     var test_name = Slack.Index.GetConversation.Invoke(new()
         ///     {
         ///         Name = "my-channel-name",
         ///     });
@@ -85,12 +85,12 @@ namespace Pulumi.Slack
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Slack.GetConversation.Invoke(new()
+        ///     var test = Slack.Index.GetConversation.Invoke(new()
         ///     {
         ///         ChannelId = "my-channel",
         ///     });
         /// 
-        ///     var test_name = Slack.GetConversation.Invoke(new()
+        ///     var test_name = Slack.Index.GetConversation.Invoke(new()
         ///     {
         ///         Name = "my-channel-name",
         ///     });
@@ -130,12 +130,12 @@ namespace Pulumi.Slack
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var test = Slack.GetConversation.Invoke(new()
+        ///     var test = Slack.Index.GetConversation.Invoke(new()
         ///     {
         ///         ChannelId = "my-channel",
         ///     });
         /// 
-        ///     var test_name = Slack.GetConversation.Invoke(new()
+        ///     var test_name = Slack.Index.GetConversation.Invoke(new()
         ///     {
         ///         Name = "my-channel-name",
         ///     });
