@@ -255,9 +255,9 @@ def get_conversation(channel_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         purpose=pulumi.get(__ret__, 'purpose'),
         topic=pulumi.get(__ret__, 'topic'))
-def get_conversation_output(channel_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                            is_private: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
-                            name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_conversation_output(channel_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                            is_private: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                            name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConversationResult]:
     """
     Use this data source to get information about a Slack conversation for use in other

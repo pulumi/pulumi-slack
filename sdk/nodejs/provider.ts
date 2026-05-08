@@ -64,7 +64,7 @@ export interface ProviderArgs {
     /**
      * The Slack token
      */
-    token?: pulumi.Input<string>;
+    token?: pulumi.Input<string | undefined>;
 }
 
 export namespace Provider {
