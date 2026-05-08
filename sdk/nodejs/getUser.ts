@@ -124,9 +124,9 @@ export interface GetUserOutputArgs {
      *
      * The data source expects exactly one of these fields, you can't set both.
      */
-    email?: pulumi.Input<string>;
+    email?: pulumi.Input<string | undefined>;
     /**
      * The name of the user
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

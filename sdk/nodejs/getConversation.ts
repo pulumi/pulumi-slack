@@ -175,16 +175,16 @@ export interface GetConversationOutputArgs {
     /**
      * The ID of the channel
      */
-    channelId?: pulumi.Input<string>;
+    channelId?: pulumi.Input<string | undefined>;
     /**
      * The conversation is privileged between two or more members
      *
      * Either `channelId` or `name` must be provided. `isPrivate` only works in conjunction
      * with `name`.
      */
-    isPrivate?: pulumi.Input<boolean>;
+    isPrivate?: pulumi.Input<boolean | undefined>;
     /**
      * The name of the public or private channel
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
 }

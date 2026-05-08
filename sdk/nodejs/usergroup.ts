@@ -160,25 +160,25 @@ export interface UsergroupState {
     /**
      * channel IDs for which the User Group uses as a default.
      */
-    channels?: pulumi.Input<pulumi.Input<string>[]>;
+    channels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * a short description of the User Group.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * a mention handle. Must be unique among channels, users
      * and User Groups.
      */
-    handle?: pulumi.Input<string>;
+    handle?: pulumi.Input<string | undefined>;
     /**
      * a name for the User Group. Must be unique among User Groups.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * user IDs that represent the entire list of users for the
      * User Group.
      */
-    users?: pulumi.Input<pulumi.Input<string>[]>;
+    users?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }
 
 /**
@@ -188,23 +188,23 @@ export interface UsergroupArgs {
     /**
      * channel IDs for which the User Group uses as a default.
      */
-    channels?: pulumi.Input<pulumi.Input<string>[]>;
+    channels?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * a short description of the User Group.
      */
-    description?: pulumi.Input<string>;
+    description?: pulumi.Input<string | undefined>;
     /**
      * a mention handle. Must be unique among channels, users
      * and User Groups.
      */
-    handle?: pulumi.Input<string>;
+    handle?: pulumi.Input<string | undefined>;
     /**
      * a name for the User Group. Must be unique among User Groups.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * user IDs that represent the entire list of users for the
      * User Group.
      */
-    users?: pulumi.Input<pulumi.Input<string>[]>;
+    users?: pulumi.Input<pulumi.Input<string>[] | undefined>;
 }

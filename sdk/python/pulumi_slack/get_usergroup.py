@@ -166,8 +166,8 @@ def get_usergroup(name: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         usergroup_id=pulumi.get(__ret__, 'usergroup_id'),
         users=pulumi.get(__ret__, 'users'))
-def get_usergroup_output(name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
-                         usergroup_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_usergroup_output(name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                         usergroup_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetUsergroupResult]:
     """
     Use this data source to get information about a usergroups for use in other

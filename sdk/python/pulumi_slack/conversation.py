@@ -20,14 +20,14 @@ __all__ = ['ConversationArgs', 'Conversation']
 class ConversationArgs:
     def __init__(__self__, *,
                  is_private: pulumi.Input[_builtins.bool],
-                 action_on_destroy: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_on_update_permanent_members: Optional[pulumi.Input[_builtins.str]] = None,
-                 adopt_existing_channel: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_archived: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 topic: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_on_destroy: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_on_update_permanent_members: pulumi.Input[Optional[_builtins.str]] = None,
+                 adopt_existing_channel: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_archived: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permanent_members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Conversation resource.
 
@@ -84,7 +84,7 @@ class ConversationArgs:
 
     @_builtins.property
     @pulumi.getter(name="actionOnDestroy")
-    def action_on_destroy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_on_destroy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         indicates whether the
         conversation should be archived or left behind on destroy. Valid values are
@@ -95,12 +95,12 @@ class ConversationArgs:
         return pulumi.get(self, "action_on_destroy")
 
     @action_on_destroy.setter
-    def action_on_destroy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_on_destroy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_destroy", value)
 
     @_builtins.property
     @pulumi.getter(name="actionOnUpdatePermanentMembers")
-    def action_on_update_permanent_members(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_on_update_permanent_members(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         indicate
         whether the members should be kick of the channel when removed from
@@ -110,12 +110,12 @@ class ConversationArgs:
         return pulumi.get(self, "action_on_update_permanent_members")
 
     @action_on_update_permanent_members.setter
-    def action_on_update_permanent_members(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_on_update_permanent_members(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_update_permanent_members", value)
 
     @_builtins.property
     @pulumi.getter(name="adoptExistingChannel")
-    def adopt_existing_channel(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def adopt_existing_channel(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         indicates that an
         existing channel with the same name should be adopted by terraform and put under
@@ -126,88 +126,88 @@ class ConversationArgs:
         return pulumi.get(self, "adopt_existing_channel")
 
     @adopt_existing_channel.setter
-    def adopt_existing_channel(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def adopt_existing_channel(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "adopt_existing_channel", value)
 
     @_builtins.property
     @pulumi.getter(name="isArchived")
-    def is_archived(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_archived(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         indicates a conversation is archived. Frozen in time.
         """
         return pulumi.get(self, "is_archived")
 
     @is_archived.setter
-    def is_archived(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_archived(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_archived", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of the public or private channel.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="permanentMembers")
-    def permanent_members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def permanent_members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         user IDs to add to the channel.
         """
         return pulumi.get(self, "permanent_members")
 
     @permanent_members.setter
-    def permanent_members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def permanent_members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "permanent_members", value)
 
     @_builtins.property
     @pulumi.getter
-    def purpose(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purpose(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         purpose of the channel.
         """
         return pulumi.get(self, "purpose")
 
     @purpose.setter
-    def purpose(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purpose(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purpose", value)
 
     @_builtins.property
     @pulumi.getter
-    def topic(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def topic(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         topic for the channel.
         """
         return pulumi.get(self, "topic")
 
     @topic.setter
-    def topic(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def topic(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "topic", value)
 
 
 @pulumi.input_type
 class _ConversationState:
     def __init__(__self__, *,
-                 action_on_destroy: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_on_update_permanent_members: Optional[pulumi.Input[_builtins.str]] = None,
-                 adopt_existing_channel: Optional[pulumi.Input[_builtins.bool]] = None,
-                 created: Optional[pulumi.Input[_builtins.int]] = None,
-                 creator: Optional[pulumi.Input[_builtins.str]] = None,
-                 is_archived: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_ext_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_general: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_org_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 topic: Optional[pulumi.Input[_builtins.str]] = None):
+                 action_on_destroy: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_on_update_permanent_members: pulumi.Input[Optional[_builtins.str]] = None,
+                 adopt_existing_channel: pulumi.Input[Optional[_builtins.bool]] = None,
+                 created: pulumi.Input[Optional[_builtins.int]] = None,
+                 creator: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_archived: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_ext_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_general: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_org_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permanent_members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Conversation resources.
 
@@ -274,7 +274,7 @@ class _ConversationState:
 
     @_builtins.property
     @pulumi.getter(name="actionOnDestroy")
-    def action_on_destroy(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_on_destroy(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         indicates whether the
         conversation should be archived or left behind on destroy. Valid values are
@@ -285,12 +285,12 @@ class _ConversationState:
         return pulumi.get(self, "action_on_destroy")
 
     @action_on_destroy.setter
-    def action_on_destroy(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_on_destroy(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_destroy", value)
 
     @_builtins.property
     @pulumi.getter(name="actionOnUpdatePermanentMembers")
-    def action_on_update_permanent_members(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def action_on_update_permanent_members(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         indicate
         whether the members should be kick of the channel when removed from
@@ -300,12 +300,12 @@ class _ConversationState:
         return pulumi.get(self, "action_on_update_permanent_members")
 
     @action_on_update_permanent_members.setter
-    def action_on_update_permanent_members(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def action_on_update_permanent_members(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "action_on_update_permanent_members", value)
 
     @_builtins.property
     @pulumi.getter(name="adoptExistingChannel")
-    def adopt_existing_channel(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def adopt_existing_channel(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         indicates that an
         existing channel with the same name should be adopted by terraform and put under
@@ -316,48 +316,48 @@ class _ConversationState:
         return pulumi.get(self, "adopt_existing_channel")
 
     @adopt_existing_channel.setter
-    def adopt_existing_channel(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def adopt_existing_channel(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "adopt_existing_channel", value)
 
     @_builtins.property
     @pulumi.getter
-    def created(self) -> Optional[pulumi.Input[_builtins.int]]:
+    def created(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         is a unix timestamp.
         """
         return pulumi.get(self, "created")
 
     @created.setter
-    def created(self, value: Optional[pulumi.Input[_builtins.int]]):
+    def created(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "created", value)
 
     @_builtins.property
     @pulumi.getter
-    def creator(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def creator(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         is the user ID of the member that created this channel.
         """
         return pulumi.get(self, "creator")
 
     @creator.setter
-    def creator(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def creator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "creator", value)
 
     @_builtins.property
     @pulumi.getter(name="isArchived")
-    def is_archived(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_archived(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         indicates a conversation is archived. Frozen in time.
         """
         return pulumi.get(self, "is_archived")
 
     @is_archived.setter
-    def is_archived(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_archived(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_archived", value)
 
     @_builtins.property
     @pulumi.getter(name="isExtShared")
-    def is_ext_shared(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_ext_shared(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         represents this conversation as being part of a Shared Channel
         with a remote organization.
@@ -365,12 +365,12 @@ class _ConversationState:
         return pulumi.get(self, "is_ext_shared")
 
     @is_ext_shared.setter
-    def is_ext_shared(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_ext_shared(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_ext_shared", value)
 
     @_builtins.property
     @pulumi.getter(name="isGeneral")
-    def is_general(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_general(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         will be true if this channel is the "general" channel that includes
         all regular team members.
@@ -378,12 +378,12 @@ class _ConversationState:
         return pulumi.get(self, "is_general")
 
     @is_general.setter
-    def is_general(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_general(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_general", value)
 
     @_builtins.property
     @pulumi.getter(name="isOrgShared")
-    def is_org_shared(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_org_shared(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         explains whether this shared channel is shared between Enterprise
         Grid workspaces within the same organization.
@@ -391,79 +391,79 @@ class _ConversationState:
         return pulumi.get(self, "is_org_shared")
 
     @is_org_shared.setter
-    def is_org_shared(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_org_shared(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_org_shared", value)
 
     @_builtins.property
     @pulumi.getter(name="isPrivate")
-    def is_private(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_private(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         create a private channel instead of a public one.
         """
         return pulumi.get(self, "is_private")
 
     @is_private.setter
-    def is_private(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_private(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_private", value)
 
     @_builtins.property
     @pulumi.getter(name="isShared")
-    def is_shared(self) -> Optional[pulumi.Input[_builtins.bool]]:
+    def is_shared(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         means the conversation is in some way shared between multiple workspaces.
         """
         return pulumi.get(self, "is_shared")
 
     @is_shared.setter
-    def is_shared(self, value: Optional[pulumi.Input[_builtins.bool]]):
+    def is_shared(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_shared", value)
 
     @_builtins.property
     @pulumi.getter
-    def name(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         name of the public or private channel.
         """
         return pulumi.get(self, "name")
 
     @name.setter
-    def name(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
     @_builtins.property
     @pulumi.getter(name="permanentMembers")
-    def permanent_members(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+    def permanent_members(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
         user IDs to add to the channel.
         """
         return pulumi.get(self, "permanent_members")
 
     @permanent_members.setter
-    def permanent_members(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+    def permanent_members(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "permanent_members", value)
 
     @_builtins.property
     @pulumi.getter
-    def purpose(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def purpose(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         purpose of the channel.
         """
         return pulumi.get(self, "purpose")
 
     @purpose.setter
-    def purpose(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def purpose(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "purpose", value)
 
     @_builtins.property
     @pulumi.getter
-    def topic(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def topic(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         topic for the channel.
         """
         return pulumi.get(self, "topic")
 
     @topic.setter
-    def topic(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def topic(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "topic", value)
 
 
@@ -473,15 +473,15 @@ class Conversation(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_on_destroy: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_on_update_permanent_members: Optional[pulumi.Input[_builtins.str]] = None,
-                 adopt_existing_channel: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_archived: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 topic: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_on_destroy: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_on_update_permanent_members: pulumi.Input[Optional[_builtins.str]] = None,
+                 adopt_existing_channel: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_archived: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permanent_members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Manages a Slack channel
@@ -707,15 +707,15 @@ class Conversation(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 action_on_destroy: Optional[pulumi.Input[_builtins.str]] = None,
-                 action_on_update_permanent_members: Optional[pulumi.Input[_builtins.str]] = None,
-                 adopt_existing_channel: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_archived: Optional[pulumi.Input[_builtins.bool]] = None,
-                 is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-                 name: Optional[pulumi.Input[_builtins.str]] = None,
-                 permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-                 purpose: Optional[pulumi.Input[_builtins.str]] = None,
-                 topic: Optional[pulumi.Input[_builtins.str]] = None,
+                 action_on_destroy: pulumi.Input[Optional[_builtins.str]] = None,
+                 action_on_update_permanent_members: pulumi.Input[Optional[_builtins.str]] = None,
+                 adopt_existing_channel: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_archived: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 permanent_members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 purpose: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -752,21 +752,21 @@ class Conversation(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            action_on_destroy: Optional[pulumi.Input[_builtins.str]] = None,
-            action_on_update_permanent_members: Optional[pulumi.Input[_builtins.str]] = None,
-            adopt_existing_channel: Optional[pulumi.Input[_builtins.bool]] = None,
-            created: Optional[pulumi.Input[_builtins.int]] = None,
-            creator: Optional[pulumi.Input[_builtins.str]] = None,
-            is_archived: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_ext_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_general: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_org_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_private: Optional[pulumi.Input[_builtins.bool]] = None,
-            is_shared: Optional[pulumi.Input[_builtins.bool]] = None,
-            name: Optional[pulumi.Input[_builtins.str]] = None,
-            permanent_members: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
-            purpose: Optional[pulumi.Input[_builtins.str]] = None,
-            topic: Optional[pulumi.Input[_builtins.str]] = None) -> 'Conversation':
+            action_on_destroy: pulumi.Input[Optional[_builtins.str]] = None,
+            action_on_update_permanent_members: pulumi.Input[Optional[_builtins.str]] = None,
+            adopt_existing_channel: pulumi.Input[Optional[_builtins.bool]] = None,
+            created: pulumi.Input[Optional[_builtins.int]] = None,
+            creator: pulumi.Input[Optional[_builtins.str]] = None,
+            is_archived: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ext_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_general: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_org_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            permanent_members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            purpose: pulumi.Input[Optional[_builtins.str]] = None,
+            topic: pulumi.Input[Optional[_builtins.str]] = None) -> 'Conversation':
         """
         Get an existing Conversation resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.

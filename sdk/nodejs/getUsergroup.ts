@@ -135,11 +135,11 @@ export interface GetUsergroupOutputArgs {
     /**
      * The name of the usergroup
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * The id of the usergroup
      *
      * The data source expects exactly one of these fields, you can't set both.
      */
-    usergroupId?: pulumi.Input<string>;
+    usergroupId?: pulumi.Input<string | undefined>;
 }

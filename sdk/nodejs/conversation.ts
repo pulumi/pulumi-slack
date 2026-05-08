@@ -264,14 +264,14 @@ export interface ConversationState {
      * as it is  and as a result any subsequent runs of pulumi up with the same
      * name  will fail.
      */
-    actionOnDestroy?: pulumi.Input<string>;
+    actionOnDestroy?: pulumi.Input<string | undefined>;
     /**
      * indicate
      * whether the members should be kick of the channel when removed from
      * `permanentMembers`. When set to `none` the user are never kicked, this prevent
      * a side effect on public channels where user that joined the channel are kicked.
      */
-    actionOnUpdatePermanentMembers?: pulumi.Input<string>;
+    actionOnUpdatePermanentMembers?: pulumi.Input<string | undefined>;
     /**
      * indicates that an
      * existing channel with the same name should be adopted by terraform and put under
@@ -279,58 +279,58 @@ export interface ConversationState {
      * (Note: for unarchiving of existing channels to work correctly, you_must_ use
      * a user token, not a bot token, due to bugs in the Slack API)
      */
-    adoptExistingChannel?: pulumi.Input<boolean>;
+    adoptExistingChannel?: pulumi.Input<boolean | undefined>;
     /**
      * is a unix timestamp.
      */
-    created?: pulumi.Input<number>;
+    created?: pulumi.Input<number | undefined>;
     /**
      * is the user ID of the member that created this channel.
      */
-    creator?: pulumi.Input<string>;
+    creator?: pulumi.Input<string | undefined>;
     /**
      * indicates a conversation is archived. Frozen in time.
      */
-    isArchived?: pulumi.Input<boolean>;
+    isArchived?: pulumi.Input<boolean | undefined>;
     /**
      * represents this conversation as being part of a Shared Channel
      * with a remote organization.
      */
-    isExtShared?: pulumi.Input<boolean>;
+    isExtShared?: pulumi.Input<boolean | undefined>;
     /**
      * will be true if this channel is the "general" channel that includes
      * all regular team members.
      */
-    isGeneral?: pulumi.Input<boolean>;
+    isGeneral?: pulumi.Input<boolean | undefined>;
     /**
      * explains whether this shared channel is shared between Enterprise
      * Grid workspaces within the same organization.
      */
-    isOrgShared?: pulumi.Input<boolean>;
+    isOrgShared?: pulumi.Input<boolean | undefined>;
     /**
      * create a private channel instead of a public one.
      */
-    isPrivate?: pulumi.Input<boolean>;
+    isPrivate?: pulumi.Input<boolean | undefined>;
     /**
      * means the conversation is in some way shared between multiple workspaces.
      */
-    isShared?: pulumi.Input<boolean>;
+    isShared?: pulumi.Input<boolean | undefined>;
     /**
      * name of the public or private channel.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * user IDs to add to the channel.
      */
-    permanentMembers?: pulumi.Input<pulumi.Input<string>[]>;
+    permanentMembers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * purpose of the channel.
      */
-    purpose?: pulumi.Input<string>;
+    purpose?: pulumi.Input<string | undefined>;
     /**
      * topic for the channel.
      */
-    topic?: pulumi.Input<string>;
+    topic?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -344,14 +344,14 @@ export interface ConversationArgs {
      * as it is  and as a result any subsequent runs of pulumi up with the same
      * name  will fail.
      */
-    actionOnDestroy?: pulumi.Input<string>;
+    actionOnDestroy?: pulumi.Input<string | undefined>;
     /**
      * indicate
      * whether the members should be kick of the channel when removed from
      * `permanentMembers`. When set to `none` the user are never kicked, this prevent
      * a side effect on public channels where user that joined the channel are kicked.
      */
-    actionOnUpdatePermanentMembers?: pulumi.Input<string>;
+    actionOnUpdatePermanentMembers?: pulumi.Input<string | undefined>;
     /**
      * indicates that an
      * existing channel with the same name should be adopted by terraform and put under
@@ -359,11 +359,11 @@ export interface ConversationArgs {
      * (Note: for unarchiving of existing channels to work correctly, you_must_ use
      * a user token, not a bot token, due to bugs in the Slack API)
      */
-    adoptExistingChannel?: pulumi.Input<boolean>;
+    adoptExistingChannel?: pulumi.Input<boolean | undefined>;
     /**
      * indicates a conversation is archived. Frozen in time.
      */
-    isArchived?: pulumi.Input<boolean>;
+    isArchived?: pulumi.Input<boolean | undefined>;
     /**
      * create a private channel instead of a public one.
      */
@@ -371,17 +371,17 @@ export interface ConversationArgs {
     /**
      * name of the public or private channel.
      */
-    name?: pulumi.Input<string>;
+    name?: pulumi.Input<string | undefined>;
     /**
      * user IDs to add to the channel.
      */
-    permanentMembers?: pulumi.Input<pulumi.Input<string>[]>;
+    permanentMembers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * purpose of the channel.
      */
-    purpose?: pulumi.Input<string>;
+    purpose?: pulumi.Input<string | undefined>;
     /**
      * topic for the channel.
      */
-    topic?: pulumi.Input<string>;
+    topic?: pulumi.Input<string | undefined>;
 }
