@@ -25,7 +25,7 @@ Use the navigation to the left to read about the available resources.
 
 
 
-{{< chooser language "typescript,python,go,csharp,java,yaml" >}}
+{{< chooser language "typescript,python,go,csharp,java,yaml,hcl" >}}
 {{% choosable language typescript %}}
 ```yaml
 # Pulumi.yaml provider configuration file
@@ -294,6 +294,37 @@ public class App {
             .build());
 
     }
+}
+```
+
+{{% /choosable %}}
+{{% choosable language hcl %}}
+```hcl
+pulumi {
+  required_providers {
+    slack = {
+      source = "pulumi/slack"
+    }
+  }
+}
+
+data "slack_getuser" "testUser00" {
+  name = "contact_test-user-ter"
+}
+
+# Create a User Group
+resource "slack_usergroup" "my_group" {
+  name        = "TestGroup"
+  handle      = "test"
+  description = "Test user group"
+  users       = [data.slack_getuser.testUser00.id]
+}
+# Create a Slack channel
+resource "slack_conversation" "test" {
+  name              = "my-channel"
+  topic             = "The topic for my channel"
+  permanent_members = slack_usergroup.my_group.users
+  is_private        = true
 }
 ```
 
