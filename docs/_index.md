@@ -339,7 +339,7 @@ means:
 - Environment variables
 ### Static Token
 
-!> **Warning:** Hard-coding credentials into any Pulumi configuration is not
+> **Warning:** Hard-coding credentials into any Pulumi configuration is not
 recommended, and risks secret leakage should this file ever be committed to a
 public version control system.
 
