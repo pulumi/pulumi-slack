@@ -95,7 +95,7 @@ publishing {
                 inceptionYear = "2022"
                 name = "pulumi-slack"
                 packaging = "jar"
-                description = "A Pulumi package for managing Slack workspaces."
+                description = $/A Pulumi package for managing Slack workspaces./$
 
                 url = "https://github.com/pulumi/pulumi-slack"
 
