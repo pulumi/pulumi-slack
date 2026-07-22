@@ -1,3 +1,0 @@
-name: slack
-description: A Pulumi resource provider for slack.
-language: schema
