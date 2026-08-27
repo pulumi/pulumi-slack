@@ -116,12 +116,8 @@ type LookupConversationResult struct {
 }
 
 func LookupConversationOutput(ctx *pulumi.Context, args LookupConversationOutputArgs, opts ...pulumi.InvokeOption) LookupConversationResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupConversationResultOutput, error) {
-			args := v.(LookupConversationArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("slack:index/getConversation:getConversation", args, LookupConversationResultOutput{}, options).(LookupConversationResultOutput), nil
-		}).(LookupConversationResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("slack:index/getConversation:getConversation", args, LookupConversationResultOutput{}, options).(LookupConversationResultOutput)
 }
 
 // A collection of arguments for invoking getConversation.

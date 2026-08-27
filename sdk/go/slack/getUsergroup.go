@@ -96,12 +96,8 @@ type LookupUsergroupResult struct {
 }
 
 func LookupUsergroupOutput(ctx *pulumi.Context, args LookupUsergroupOutputArgs, opts ...pulumi.InvokeOption) LookupUsergroupResultOutput {
-	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (LookupUsergroupResultOutput, error) {
-			args := v.(LookupUsergroupArgs)
-			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("slack:index/getUsergroup:getUsergroup", args, LookupUsergroupResultOutput{}, options).(LookupUsergroupResultOutput), nil
-		}).(LookupUsergroupResultOutput)
+	options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
+	return ctx.InvokeOutput("slack:index/getUsergroup:getUsergroup", args, LookupUsergroupResultOutput{}, options).(LookupUsergroupResultOutput)
 }
 
 // A collection of arguments for invoking getUsergroup.
