@@ -1,3 +1,0 @@
-name: channel
-runtime: nodejs
-description: A sample Slack Pulumi program
