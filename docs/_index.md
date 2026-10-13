@@ -300,7 +300,7 @@ public class App {
 {{% /choosable %}}
 {{% choosable language hcl %}}
 ```hcl
-pulumi {
+terraform {
   required_providers {
     slack = {
       source = "pulumi/slack"
@@ -308,19 +308,25 @@ pulumi {
   }
 }
 
-data "slack_getuser" "testUser00" {
+data "slack_user" "testUser00" {
   name = "contact_test-user-ter"
 }
 
 # Create a User Group
 resource "slack_usergroup" "my_group" {
+  lifecycle {
+    create_before_destroy = true
+  }
   name        = "TestGroup"
   handle      = "test"
   description = "Test user group"
-  users       = [data.slack_getuser.testUser00.id]
+  users       = [data.slack_user.testUser00.id]
 }
 # Create a Slack channel
 resource "slack_conversation" "test" {
+  lifecycle {
+    create_before_destroy = true
+  }
   name              = "my-channel"
   topic             = "The topic for my channel"
   permanent_members = slack_usergroup.my_group.users
