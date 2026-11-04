@@ -326,6 +326,12 @@ func (ConversationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*conversationState)(nil)).Elem()
 }
 
+// ConversationExists checks whether an existing Conversation resource with the given ID exists.
+func ConversationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConversationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("slack:index/conversation:Conversation", id, state, "", opts...)
+}
+
 type conversationArgs struct {
 	// indicates whether the
 	// conversation should be archived or left behind on destroy. Valid values are

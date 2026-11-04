@@ -195,6 +195,12 @@ func (UsergroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*usergroupState)(nil)).Elem()
 }
 
+// UsergroupExists checks whether an existing Usergroup resource with the given ID exists.
+func UsergroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UsergroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("slack:index/usergroup:Usergroup", id, state, "", opts...)
+}
+
 type usergroupArgs struct {
 	// channel IDs for which the User Group uses as a default.
 	Channels []string `pulumi:"channels"`
