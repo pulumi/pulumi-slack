@@ -435,6 +435,22 @@ class Usergroup(pulumi.CustomResource):
         __props__.__dict__["users"] = users
         return Usergroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            channels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            handle: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["channels"] = channels
+        __props__["description"] = description
+        __props__["handle"] = handle
+        __props__["name"] = name
+        __props__["users"] = users
+        return pulumi.runtime.exists_resource(None, 'slack:index/usergroup:Usergroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def channels(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

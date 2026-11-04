@@ -825,6 +825,42 @@ class Conversation(pulumi.CustomResource):
         __props__.__dict__["topic"] = topic
         return Conversation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action_on_destroy: pulumi.Input[Optional[_builtins.str]] = None,
+            action_on_update_permanent_members: pulumi.Input[Optional[_builtins.str]] = None,
+            adopt_existing_channel: pulumi.Input[Optional[_builtins.bool]] = None,
+            created: pulumi.Input[Optional[_builtins.int]] = None,
+            creator: pulumi.Input[Optional[_builtins.str]] = None,
+            is_archived: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ext_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_general: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_org_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shared: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            permanent_members: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            purpose: pulumi.Input[Optional[_builtins.str]] = None,
+            topic: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actionOnDestroy"] = action_on_destroy
+        __props__["actionOnUpdatePermanentMembers"] = action_on_update_permanent_members
+        __props__["adoptExistingChannel"] = adopt_existing_channel
+        __props__["created"] = created
+        __props__["creator"] = creator
+        __props__["isArchived"] = is_archived
+        __props__["isExtShared"] = is_ext_shared
+        __props__["isGeneral"] = is_general
+        __props__["isOrgShared"] = is_org_shared
+        __props__["isPrivate"] = is_private
+        __props__["isShared"] = is_shared
+        __props__["name"] = name
+        __props__["permanentMembers"] = permanent_members
+        __props__["purpose"] = purpose
+        __props__["topic"] = topic
+        return pulumi.runtime.exists_resource(None, 'slack:index/conversation:Conversation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="actionOnDestroy")
     def action_on_destroy(self) -> pulumi.Output[Optional[_builtins.str]]:
